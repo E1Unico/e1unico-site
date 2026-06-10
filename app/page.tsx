@@ -353,6 +353,72 @@ export default function Home() {
         </div>
       </section>
 
+
+      {/* ── ALL SERVICES STORE ── */}
+      <section id="services-store" style={{ padding: "100px 20px", background: "linear-gradient(180deg, rgba(201,168,76,0.03) 0%, transparent 100%)" }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          <div style={{ textAlign: "center", marginBottom: 60 }}>
+            <p style={{ fontSize: 11, fontWeight: 700, color: "#c9a84c", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 12 }}>Everything We Offer</p>
+            <h2 style={{ fontSize: "clamp(28px, 4vw, 52px)", fontWeight: 900, letterSpacing: "-0.02em", marginBottom: 12 }}>
+              Our <span style={{ background: "linear-gradient(135deg, #f0c96e, #c9a84c)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Services</span>
+            </h2>
+            <p style={{ color: "#6b7280", fontSize: 14, maxWidth: 440, margin: "0 auto" }}>Order online instantly. We get to work within 24 hours.</p>
+          </div>
+
+          {/* Flagship row */}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, marginBottom: 20 }}>
+            {[
+              { product: "2k-special", emoji: "🚀", title: "The 2K Special", tag: "Most Popular", price: "$2,000", sub: "One-time", desc: "Entity formation, EIN, registered agent, logo, email, Google profile, UnicoOS + strategy session. Everything to launch.", highlight: true },
+              { product: "custom-unicoos", emoji: "🎨", title: "Custom UnicoOS", tag: "White-Label", price: "$2,000/mo", sub: "+ $2,500 setup", desc: "Your own branded Business OS. Custom name, logo, domain. Built, hosted, and maintained by us.", highlight: false },
+            ].map(s => (
+              <div key={s.product} style={{ background: s.highlight ? "linear-gradient(145deg, rgba(201,168,76,0.15), rgba(79,70,229,0.1))" : "rgba(255,255,255,0.03)", border: `1px solid ${s.highlight ? "rgba(201,168,76,0.35)" : "rgba(255,255,255,0.08)"}`, borderRadius: 20, padding: "28px 24px" }} className="card-lift">
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 12 }}>
+                  <span style={{ fontSize: 32 }}>{s.emoji}</span>
+                  <span style={{ fontSize: 10, fontWeight: 700, background: s.highlight ? "rgba(201,168,76,0.2)" : "rgba(255,255,255,0.08)", color: s.highlight ? "#c9a84c" : "#9ca3af", padding: "3px 10px", borderRadius: 999, letterSpacing: "0.1em", textTransform: "uppercase" }}>{s.tag}</span>
+                </div>
+                <p style={{ fontWeight: 900, fontSize: 18, color: "white", marginBottom: 4 }}>{s.title}</p>
+                <p style={{ fontSize: 22, fontWeight: 900, color: s.highlight ? "#c9a84c" : "#818cf8", lineHeight: 1, marginBottom: 2 }}>{s.price}</p>
+                <p style={{ fontSize: 11, color: "#6b7280", marginBottom: 14 }}>{s.sub}</p>
+                <p style={{ color: "#9ca3af", fontSize: 12, lineHeight: 1.6, marginBottom: 20 }}>{s.desc}</p>
+                <BuyButton product={s.product} label="🛒 Order Now" className={s.highlight ? "btn-gold" : "btn-indigo"}
+                  style={{ display: "block", width: "100%", color: "white", fontWeight: 700, fontSize: 14, padding: "12px", borderRadius: 12, border: "none", cursor: "pointer" }} />
+              </div>
+            ))}
+          </div>
+
+          {/* À la carte grid */}
+          <p style={{ color: "#6b7280", fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.15em", marginBottom: 16 }}>À La Carte Services</p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: 14 }}>
+            {[
+              { product: "llc-formation",       emoji: "📋", title: "LLC Formation",              price: "$299",      sub: "one-time",  desc: "State filing + EIN + registered agent (1 yr)" },
+              { product: "ein-only",             emoji: "🔢", title: "EIN Filing Only",            price: "$99",       sub: "one-time",  desc: "Federal Tax ID, usually same business day" },
+              { product: "logo-brand-kit",       emoji: "🎨", title: "Logo + Brand Kit",           price: "$299",      sub: "one-time",  desc: "Logo, colors, fonts, brand guidelines" },
+              { product: "google-business",      emoji: "🗺️", title: "Google Business Setup",     price: "$149",      sub: "one-time",  desc: "Full profile setup + optimization for local search" },
+              { product: "social-media-setup",   emoji: "📱", title: "Social Media Setup",         price: "$249",      sub: "one-time",  desc: "Facebook, Instagram, LinkedIn — branded & ready" },
+              { product: "website-starter",      emoji: "💻", title: "Business Website",           price: "$499",      sub: "one-time",  desc: "5-page professional site, mobile-ready, SEO-optimized" },
+              { product: "website-hosting",      emoji: "☁️", title: "Website Hosting",            price: "$97",       sub: "per month", desc: "Hosting, updates, security & maintenance" },
+              { product: "strategy-session",     emoji: "🧠", title: "Strategy Session (1hr)",     price: "$150",      sub: "one-time",  desc: "1-on-1 with Unico — business plan, marketing, next steps" },
+              { product: "consulting-retainer",  emoji: "📈", title: "Monthly Consulting",         price: "$500",      sub: "per month", desc: "Weekly meetings, number reviews, growth guidance" },
+              { product: "unicoos-website-bundle",emoji: "⚡", title: "UnicoOS + Website Bundle", price: "$1,497",    sub: "one-time",  desc: "UnicoOS Pro (1 year) + custom business website" },
+            ].map(s => (
+              <div key={s.product} style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: 16, padding: "20px 18px", display: "flex", flexDirection: "column" }} className="card-lift">
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 10 }}>
+                  <span style={{ fontSize: 26 }}>{s.emoji}</span>
+                  <div style={{ textAlign: "right" }}>
+                    <p style={{ fontSize: 18, fontWeight: 900, color: "#c9a84c", lineHeight: 1 }}>{s.price}</p>
+                    <p style={{ fontSize: 10, color: "#4b5563" }}>{s.sub}</p>
+                  </div>
+                </div>
+                <p style={{ fontWeight: 700, fontSize: 13, color: "white", marginBottom: 6 }}>{s.title}</p>
+                <p style={{ color: "#6b7280", fontSize: 11, lineHeight: 1.5, flex: 1, marginBottom: 14 }}>{s.desc}</p>
+                <BuyButton product={s.product} label="🛒 Order" className="btn-gold"
+                  style={{ display: "block", width: "100%", color: "white", fontWeight: 700, fontSize: 12, padding: "9px", borderRadius: 10, border: "none", cursor: "pointer" }} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <div className="section-line" />
 
       {/* ── CONTACT ── */}
