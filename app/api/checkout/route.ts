@@ -18,6 +18,16 @@ const PRICES: Record<string, { mode: "payment" | "subscription"; line_items: Str
   "social-media-setup":     { mode: "payment",      line_items: [{ price: "price_1Tgc43JS6gY9XerPjdcLqeFF", quantity: 1 }] },
   "unicoos-website-bundle": { mode: "payment",      line_items: [{ price: "price_1Tgc44JS6gY9XerPQRFoZleN", quantity: 1 }] },
   "ein-only":               { mode: "payment",      line_items: [{ price: "price_1Tgc44JS6gY9XerPVu03dgZz", quantity: 1 }] },
+  // Career & Document Services
+  "resume-writing":          { mode: "payment",      line_items: [{ price: "price_1Tgc77JS6gY9XerPwg3rgHvq", quantity: 1 }] },
+  "cover-letter":            { mode: "payment",      line_items: [{ price: "price_1Tgc77JS6gY9XerPSNEwvLXM", quantity: 1 }] },
+  "resume-cover-bundle":     { mode: "payment",      line_items: [{ price: "price_1Tgc77JS6gY9XerP02mVtIdq", quantity: 1 }] },
+  "linkedin-optimization":   { mode: "payment",      line_items: [{ price: "price_1Tgc78JS6gY9XerPydNzWEHL", quantity: 1 }] },
+  "thank-you-letter":        { mode: "payment",      line_items: [{ price: "price_1Tgc78JS6gY9XerPA7i27SOD", quantity: 1 }] },
+  "resume-review":           { mode: "payment",      line_items: [{ price: "price_1Tgc79JS6gY9XerPgslOeiw5", quantity: 1 }] },
+  "career-bundle":           { mode: "payment",      line_items: [{ price: "price_1Tgc79JS6gY9XerPFnq4bpQK", quantity: 1 }] },
+  "bio-writing":             { mode: "payment",      line_items: [{ price: "price_1Tgc79JS6gY9XerPAsjeR928", quantity: 1 }] },
+  "reference-letter":        { mode: "payment",      line_items: [{ price: "price_1Tgc7AJS6gY9XerPIgsyiWsZ", quantity: 1 }] },
 };
 
 export async function POST(req: NextRequest) {
