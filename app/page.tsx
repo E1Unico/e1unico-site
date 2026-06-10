@@ -182,10 +182,7 @@ export default function Home() {
 
                 <BuyButton product="2k-special" label="🛒 Order Now — $2,000" className="btn-gold"
                   style={{ display: "block", width: "100%", color: "white", fontWeight: 800, fontSize: 16, padding: "16px", borderRadius: 14, border: "none", cursor: "pointer", marginBottom: 10, boxShadow: "0 8px 32px rgba(201,168,76,0.3)" }} />
-                <a href="tel:18333186426" className="btn-gold"
-                  style={{ display: "block", width: "100%", color: "white", fontWeight: 700, fontSize: 14, padding: "13px", borderRadius: 14, textDecoration: "none", marginBottom: 10, opacity: 0.8 }}>
-                  📞 Call to Get Started
-                </a>
+
                 <a href="mailto:Unico@E1Unico.com"
                   style={{ display: "block", width: "100%", color: "#9ca3af", fontWeight: 600, fontSize: 13, padding: "12px", borderRadius: 14, textDecoration: "none", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)" }}>
                   📧 Unico@E1Unico.com
@@ -310,7 +307,7 @@ export default function Home() {
               <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 4 }}>
                 <BuyButton product="2k-special" label="🛒 Order Now" className="btn-gold"
                   style={{ color: "white", fontWeight: 700, fontSize: 12, padding: "8px 16px", borderRadius: 8, border: "none", cursor: "pointer" }} />
-                <a href="tel:18333186426" style={{ fontSize: 12, color: "#c9a84c", fontWeight: 700, textDecoration: "none", alignSelf: "center" }}>📞 1-833-E1-UNICO →</a>
+
               </div>
             </div>
 
@@ -349,7 +346,7 @@ export default function Home() {
               <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 4 }}>
                 <BuyButton product="custom-unicoos" label="🛒 Order Now" className="btn-gold"
                   style={{ color: "white", fontWeight: 700, fontSize: 12, padding: "8px 16px", borderRadius: 8, border: "none", cursor: "pointer" }} />
-                <a href="tel:18333186426" style={{ fontSize: 12, color: "#c9a84c", fontWeight: 700, textDecoration: "none", alignSelf: "center" }}>📞 Call →</a>
+
               </div>
             </div>
           </div>
@@ -390,10 +387,12 @@ export default function Home() {
             ))}
           </div>
 
-          <a href="tel:18333186426" className="btn-gold"
-            style={{ display: "inline-flex", alignItems: "center", gap: 12, color: "white", fontWeight: 900, fontSize: 20, padding: "20px 48px", borderRadius: 20, textDecoration: "none", boxShadow: "0 12px 50px rgba(201,168,76,0.4)" }}>
-            📞 1-833-E1-UNICO
-          </a>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 14, justifyContent: "center" }}>
+            <BuyButton product="2k-special" label="🛒 Order The 2K Special — $2,000" className="btn-gold"
+              style={{ color: "white", fontWeight: 800, fontSize: 16, padding: "18px 36px", borderRadius: 18, border: "none", cursor: "pointer", boxShadow: "0 12px 40px rgba(201,168,76,0.35)" }} />
+            <BuyButton product="custom-unicoos" label="🎨 Get Custom UnicoOS — $2,000/mo" className="btn-indigo"
+              style={{ color: "white", fontWeight: 800, fontSize: 16, padding: "18px 36px", borderRadius: 18, border: "none", cursor: "pointer" }} />
+          </div>
 
           <div style={{ marginTop: 48 }}>
             <a href="https://www.bbb.org/us/tx/spring/profile/business-consultant/e1-unico-corporation-0915-90076784/" target="_blank" rel="nofollow"
