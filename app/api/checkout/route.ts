@@ -56,8 +56,12 @@ export async function POST(req: NextRequest) {
     cancel_url: `${origin}`,
     billing_address_collection: "required",
     phone_number_collection: { enabled: true },
+    // ✅ Automatic tax — Stripe calculates correct rate by customer location
+    automatic_tax: { enabled: true },
+    // Collect customer tax ID (for business clients who need it)
+    tax_id_collection: { enabled: true },
     custom_text: {
-      submit: { message: "We'll reach out within 24 hours to get you started. Questions? Call 1-833-E1-UNICO." },
+      submit: { message: "We\'ll reach out within 24 hours to get you started. Questions? Call 1-833-E1-UNICO." },
     },
     metadata: { product, source: "e1unico.com" },
   });
