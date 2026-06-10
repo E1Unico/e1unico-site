@@ -366,10 +366,11 @@ export default function Home() {
           </div>
 
           {/* Flagship row */}
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, marginBottom: 20 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20, marginBottom: 20 }}>
             {[
               { product: "2k-special", emoji: "🚀", title: "The 2K Special", tag: "Most Popular", price: "$2,350", sub: "State fee included", desc: "Entity formation, EIN, registered agent, logo, email, Google profile, UnicoOS + strategy session. Everything to launch.", highlight: true },
-              { product: "custom-unicoos", emoji: "🎨", title: "Custom UnicoOS", tag: "White-Label", price: "$2,000/mo", sub: "+ $2,500 setup", desc: "Your own branded Business OS. Custom name, logo, domain. Built, hosted, and maintained by us.", highlight: false },
+              { product: "lite-website-app", emoji: "💻", title: "Lite Website / App", tag: "Get Online", price: "$2,000", sub: "one-time", desc: "Professional website or mobile-ready web app. Clean design, fast, SEO-ready. Perfect for businesses that need a strong online presence fast.", highlight: false },
+              { product: "custom-website-app", emoji: "⚡", title: "Custom Website / App", tag: "Premium Build", price: "$10,000", sub: "+ $2,500/mo maintenance", desc: "Fully custom-built website or web app. Unique design, advanced features, built to scale. We maintain it every month so it stays sharp.", highlight: false },
             ].map(s => (
               <div key={s.product} style={{ background: s.highlight ? "linear-gradient(145deg, rgba(201,168,76,0.15), rgba(79,70,229,0.1))" : "rgba(255,255,255,0.03)", border: `1px solid ${s.highlight ? "rgba(201,168,76,0.35)" : "rgba(255,255,255,0.08)"}`, borderRadius: 20, padding: "28px 24px" }} className="card-lift">
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 12 }}>
