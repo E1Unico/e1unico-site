@@ -446,6 +446,57 @@ export default function Home() {
               </div>
             ))}
           </div>
+
+          {/* Website Services */}
+          <p style={{ color: "#6b7280", fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.15em", marginBottom: 16, marginTop: 40 }}>🌐 Website Design & Development</p>
+
+          {/* Featured hero builds */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 14, marginBottom: 14 }}>
+            {[
+              { product: "full-digital-package", emoji: "⚡", title: "Full Digital Package", price: "$1,499", sub: "one-time", desc: "Website + Logo + SEO + Google Business + Social Media. Everything to launch your full online presence.", badge: "Best Value" },
+              { product: "ecommerce-website",    emoji: "🛒", title: "E-Commerce Website",   price: "$1,499", sub: "one-time", desc: "Full online store with products, cart, Stripe checkout, and order management. Start selling online.", badge: "Sell Online" },
+              { product: "website-10-pages",     emoji: "💻", title: "10-Page Website",      price: "$999",   sub: "one-time", desc: "Comprehensive multi-page site for established businesses. Custom design, all content built for you.", badge: "" },
+            ].map(s => (
+              <div key={s.product} style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(79,70,229,0.2)", borderRadius: 16, padding: "22px 20px", display: "flex", flexDirection: "column", position: "relative" }} className="card-lift">
+                {s.badge && <span style={{ position: "absolute", top: 12, right: 12, fontSize: 9, fontWeight: 700, background: "rgba(79,70,229,0.2)", color: "#818cf8", padding: "2px 8px", borderRadius: 999, textTransform: "uppercase", letterSpacing: "0.1em" }}>{s.badge}</span>}
+                <span style={{ fontSize: 28, marginBottom: 10 }}>{s.emoji}</span>
+                <p style={{ fontWeight: 800, fontSize: 15, color: "white", marginBottom: 4 }}>{s.title}</p>
+                <p style={{ fontSize: 22, fontWeight: 900, color: "#818cf8", lineHeight: 1, marginBottom: 2 }}>{s.price}</p>
+                <p style={{ fontSize: 10, color: "#4b5563", marginBottom: 12 }}>{s.sub}</p>
+                <p style={{ color: "#6b7280", fontSize: 12, lineHeight: 1.5, flex: 1, marginBottom: 16 }}>{s.desc}</p>
+                <BuyButton product={s.product} label="🛒 Order Now" className="btn-indigo"
+                  style={{ display: "block", width: "100%", color: "white", fontWeight: 700, fontSize: 13, padding: "11px", borderRadius: 11, border: "none", cursor: "pointer" }} />
+              </div>
+            ))}
+          </div>
+
+          {/* Smaller website options */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 12 }}>
+            {[
+              { product: "landing-page",         emoji: "🎯", title: "Landing Page",           price: "$299",  sub: "one-time",   desc: "Single high-converting page. Perfect for promos or lead gen." },
+              { product: "website-5-pages",       emoji: "🌐", title: "5-Page Website",         price: "$599",  sub: "one-time",   desc: "Home, About, Services, Contact + 1 custom page." },
+              { product: "website-redesign",      emoji: "🔄", title: "Website Redesign",       price: "$699",  sub: "one-time",   desc: "We rebuild your old site — modern, fast, mobile-first." },
+              { product: "website-seo",           emoji: "🔍", title: "Website + SEO",          price: "$899",  sub: "one-time",   desc: "Site build plus full SEO setup and Google Search Console." },
+              { product: "website-copywriting",   emoji: "✍️", title: "Website + Copywriting",  price: "$899",  sub: "one-time",   desc: "We build it AND write every word on every page." },
+              { product: "website-care",          emoji: "🛡️", title: "Website Care Plan",      price: "$97",   sub: "per month",  desc: "Backups, security, updates + 1hr content changes/mo." },
+              { product: "pro-hosting",           emoji: "☁️", title: "Pro Hosting",            price: "$197",  sub: "per month",  desc: "Hosting + SEO monitoring + speed optimization + support." },
+              { product: "ecommerce-hosting",     emoji: "📦", title: "E-Commerce Hosting",     price: "$247",  sub: "per month",  desc: "Store hosting, security, backups, and monthly reports." },
+            ].map(s => (
+              <div key={s.product} style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 14, padding: "18px 16px", display: "flex", flexDirection: "column" }} className="card-lift">
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 8 }}>
+                  <span style={{ fontSize: 22 }}>{s.emoji}</span>
+                  <div style={{ textAlign: "right" }}>
+                    <p style={{ fontSize: 16, fontWeight: 900, color: "#c9a84c", lineHeight: 1 }}>{s.price}</p>
+                    <p style={{ fontSize: 10, color: "#4b5563" }}>{s.sub}</p>
+                  </div>
+                </div>
+                <p style={{ fontWeight: 700, fontSize: 12, color: "white", marginBottom: 5 }}>{s.title}</p>
+                <p style={{ color: "#6b7280", fontSize: 11, lineHeight: 1.5, flex: 1, marginBottom: 12 }}>{s.desc}</p>
+                <BuyButton product={s.product} label="🛒 Order" className="btn-gold"
+                  style={{ display: "block", width: "100%", color: "white", fontWeight: 700, fontSize: 11, padding: "8px", borderRadius: 9, border: "none", cursor: "pointer" }} />
+              </div>
+            ))}
+          </div>
           </div>
         </div>
       </section>

@@ -28,6 +28,18 @@ const PRICES: Record<string, { mode: "payment" | "subscription"; line_items: Str
   "career-bundle":           { mode: "payment",      line_items: [{ price: "price_1Tgc79JS6gY9XerPFnq4bpQK", quantity: 1 }] },
   "bio-writing":             { mode: "payment",      line_items: [{ price: "price_1Tgc79JS6gY9XerPAsjeR928", quantity: 1 }] },
   "reference-letter":        { mode: "payment",      line_items: [{ price: "price_1Tgc7AJS6gY9XerPIgsyiWsZ", quantity: 1 }] },
+  // Website Services
+  "landing-page":             { mode: "payment",      line_items: [{ price: "price_1Tgc9JJS6gY9XerPCx7Rw9pR", quantity: 1 }] },
+  "website-5-pages":          { mode: "payment",      line_items: [{ price: "price_1Tgc9JJS6gY9XerPE7DDJcAj", quantity: 1 }] },
+  "website-10-pages":         { mode: "payment",      line_items: [{ price: "price_1Tgc9KJS6gY9XerPYwU7fZRQ", quantity: 1 }] },
+  "ecommerce-website":        { mode: "payment",      line_items: [{ price: "price_1Tgc9KJS6gY9XerPCzPT7NFs", quantity: 1 }] },
+  "website-redesign":         { mode: "payment",      line_items: [{ price: "price_1Tgc9LJS6gY9XerPZOjS6bOx", quantity: 1 }] },
+  "website-copywriting":      { mode: "payment",      line_items: [{ price: "price_1Tgc9LJS6gY9XerPv8ePRP7a", quantity: 1 }] },
+  "website-seo":              { mode: "payment",      line_items: [{ price: "price_1Tgc9LJS6gY9XerP48s2ruZ4", quantity: 1 }] },
+  "full-digital-package":     { mode: "payment",      line_items: [{ price: "price_1Tgc9MJS6gY9XerPmJNrmxmE", quantity: 1 }] },
+  "pro-hosting":              { mode: "subscription", line_items: [{ price: "price_1Tgc9MJS6gY9XerPg4gKEEYB", quantity: 1 }] },
+  "ecommerce-hosting":        { mode: "subscription", line_items: [{ price: "price_1Tgc9MJS6gY9XerPffUBXd5Y", quantity: 1 }] },
+  "website-care":             { mode: "subscription", line_items: [{ price: "price_1Tgc9NJS6gY9XerP3gGlWRRn", quantity: 1 }] },
 };
 
 export async function POST(req: NextRequest) {
