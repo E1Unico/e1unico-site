@@ -420,13 +420,13 @@ export default function Home() {
           <p style={{ color: "#6b7280", fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.15em", marginBottom: 16, marginTop: 40 }}>📄 Career & Document Services</p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: 14 }}>
             {[
-              { product: "career-bundle",        emoji: "⭐", title: "Career Bundle",            price: "$349", sub: "best value", desc: "Resume + Cover Letter + LinkedIn + Thank You Letter — full package", badge: "Best Value" },
-              { product: "resume-writing",        emoji: "📄", title: "Resume Writing",           price: "$149", sub: "one-time",   desc: "ATS-optimized, professionally written. Delivered in Word + PDF", badge: "" },
-              { product: "resume-cover-bundle",   emoji: "📎", title: "Resume + Cover Letter",    price: "$199", sub: "one-time",   desc: "Both documents together at a bundled price", badge: "Popular" },
+              { product: "career-bundle",        emoji: "⭐", title: "Career Bundle",            price: "$597", sub: "best value", desc: "Resume + Cover Letter + LinkedIn + Thank You Letter — full package", badge: "Best Value" },
+              { product: "resume-writing",        emoji: "📄", title: "Resume Writing",           price: "$249", sub: "one-time",   desc: "ATS-optimized, professionally written. Delivered in Word + PDF", badge: "" },
+              { product: "resume-cover-bundle",   emoji: "📎", title: "Resume + Cover Letter",    price: "$349", sub: "one-time",   desc: "Both documents together at a bundled price", badge: "Popular" },
               { product: "cover-letter",          emoji: "✉️", title: "Cover Letter",             price: "$79",  sub: "one-time",   desc: "Personalized, compelling — tailored to your target job", badge: "" },
-              { product: "linkedin-optimization", emoji: "💼", title: "LinkedIn Optimization",    price: "$129", sub: "one-time",   desc: "Headline, summary, experience rewritten to attract recruiters", badge: "" },
-              { product: "bio-writing",           emoji: "🖊️", title: "Professional Bio",         price: "$99",  sub: "one-time",   desc: "150-300 word bio for websites, press kits, or speaking events", badge: "" },
-              { product: "resume-review",         emoji: "🔍", title: "Resume Review",            price: "$49",  sub: "one-time",   desc: "Detailed written feedback on your existing resume", badge: "" },
+              { product: "linkedin-optimization", emoji: "💼", title: "LinkedIn Optimization",    price: "$350", sub: "one-time",   desc: "Full profile rebuild — headline, summary, experience, and skills rewritten to attract top opportunities", badge: "" },
+              { product: "bio-writing",           emoji: "🖊️", title: "Professional Bio",         price: "$149",  sub: "one-time",   desc: "150-300 word bio for websites, press kits, or speaking events", badge: "" },
+              { product: "resume-review",         emoji: "🔍", title: "Resume Review",            price: "$97",  sub: "one-time",   desc: "Detailed written feedback on your existing resume", badge: "" },
               { product: "thank-you-letter",      emoji: "🙏", title: "Thank You Letter",         price: "$49",  sub: "one-time",   desc: "Post-interview follow-up that keeps you top of mind", badge: "" },
               { product: "reference-letter",      emoji: "📝", title: "Reference Letter",         price: "$69",  sub: "one-time",   desc: "Professional reference letter template, ready for signatures", badge: "" },
             ].map(s => (
