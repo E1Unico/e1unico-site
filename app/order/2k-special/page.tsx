@@ -66,8 +66,8 @@ export default function TwoKSpecialPage() {
           <div>
             <div style={{ background: "linear-gradient(145deg, rgba(201,168,76,0.12), rgba(79,70,229,0.12))", border: "1px solid rgba(201,168,76,0.25)", borderRadius: 24, padding: "28px 24px" }}>
               <div style={{ textAlign: "center", marginBottom: 24 }}>
-                <p style={{ fontSize: 42, fontWeight: 900, color: "white", lineHeight: 1 }}>$2,000</p>
-                <p style={{ color: "#6b7280", fontSize: 13, marginTop: 4 }}>One-time · No hidden fees</p>
+                <p style={{ fontSize: 42, fontWeight: 900, color: "white", lineHeight: 1 }}>$2,350</p>
+                <p style={{ color: "#6b7280", fontSize: 13, marginTop: 4 }}>One flat price · State filing fee included</p>
               </div>
               <OrderForm product="2K Special" price="$2,000" />
               <p style={{ fontSize: 11, color: "#4b5563", textAlign: "center", marginTop: 14 }}>

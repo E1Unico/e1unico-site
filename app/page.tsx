@@ -27,7 +27,7 @@ const features = [
 
 const stats = [
   { val: "BBB®", label: "Accredited Business" },
-  { val: "$2K", label: "Gets You Launched" },
+  { val: "$2,350", label: "State Fee Included" },
   { val: "7×", label: "Days a Week" },
   { val: "100%", label: "Texas Built" },
 ];
@@ -180,7 +180,7 @@ export default function Home() {
                 <p className="gold-text" style={{ fontSize: 80, fontWeight: 900, lineHeight: 1 }}>$2K</p>
                 <p style={{ color: "#6b7280", fontSize: 14, marginTop: 6, marginBottom: 32 }}>One-time · No hidden fees</p>
 
-                <BuyButton product="2k-special" label="🛒 Order Now — $2,000" className="btn-gold"
+                <BuyButton product="2k-special" label="🛒 Order Now — $2,350" className="btn-gold"
                   style={{ display: "block", width: "100%", color: "white", fontWeight: 800, fontSize: 16, padding: "16px", borderRadius: 14, border: "none", cursor: "pointer", marginBottom: 10, boxShadow: "0 8px 32px rgba(201,168,76,0.3)" }} />
 
                 <a href="mailto:Unico@E1Unico.com"
@@ -368,7 +368,7 @@ export default function Home() {
           {/* Flagship row */}
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, marginBottom: 20 }}>
             {[
-              { product: "2k-special", emoji: "🚀", title: "The 2K Special", tag: "Most Popular", price: "$2,000", sub: "One-time", desc: "Entity formation, EIN, registered agent, logo, email, Google profile, UnicoOS + strategy session. Everything to launch.", highlight: true },
+              { product: "2k-special", emoji: "🚀", title: "The 2K Special", tag: "Most Popular", price: "$2,350", sub: "State fee included", desc: "Entity formation, EIN, registered agent, logo, email, Google profile, UnicoOS + strategy session. Everything to launch.", highlight: true },
               { product: "custom-unicoos", emoji: "🎨", title: "Custom UnicoOS", tag: "White-Label", price: "$2,000/mo", sub: "+ $2,500 setup", desc: "Your own branded Business OS. Custom name, logo, domain. Built, hosted, and maintained by us.", highlight: false },
             ].map(s => (
               <div key={s.product} style={{ background: s.highlight ? "linear-gradient(145deg, rgba(201,168,76,0.15), rgba(79,70,229,0.1))" : "rgba(255,255,255,0.03)", border: `1px solid ${s.highlight ? "rgba(201,168,76,0.35)" : "rgba(255,255,255,0.08)"}`, borderRadius: 20, padding: "28px 24px" }} className="card-lift">
@@ -390,8 +390,8 @@ export default function Home() {
           <p style={{ color: "#6b7280", fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.15em", marginBottom: 16 }}>À La Carte Services</p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: 14 }}>
             {[
-              { product: "llc-formation",       emoji: "📋", title: "LLC Formation",              price: "$299",      sub: "one-time",  desc: "State filing + EIN + registered agent (1 yr)" },
-              { product: "ein-only",             emoji: "🔢", title: "EIN Filing Only",            price: "$99",       sub: "one-time",  desc: "Federal Tax ID, usually same business day" },
+              { product: "llc-formation",       emoji: "📋", title: "LLC Formation",              price: "$649",      sub: "state fee included",  desc: "Business name search, state filing, EIN + registered agent (1 yr) — we pay the state fee for you" },
+              { product: "ein-only",             emoji: "🔢", title: "EIN + Name Search",          price: "$149",      sub: "one-time",  desc: "Business name availability search + Federal Tax ID. Usually same business day" },
               { product: "logo-brand-kit",       emoji: "🎨", title: "Logo + Brand Kit",           price: "$299",      sub: "one-time",  desc: "Logo, colors, fonts, brand guidelines" },
               { product: "google-business",      emoji: "🗺️", title: "Google Business Setup",     price: "$149",      sub: "one-time",  desc: "Full profile setup + optimization for local search" },
               { product: "social-media-setup",   emoji: "📱", title: "Social Media Setup",         price: "$249",      sub: "one-time",  desc: "Facebook, Instagram, LinkedIn — branded & ready" },
