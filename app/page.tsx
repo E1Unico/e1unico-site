@@ -395,7 +395,7 @@ export default function Home() {
               { product: "ein-only",             emoji: "🔢", title: "EIN / Federal Tax ID",        price: "$149",      sub: "one-time",  desc: "Get your Federal Tax ID fast. Required to open business accounts, hire, and operate legally. Usually same business day." },
               { product: "logo-brand-kit",       emoji: "🎨", title: "Logo + Brand Kit",           price: "$299",      sub: "one-time",  desc: "Logo, colors, fonts, brand guidelines" },
               { product: "google-business",      emoji: "🗺️", title: "Google Business Setup",     price: "$149",      sub: "one-time",  desc: "Full profile setup + optimization for local search" },
-              { product: "social-media-setup",   emoji: "📱", title: "Social Media Setup",         price: "$249",      sub: "one-time",  desc: "Facebook, Instagram, LinkedIn — branded & ready" },
+              { product: "social-media-setup",   emoji: "📱", title: "Social Media Setup",         price: "$649",      sub: "+ $200/mo management",  desc: "Facebook, Instagram, LinkedIn — fully branded, set up, and managed for you every month." },
               { product: "website-starter",      emoji: "💻", title: "Business Website",           price: "$499",      sub: "one-time",  desc: "5-page professional site, mobile-ready, SEO-optimized" },
               { product: "website-hosting",      emoji: "☁️", title: "Website Hosting",            price: "$97",       sub: "per month", desc: "Hosting, updates, security & maintenance" },
               { product: "strategy-session",     emoji: "🧠", title: "Strategy Session (1hr)",     price: "$150",      sub: "one-time",  desc: "1-on-1 with Unico — business plan, marketing, next steps" },
