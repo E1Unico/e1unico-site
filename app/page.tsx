@@ -392,7 +392,7 @@ export default function Home() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: 14 }}>
             {[
               { product: "llc-formation",       emoji: "📋", title: "LLC Formation",              price: "$649",      sub: "state fee included",  desc: "Business name search, state filing, EIN + registered agent (1 yr) — we pay the state fee for you" },
-              { product: "ein-only",             emoji: "🔢", title: "EIN + Name Search",          price: "$149",      sub: "one-time",  desc: "Business name availability search + Federal Tax ID. Usually same business day" },
+              { product: "ein-only",             emoji: "🔢", title: "EIN / Federal Tax ID",        price: "$149",      sub: "one-time",  desc: "Get your Federal Tax ID fast. Required to open business accounts, hire, and operate legally. Usually same business day." },
               { product: "logo-brand-kit",       emoji: "🎨", title: "Logo + Brand Kit",           price: "$299",      sub: "one-time",  desc: "Logo, colors, fonts, brand guidelines" },
               { product: "google-business",      emoji: "🗺️", title: "Google Business Setup",     price: "$149",      sub: "one-time",  desc: "Full profile setup + optimization for local search" },
               { product: "social-media-setup",   emoji: "📱", title: "Social Media Setup",         price: "$249",      sub: "one-time",  desc: "Facebook, Instagram, LinkedIn — branded & ready" },
