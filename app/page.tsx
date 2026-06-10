@@ -179,9 +179,9 @@ export default function Home() {
                 <p className="gold-text" style={{ fontSize: 80, fontWeight: 900, lineHeight: 1 }}>$2K</p>
                 <p style={{ color: "#6b7280", fontSize: 14, marginTop: 6, marginBottom: 32 }}>One-time · No hidden fees</p>
 
-                <a href="https://e1unico.myshopify.com/products/the-2k-special" target="_blank" rel="noreferrer" className="btn-gold"
+                <a href="tel:18333186426" target="_blank" rel="noreferrer" className="btn-gold"
                   style={{ display: "block", width: "100%", color: "white", fontWeight: 800, fontSize: 16, padding: "16px", borderRadius: 14, textDecoration: "none", marginBottom: 10, boxShadow: "0 8px 32px rgba(201,168,76,0.3)" }}>
-                  🛒 Order Now — $2,000
+                  📞 Call to Order — $2,000
                 </a>
                 <a href="tel:18333186426" className="btn-gold"
                   style={{ display: "block", width: "100%", color: "white", fontWeight: 700, fontSize: 14, padding: "13px", borderRadius: 14, textDecoration: "none", marginBottom: 10, opacity: 0.8 }}>
@@ -272,13 +272,13 @@ export default function Home() {
                 </div>
               ))}
               {[
-                { plan: "Starter", price: "$97", sku: "unicoos-starter" },
-                { plan: "Professional", price: "$297", sku: "unicoos-professional" },
-                { plan: "Enterprise", price: "$497", sku: "unicoos-enterprise" },
+                { plan: "Starter",      price: "$97",  href: "https://OS.E1Unico.com/register?plan=starter" },
+                { plan: "Professional", price: "$297", href: "https://OS.E1Unico.com/register?plan=professional" },
+                { plan: "Enterprise",   price: "$497", href: "https://OS.E1Unico.com/register?plan=enterprise" },
               ].map(p => (
-                <a key={p.sku} href={`https://e1unico.myshopify.com/products/${p.sku}`} target="_blank" rel="noreferrer"
+                <a key={p.plan} href={p.href} target="_blank" rel="noreferrer"
                   style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "10px 14px", borderRadius: 10, textDecoration: "none", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", marginBottom: 8 }}>
-                  <span style={{ fontSize: 13, color: "white", fontWeight: 600 }}>🛒 Order {p.plan}</span>
+                  <span style={{ fontSize: 13, color: "white", fontWeight: 600 }}>🚀 Get {p.plan}</span>
                   <span style={{ fontSize: 13, color: "#c9a84c", fontWeight: 800 }}>{p.price}/mo →</span>
                 </a>
               ))}
@@ -309,8 +309,8 @@ export default function Home() {
               <p style={{ fontSize: 12, color: "#c9a84c", fontWeight: 600, marginBottom: 14 }}>Business Launch & Consulting · BBB Accredited</p>
               <p style={{ color: "#9ca3af", fontSize: 13, lineHeight: 1.7, marginBottom: 20 }}>All-in-one business launch. Our 2K Special gets you registered, branded, and operating.</p>
               <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 4 }}>
-                <a href="https://e1unico.myshopify.com/products/the-2k-special" target="_blank" rel="noreferrer" className="btn-gold"
-                  style={{ color: "white", fontWeight: 700, fontSize: 12, padding: "8px 16px", borderRadius: 8, textDecoration: "none" }}>🛒 Order Now</a>
+                <a href="tel:18333186426" target="_blank" rel="noreferrer" className="btn-gold"
+                  style={{ color: "white", fontWeight: 700, fontSize: 12, padding: "8px 16px", borderRadius: 8, textDecoration: "none" }}>📞 Call to Order</a>
                 <a href="tel:18333186426" style={{ fontSize: 12, color: "#c9a84c", fontWeight: 700, textDecoration: "none", alignSelf: "center" }}>📞 1-833-E1-UNICO →</a>
               </div>
             </div>
@@ -348,8 +348,8 @@ export default function Home() {
               <p style={{ fontSize: 12, color: "#c9a84c", fontWeight: 600, marginBottom: 14 }}>White-Label Business Platform · From $2,000/mo</p>
               <p style={{ color: "#9ca3af", fontSize: 13, lineHeight: 1.7, marginBottom: 20 }}>Want your own branded Business OS? We build UnicoOS under your name, logo, and domain. You own it.</p>
               <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 4 }}>
-                <a href="https://e1unico.myshopify.com/products/custom-unicoos" target="_blank" rel="noreferrer" className="btn-gold"
-                  style={{ color: "white", fontWeight: 700, fontSize: 12, padding: "8px 16px", borderRadius: 8, textDecoration: "none" }}>🛒 Order Now</a>
+                <a href="tel:18333186426" target="_blank" rel="noreferrer" className="btn-gold"
+                  style={{ color: "white", fontWeight: 700, fontSize: 12, padding: "8px 16px", borderRadius: 8, textDecoration: "none" }}>📞 Call to Order</a>
                 <a href="tel:18333186426" style={{ fontSize: 12, color: "#c9a84c", fontWeight: 700, textDecoration: "none", alignSelf: "center" }}>📞 Call →</a>
               </div>
             </div>
