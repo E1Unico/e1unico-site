@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UniRo Live Demo</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #0d0d1a;
+    color: white;
+    height: 640px;
+    width: 420px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border-bottom: 1px solid rgba(99,102,241,0.2);
+    padding: 14px 16px 12px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .uniro-avatar {
+    width: 40px; height: 40px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+    position: relative;
+  }
+  .live-dot {
+    position: absolute;
+    top: -2px; right: -2px;
+    width: 10px; height: 10px;
+    background: #22c55e;
+    border-radius: 50%;
+    border: 2px solid #0d0d1a;
+    display: none;
+  }
+  .live-dot.active { display: block; animation: pulse 1.5s infinite; }
+  @keyframes pulse {
+    0%,100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.2); }
+  }
+  .header-info { flex: 1; min-width: 0; }
+  .header-title {
+    font-size: 14px; font-weight: 800; color: white;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .live-badge {
+    font-size: 9px; font-weight: 800; letter-spacing: 0.08em;
+    color: #22c55e; background: rgba(34,197,94,0.12);
+    border: 1px solid rgba(34,197,94,0.3);
+    padding: 2px 6px; border-radius: 999px;
+    display: none;
+  }
+  .live-badge.active { display: inline-block; }
+  .header-sub {
+    font-size: 11px; color: #6b7280; margin-top: 1px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .call-timer {
+    font-size: 12px; font-weight: 700;
+    color: #22c55e; font-variant-numeric: tabular-nums;
+    display: none;
+  }
+  .call-timer.active { display: block; }
+
+  /* ── CHAT AREA ── */
+  .chat-area {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    scroll-behavior: smooth;
+  }
+  .chat-area::-webkit-scrollbar { width: 4px; }
+  .chat-area::-webkit-scrollbar-track { background: transparent; }
+  .chat-area::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
+
+  /* ── START SCREEN ── */
+  .start-screen {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 24px;
+    text-align: center;
+    gap: 16px;
+  }
+  .start-icon {
+    width: 72px; height: 72px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    border-radius: 20px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 34px;
+    box-shadow: 0 0 40px rgba(99,102,241,0.35);
+    margin-bottom: 4px;
+  }
+  .start-title {
+    font-size: 19px; font-weight: 900;
+    background: linear-gradient(135deg, #a5b4fc, #c4b5fd);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    line-height: 1.25;
+  }
+  .start-sub {
+    font-size: 13px; color: #6b7280; line-height: 1.6; max-width: 280px;
+  }
+  .start-btn {
+    margin-top: 8px;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: white; border: none; cursor: pointer;
+    font-size: 15px; font-weight: 800;
+    padding: 14px 32px; border-radius: 999px;
+    display: flex; align-items: center; gap: 8px;
+    box-shadow: 0 4px 24px rgba(34,197,94,0.35);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .start-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 32px rgba(34,197,94,0.45); }
+  .start-btn:active { transform: translateY(0); }
+  .start-features {
+    display: flex; flex-direction: column; gap: 6px;
+    margin-top: 4px; width: 100%;
+  }
+  .start-feature {
+    font-size: 11px; color: #4b5563;
+    display: flex; align-items: center; gap: 6px;
+    justify-content: center;
+  }
+  .start-feature span { color: #374151; }
+
+  /* ── BUBBLE STYLES ── */
+  .bubble-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  .bubble-row.visible { opacity: 1; transform: translateY(0); }
+  .bubble-row.uniro { flex-direction: row-reverse; }
+
+  .bubble-avatar {
+    width: 28px; height: 28px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; flex-shrink: 0; margin-bottom: 2px;
+  }
+  .bubble-avatar.uniro-av {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  }
+  .bubble-avatar.caller-av {
+    background: #374151;
+  }
+
+  .bubble {
+    max-width: 260px;
+    padding: 10px 14px;
+    border-radius: 16px;
+    font-size: 13px;
+    line-height: 1.5;
+    word-break: break-word;
+  }
+  .bubble.uniro {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    color: white;
+    border-bottom-right-radius: 4px;
+  }
+  .bubble.caller {
+    background: #1f2937;
+    color: #e5e7eb;
+    border-bottom-left-radius: 4px;
+  }
+  .bubble-label {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.04em; margin-bottom: 3px;
+  }
+  .uniro .bubble-label { color: #a5b4fc; text-align: right; }
+  .caller .bubble-label { color: #9ca3af; }
+
+  /* ── TYPING INDICATOR ── */
+  .typing-row {
+    display: flex; align-items: flex-end; gap: 8px;
+    opacity: 0; transition: opacity 0.2s;
+  }
+  .typing-row.visible { opacity: 1; }
+  .typing-row.uniro { flex-direction: row-reverse; }
+  .typing-bubble {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    border-radius: 16px; border-bottom-right-radius: 4px;
+    padding: 12px 16px;
+    display: flex; gap: 4px; align-items: center;
+  }
+  .typing-row.caller .typing-bubble {
+    background: #1f2937;
+    border-bottom-right-radius: 16px;
+    border-bottom-left-radius: 4px;
+  }
+  .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: rgba(255,255,255,0.6);
+    animation: dotBounce 1.1s infinite;
+  }
+  .dot:nth-child(2) { animation-delay: 0.18s; }
+  .dot:nth-child(3) { animation-delay: 0.36s; }
+  @keyframes dotBounce {
+    0%,80%,100% { transform: translateY(0); opacity: 0.6; }
+    40% { transform: translateY(-5px); opacity: 1; }
+  }
+
+  /* ── BOOKING CARD ── */
+  .booking-wrap {
+    padding: 12px 14px 14px;
+    flex-shrink: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+  .booking-wrap.visible { opacity: 1; transform: translateY(0); }
+  .booking-card {
+    background: #111827;
+    border: 1px solid rgba(34,197,94,0.3);
+    border-radius: 16px;
+    padding: 14px 16px;
+    box-shadow: 0 0 24px rgba(34,197,94,0.1);
+  }
+  .booking-header {
+    display: flex; align-items: center; gap: 8px;
+    margin-bottom: 10px;
+  }
+  .booking-badge {
+    width: 28px; height: 28px;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; flex-shrink: 0;
+  }
+  .booking-title-text {
+    font-size: 12px; font-weight: 800; color: #22c55e;
+    text-transform: uppercase; letter-spacing: 0.06em;
+  }
+  .booking-sub { font-size: 10px; color: #4b5563; }
+  .booking-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .booking-field {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 8px;
+    padding: 8px 10px;
+  }
+  .booking-field.full { grid-column: 1 / -1; }
+  .field-label { font-size: 9px; font-weight: 700; color: #6b7280; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 3px; }
+  .field-val { font-size: 12px; font-weight: 700; color: #f9fafb; }
+  .status-pill {
+    display: inline-flex; align-items: center; gap: 5px;
+    background: rgba(34,197,94,0.12);
+    border: 1px solid rgba(34,197,94,0.3);
+    color: #22c55e;
+    font-size: 11px; font-weight: 800;
+    padding: 4px 10px; border-radius: 999px;
+    margin-top: 10px;
+    width: 100%;
+    justify-content: center;
+  }
+  .status-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #22c55e;
+    animation: pulse 1.5s infinite;
+  }
+
+  /* ── REPLAY ── */
+  .replay-wrap {
+    padding: 0 14px 14px;
+    flex-shrink: 0;
+    display: none;
+  }
+  .replay-wrap.visible { display: block; }
+  .replay-btn {
+    width: 100%;
+    background: transparent;
+    border: 1px solid rgba(99,102,241,0.3);
+    color: #a5b4fc;
+    font-size: 12px; font-weight: 700;
+    padding: 9px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .replay-btn:hover { background: rgba(99,102,241,0.1); }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header" id="header">
+  <div class="uniro-avatar" id="uniroAvatar">
+    🤖
+    <div class="live-dot" id="liveDot"></div>
+  </div>
+  <div class="header-info">
+    <div class="header-title">
+      UniRo &nbsp;<span class="live-badge" id="liveBadge">● LIVE</span>
+    </div>
+    <div class="header-sub" id="headerSub">AI Receptionist · Lone Star Plumbing</div>
+  </div>
+  <div class="call-timer" id="callTimer">0:00</div>
+</div>
+
+<!-- START SCREEN (shown initially) -->
+<div class="start-screen" id="startScreen">
+  <div class="start-icon">🤖</div>
+  <div class="start-title">Hear UniRo answer<br>a real service call</div>
+  <div class="start-sub">Watch UniRo qualify a lead, book a job window, and file it into UnicoOS — all in under 90 seconds.</div>
+  <button class="start-btn" id="startBtn" onclick="startDemo()">
+    <span>📞</span> Hear UniRo Answer
+  </button>
+  <div class="start-features">
+    <div class="start-feature">🎙 <span>Browser speaks every line aloud</span></div>
+    <div class="start-feature">📋 <span>See the booking filed live into UnicoOS</span></div>
+  </div>
+</div>
+
+<!-- CHAT (hidden until demo starts) -->
+<div class="chat-area" id="chatArea" style="display:none;"></div>
+
+<!-- BOOKING CARD (injected after last line) -->
+<div class="booking-wrap" id="bookingWrap" style="display:none;">
+  <div class="booking-card">
+    <div class="booking-header">
+      <div class="booking-badge">📋</div>
+      <div>
+        <div class="booking-title-text">Lead Captured — UnicoOS</div>
+        <div class="booking-sub">Filed automatically by UniRo</div>
+      </div>
+    </div>
+    <div class="booking-fields">
+      <div class="booking-field">
+        <div class="field-label">Customer</div>
+        <div class="field-val">Marcus Webb</div>
+      </div>
+      <div class="booking-field">
+        <div class="field-label">Phone</div>
+        <div class="field-val">832-555-0174</div>
+      </div>
+      <div class="booking-field full">
+        <div class="field-label">Job</div>
+        <div class="field-val">Water heater leak — URGENT</div>
+      </div>
+      <div class="booking-field full">
+        <div class="field-label">Scheduled Window</div>
+        <div class="field-val">Today · 2:00 PM – 4:00 PM</div>
+      </div>
+    </div>
+    <div class="status-pill">
+      <div class="status-dot"></div>
+      Booked &nbsp;+&nbsp; SMS sent to Marcus
+    </div>
+  </div>
+</div>
+
+<div class="replay-wrap" id="replayWrap">
+  <button class="replay-btn" onclick="replayDemo()">↩ Play again</button>
+</div>
+
+<script>
+const SCRIPT = [
+  { speaker: 'uniro', text: "Thank you for calling Lone Star Plumbing! I'm UniRo, your virtual assistant. How can I help you today?", pause: 500 },
+  { speaker: 'caller', text: "Hi — my water heater is leaking, pretty bad. Water's starting to pool on the floor.", pause: 400 },
+  { speaker: 'uniro', text: "Oh no — that sounds urgent. Let's get someone out to you today. Can I start with your name?", pause: 350 },
+  { speaker: 'caller', text: "Marcus Webb.", pause: 300 },
+  { speaker: 'uniro', text: "Thanks Marcus. And what's the best callback number for you?", pause: 300 },
+  { speaker: 'caller', text: "832-555-0174.", pause: 350 },
+  { speaker: 'uniro', text: "Got it. For an urgent water heater job, I have a 2 to 4 PM window this afternoon, or 4 to 6 PM. Which works better for you?", pause: 400 },
+  { speaker: 'caller', text: "2 to 4 works great.", pause: 350 },
+  { speaker: 'uniro', text: "Perfect! I've booked a technician for Marcus Webb at the 2 to 4 PM window today. You'll receive an SMS confirmation right now. Is there anything else I can help you with?", pause: 400 },
+  { speaker: 'caller', text: "No, that's it. Thanks so much!", pause: 350 },
+  { speaker: 'uniro', text: "Wonderful — help is on the way! Have a great day, Marcus.", pause: 0 },
+];
+
+let timerInterval = null;
+let timerSeconds = 0;
+let voices = [];
+let currentUtterance = null;
+let stopped = false;
+
+function loadVoices() {
+  voices = window.speechSynthesis.getVoices();
+  if (!voices.length) {
+    window.speechSynthesis.onvoiceschanged = () => {
+      voices = window.speechSynthesis.getVoices();
+    };
+  }
+}
+loadVoices();
+
+function getBestVoice(isUniro) {
+  if (!voices.length) voices = window.speechSynthesis.getVoices();
+  if (isUniro) {
+    // Prefer female-sounding, English voices for UniRo
+    const pref = ['Samantha', 'Karen', 'Moira', 'Victoria', 'Tessa', 'Google US English', 'en-US-Neural2-F', 'Microsoft Aria'];
+    for (const name of pref) {
+      const v = voices.find(v => v.name.includes(name));
+      if (v) return v;
+    }
+    return voices.find(v => v.lang.startsWith('en') && /female|woman|girl/i.test(v.name))
+        || voices.find(v => v.lang.startsWith('en'))
+        || null;
+  } else {
+    // Caller — try a deeper/male voice
+    const pref = ['Google UK English Male', 'Daniel', 'Alex', 'Fred', 'Tom', 'en-US-Neural2-D'];
+    for (const name of pref) {
+      const v = voices.find(v => v.name.includes(name));
+      if (v) return v;
+    }
+    return voices.find(v => v.lang.startsWith('en') && /male|man/i.test(v.name))
+        || voices.find(v => v.lang.startsWith('en') && v !== getBestVoice(true))
+        || null;
+  }
+}
+
+function speak(text, isUniro) {
+  return new Promise(resolve => {
+    if (stopped) { resolve(); return; }
+    window.speechSynthesis.cancel();
+    const utter = new SpeechSynthesisUtterance(text);
+    currentUtterance = utter;
+    const v = getBestVoice(isUniro);
+    if (v) utter.voice = v;
+    utter.pitch = isUniro ? 1.1 : 0.95;
+    utter.rate = isUniro ? 1.05 : 1.0;
+    utter.volume = 1;
+    utter.onend = resolve;
+    utter.onerror = resolve;
+    window.speechSynthesis.speak(utter);
+  });
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function startTimer() {
+  timerSeconds = 0;
+  const el = document.getElementById('callTimer');
+  el.classList.add('active');
+  timerInterval = setInterval(() => {
+    timerSeconds++;
+    const m = Math.floor(timerSeconds / 60);
+    const s = String(timerSeconds % 60).padStart(2, '0');
+    el.textContent = `${m}:${s}`;
+  }, 1000);
+}
+
+function stopTimer() {
+  clearInterval(timerInterval);
+}
+
+function showTyping(speaker) {
+  const chatArea = document.getElementById('chatArea');
+  const row = document.createElement('div');
+  row.className = `typing-row ${speaker}`;
+  row.id = 'typingRow';
+
+  const av = document.createElement('div');
+  av.className = `bubble-avatar ${speaker === 'uniro' ? 'uniro-av' : 'caller-av'}`;
+  av.textContent = speaker === 'uniro' ? '🤖' : '👤';
+
+  const tb = document.createElement('div');
+  tb.className = 'typing-bubble';
+  tb.innerHTML = '<div class="dot"></div><div class="dot"></div><div class="dot"></div>';
+
+  if (speaker === 'uniro') {
+    row.appendChild(tb);
+    row.appendChild(av);
+  } else {
+    row.appendChild(av);
+    row.appendChild(tb);
+  }
+
+  chatArea.appendChild(row);
+  requestAnimationFrame(() => row.classList.add('visible'));
+  chatArea.scrollTop = chatArea.scrollHeight;
+  return row;
+}
+
+function removeTyping() {
+  const el = document.getElementById('typingRow');
+  if (el) el.remove();
+}
+
+function addBubble(speaker, text) {
+  const chatArea = document.getElementById('chatArea');
+  const row = document.createElement('div');
+  row.className = `bubble-row ${speaker}`;
+
+  const av = document.createElement('div');
+  av.className = `bubble-avatar ${speaker === 'uniro' ? 'uniro-av' : 'caller-av'}`;
+  av.textContent = speaker === 'uniro' ? '🤖' : '👤';
+
+  const bWrap = document.createElement('div');
+  const label = document.createElement('div');
+  label.className = 'bubble-label';
+  label.textContent = speaker === 'uniro' ? 'UniRo' : 'Marcus';
+  const bubble = document.createElement('div');
+  bubble.className = `bubble ${speaker}`;
+  bubble.textContent = text;
+  bWrap.appendChild(label);
+  bWrap.appendChild(bubble);
+
+  if (speaker === 'uniro') {
+    row.appendChild(bWrap);
+    row.appendChild(av);
+  } else {
+    row.appendChild(av);
+    row.appendChild(bWrap);
+  }
+
+  chatArea.appendChild(row);
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => row.classList.add('visible'));
+  });
+  chatArea.scrollTop = chatArea.scrollHeight;
+}
+
+async function startDemo() {
+  stopped = false;
+  document.getElementById('startScreen').style.display = 'none';
+  const chatArea = document.getElementById('chatArea');
+  chatArea.style.display = 'flex';
+  chatArea.innerHTML = '';
+
+  document.getElementById('liveDot').classList.add('active');
+  document.getElementById('liveBadge').classList.add('active');
+  startTimer();
+
+  // Tiny delay so the UI settles
+  await sleep(600);
+
+  for (let i = 0; i < SCRIPT.length; i++) {
+    if (stopped) return;
+    const line = SCRIPT[i];
+    const isUniro = line.speaker === 'uniro';
+
+    // Show typing dots (shorter for caller)
+    const typingDelay = isUniro ? 700 : 400;
+    const typingRow = showTyping(line.speaker);
+    await sleep(typingDelay);
+    if (stopped) return;
+
+    removeTyping();
+    addBubble(line.speaker, line.text);
+    chatArea.scrollTop = chatArea.scrollHeight;
+
+    // Speak the line
+    await speak(line.text, isUniro);
+    if (stopped) return;
+
+    // Pause between lines
+    if (line.pause > 0) await sleep(line.pause);
+  }
+
+  // Done — show booking card
+  stopTimer();
+  document.getElementById('liveBadge').classList.remove('active');
+  document.getElementById('liveDot').classList.remove('active');
+  document.getElementById('callTimer').classList.remove('active');
+
+  await sleep(500);
+
+  const bw = document.getElementById('bookingWrap');
+  bw.style.display = 'block';
+  chatArea.style.flex = '1';
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => bw.classList.add('visible'));
+  });
+  chatArea.scrollTop = chatArea.scrollHeight;
+
+  await sleep(600);
+  document.getElementById('replayWrap').classList.add('visible');
+}
+
+function replayDemo() {
+  stopped = true;
+  window.speechSynthesis.cancel();
+  stopTimer();
+
+  const chatArea = document.getElementById('chatArea');
+  chatArea.style.display = 'none';
+  chatArea.innerHTML = '';
+
+  const bw = document.getElementById('bookingWrap');
+  bw.classList.remove('visible');
+  bw.style.display = 'none';
+
+  document.getElementById('replayWrap').classList.remove('visible');
+  document.getElementById('liveDot').classList.remove('active');
+  document.getElementById('liveBadge').classList.remove('active');
+  document.getElementById('callTimer').classList.remove('active');
+  document.getElementById('callTimer').textContent = '0:00';
+
+  document.getElementById('startScreen').style.display = 'flex';
+
+  setTimeout(() => { stopped = false; }, 100);
+}
+</script>
+</body>
+</html>
