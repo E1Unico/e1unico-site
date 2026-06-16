@@ -248,40 +248,21 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Pricing stack */}
-            <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-              {[
-                { plan: "Starter",      price: "$97",  color: "#4b5563", glow: false },
-                { plan: "Professional", price: "$297", color: "#4f46e5", glow: true,  badge: "Most Popular" },
-                { plan: "Enterprise",   price: "$497", color: "#7c3aed", glow: false, badge: "Full Platform" },
-              ].map(p => (
-                <div key={p.plan} className="card-lift"
-                  style={{ borderRadius: 18, padding: "20px 24px", display: "flex", alignItems: "center", justifyContent: "space-between", background: `rgba(${p.glow ? "79,70,229" : "255,255,255"},0.05)`, border: `1px solid rgba(${p.glow ? "79,70,229" : "255,255,255"},${p.glow ? "0.4" : "0.08"})`, boxShadow: p.glow ? "0 0 30px rgba(79,70,229,0.2)" : "none" }}>
-                  <div>
-                    <p style={{ fontWeight: 800, fontSize: 16, color: "white" }}>{p.plan}</p>
-                    {p.badge && <span style={{ fontSize: 10, background: p.plan === "Professional" ? "#4f46e5" : "#7c3aed", color: "white", padding: "2px 8px", borderRadius: 999, fontWeight: 700 }}>{p.badge}</span>}
-                  </div>
-                  <div style={{ textAlign: "right" }}>
-                    <p style={{ fontSize: 28, fontWeight: 900, color: "white", lineHeight: 1 }}>{p.price}</p>
-                    <p style={{ fontSize: 11, color: "#6b7280" }}>/month</p>
-                  </div>
-                </div>
-              ))}
-              {[
-                { plan: "Starter",      price: "$97",  href: "https://OS.E1Unico.com/register?plan=starter" },
-                { plan: "Professional", price: "$297", href: "https://OS.E1Unico.com/register?plan=professional" },
-                { plan: "Enterprise",   price: "$497", href: "https://OS.E1Unico.com/register?plan=enterprise" },
-              ].map(p => (
-                <a key={p.plan} href={p.href} target="_blank" rel="noreferrer"
-                  style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "10px 14px", borderRadius: 10, textDecoration: "none", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", marginBottom: 8 }}>
-                  <span style={{ fontSize: 13, color: "white", fontWeight: 600 }}>🚀 Get {p.plan}</span>
-                  <span style={{ fontSize: 13, color: "#c9a84c", fontWeight: 800 }}>{p.price}/mo →</span>
+            {/* UnicoOS CTA — pricing lives on unicoos.app */}
+            <div style={{ display: "flex", flexDirection: "column", gap: 16, justifyContent: "center" }}>
+              <div className="card-lift" style={{ borderRadius: 20, padding: "28px 28px", background: "rgba(79,70,229,0.08)", border: "1px solid rgba(79,70,229,0.25)", boxShadow: "0 0 40px rgba(79,70,229,0.12)" }}>
+                <p style={{ fontSize: 13, fontWeight: 700, color: "#a5b4fc", marginBottom: 10, letterSpacing: "0.05em", textTransform: "uppercase" }}>All-in-One Business OS</p>
+                <p style={{ fontSize: 22, fontWeight: 900, color: "white", lineHeight: 1.3, marginBottom: 8 }}>
+                  UnicoOS — run your whole business in one app.
+                </p>
+                <p style={{ fontSize: 14, color: "#9ca3af", lineHeight: 1.7, marginBottom: 24 }}>
+                  CRM · Invoicing · POS · AI Receptionist · Campaigns · Inventory · Safety · and 40+ more modules — all under one login.
+                </p>
+                <a href="https://unicoos.app" target="_blank" rel="noreferrer" className="btn-indigo"
+                  style={{ display: "inline-flex", alignItems: "center", gap: 8, color: "white", fontWeight: 800, fontSize: 15, padding: "14px 28px", borderRadius: 14, textDecoration: "none" }}>
+                  Explore UnicoOS &nbsp;→
                 </a>
-              ))}
-              <a href="https://OS.E1Unico.com/register" target="_blank" rel="noreferrer" className="btn-indigo"
-                style={{ display: "block", color: "white", fontWeight: 800, fontSize: 14, padding: "13px", borderRadius: 14, textDecoration: "none", textAlign: "center", marginTop: 4 }}>
-                🚀 Or Try Free — No Card Required
-              </a>
+              </div>
             </div>
           </div>
         </div>
