@@ -72,6 +72,27 @@ async function notifyWebhook(payload: object) {
   }
 }
 
+// Twilio SMS — sends the lead summary to Unico's direct line (281-739-6522 by default).
+async function notifyTwilioSms(text: string) {
+  const sid = process.env.TWILIO_ACCOUNT_SID;
+  const token = process.env.TWILIO_AUTH_TOKEN;
+  const from = process.env.TWILIO_FROM || process.env.UNICOOS_TWILIO_NUMBER; // 1-828-678-6426 lives in env
+  const to = process.env.LEAD_SMS_TO || "+12817396522"; // Unico's direct line
+  if (!sid || !token || !from) return false;
+  try {
+    const body = new URLSearchParams({ From: from, To: to, Body: text.slice(0, 1500) });
+    const auth = Buffer.from(`${sid}:${token}`).toString("base64");
+    const r = await fetch(`https://api.twilio.com/2010-04-01/Accounts/${sid}/Messages.json`, {
+      method: "POST",
+      headers: { Authorization: `Basic ${auth}`, "Content-Type": "application/x-www-form-urlencoded" },
+      body,
+    });
+    return r.ok;
+  } catch {
+    return false;
+  }
+}
+
 export async function POST(req: NextRequest) {
   const body = (await req.json().catch(() => ({}))) as LeadBody;
   const name = (body.name || "").trim().slice(0, 120);
@@ -107,10 +128,19 @@ ${transcript ? "\n*Recent chat:*\n```\n" + transcript + "\n```" : ""}`;
 ${transcript ? `<p><b>Recent chat:</b></p><pre style="background:#f5f5f5;padding:10px;border-radius:8px;font-size:12px;white-space:pre-wrap">${transcript}</pre>` : ""}
 </div>`;
 
-  // Try every available channel — first one set will deliver, others noop.
+  // Plain-text SMS summary for Twilio (no Markdown).
+  const sms =
+`✨ e1unico.com lead
+${name} · ${contact}
+Page: ${page}
+Problem: ${problem || "(none)"}
+— reply via Telegram or call back.`;
+
+  // Try every available channel — each delivers independently.
   const results = await Promise.allSettled([
     notifyTelegram(text),
     notifyResend(`✨ e1unico.com lead — ${name}`, html),
+    notifyTwilioSms(sms),
     notifyWebhook({ name, contact, problem, page, source, when, transcript }),
   ]);
 
