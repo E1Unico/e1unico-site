@@ -16,6 +16,7 @@ const included = [
   { emoji: "🗺️", title: "Google Business Profile",     desc: "Show up on Google Maps" },
   { emoji: "💻", title: "UnicoOS Starter — 1 Mo Free", desc: "Run your business from one platform" },
   { emoji: "🧠", title: "1-on-1 Strategy Session",     desc: "Map out your launch plan with us" },
+  { emoji: "🛟", title: "UnicoCare Essential — 1 Mo Free", desc: "Email + website hosting, backups, support · then $99/mo" },
 ];
 
 export default function TwoKSpecialPage() {
@@ -70,6 +71,12 @@ export default function TwoKSpecialPage() {
                 <p style={{ color: "#6b7280", fontSize: 13, marginTop: 4 }}>One flat price · State filing fee included</p>
               </div>
               <OrderForm product="2K Special" price="$2,000" />
+              <div style={{ marginTop: 16, padding: "12px 14px", background: "rgba(99,102,241,0.10)", border: "1px solid rgba(99,102,241,0.30)", borderRadius: 12 }}>
+                <p style={{ fontSize: 12, color: "#a5b4fc", fontWeight: 700, marginBottom: 4 }}>🛟 Includes 1 month UnicoCare Essential</p>
+                <p style={{ fontSize: 11.5, color: "#9ca3af", lineHeight: 1.5 }}>
+                  Email + website hosting, backups, SSL, and support are included free for your first month. After that, an active <a href="/order/unicocare" style={{ color: "#c9a84c", textDecoration: "underline" }}>UnicoCare plan</a> ($99/mo+) is required so your business stays live and supported. Upgrade anytime for visibility, AI/AEO, or full done-for-you growth.
+                </p>
+              </div>
               <p style={{ fontSize: 11, color: "#4b5563", textAlign: "center", marginTop: 14 }}>
                 We&apos;ll contact you within 24 hours to confirm and get started.<br />
                 Evenings 7:30–9:30 PM · 7 days/wk · 1-833-E1-UNICO
