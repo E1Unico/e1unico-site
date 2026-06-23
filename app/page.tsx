@@ -48,7 +48,7 @@ export default function Home() {
             </div>
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-            <a href="https://OS.E1Unico.com" target="_blank" rel="noreferrer"
+            <a href="https://unicoos.app" target="_blank" rel="noreferrer"
               style={{ fontSize: 13, color: "#9ca3af", textDecoration: "none", padding: "6px 14px" }}
               className="hidden sm:block">UnicoOS</a>
             <a href="#services"
@@ -154,7 +154,7 @@ export default function Home() {
               The <span className="gold-text">2K Special</span>
             </h2>
             <p style={{ color: "#6b7280", marginTop: 16, maxWidth: 480, margin: "16px auto 0", fontSize: 15, lineHeight: 1.6 }}>
-              One flat fee. Everything to go from idea to operating business.
+              Everything to go from idea to operating business. One launch fee + ongoing UnicoCare from $99/mo (1st month free).
             </p>
           </div>
 
@@ -178,7 +178,7 @@ export default function Home() {
               <div style={{ borderRadius: 28, padding: "36px 28px", textAlign: "center", background: "linear-gradient(145deg, rgba(201,168,76,0.15), rgba(79,70,229,0.15))", border: "1px solid rgba(201,168,76,0.3)", boxShadow: "0 0 60px rgba(201,168,76,0.1)" }}>
                 <p style={{ fontSize: 11, fontWeight: 700, color: "#c9a84c", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 16 }}>Everything Above For</p>
                 <p className="gold-text" style={{ fontSize: 80, fontWeight: 900, lineHeight: 1 }}>$2K</p>
-                <p style={{ color: "#6b7280", fontSize: 14, marginTop: 6, marginBottom: 32 }}>One-time · No hidden fees</p>
+                <p style={{ color: "#6b7280", fontSize: 14, marginTop: 6, marginBottom: 32 }}>One-time launch fee · then UnicoCare from $99/mo (1st month free)</p>
 
                 <BuyButton product="2k-special" label="🛒 Order Now — $2,350" className="btn-gold"
                   style={{ display: "block", width: "100%", color: "white", fontWeight: 800, fontSize: 16, padding: "16px", borderRadius: 14, border: "none", cursor: "pointer", marginBottom: 10, boxShadow: "0 8px 32px rgba(201,168,76,0.3)" }} />
@@ -215,7 +215,7 @@ export default function Home() {
                   style={{ width: 56, height: 56, objectFit: "contain", borderRadius: 14, background: "white", padding: 4 }} />
                 <div>
                   <p style={{ fontSize: 22, fontWeight: 900 }}>UnicoOS</p>
-                  <p style={{ fontSize: 12, color: "#818cf8", fontWeight: 600 }}>OS.E1Unico.com</p>
+                  <p style={{ fontSize: 12, color: "#818cf8", fontWeight: 600 }}>UnicoOS.app</p>
                 </div>
               </div>
               <h2 style={{ fontSize: "clamp(28px, 4vw, 48px)", fontWeight: 900, lineHeight: 1.1, marginBottom: 20, letterSpacing: "-0.02em" }}>
@@ -237,13 +237,13 @@ export default function Home() {
                 ))}
               </div>
               <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-                <a href="https://OS.E1Unico.com/register" target="_blank" rel="noreferrer" className="btn-indigo"
+                <a href="https://unicoos.app/register" target="_blank" rel="noreferrer" className="btn-indigo"
                   style={{ color: "white", fontWeight: 700, fontSize: 14, padding: "13px 26px", borderRadius: 12, textDecoration: "none", display: "inline-block" }}>
                   🚀 Try Free — 30 Day Trial
                 </a>
-                <a href="https://OS.E1Unico.com" target="_blank" rel="noreferrer"
+                <a href="https://unicoos.app" target="_blank" rel="noreferrer"
                   style={{ color: "white", fontWeight: 600, fontSize: 14, padding: "13px 22px", borderRadius: 12, textDecoration: "none", display: "inline-block", background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)" }}>
-                  Visit OS.E1Unico.com →
+                  Visit UnicoOS.app →
                 </a>
               </div>
             </div>
@@ -299,9 +299,9 @@ export default function Home() {
               <p style={{ fontSize: 12, color: "#818cf8", fontWeight: 600, marginBottom: 14 }}>Business Operating System · SaaS Platform</p>
               <p style={{ color: "#9ca3af", fontSize: 13, lineHeight: 1.7, marginBottom: 20 }}>The all-in-one platform to run every part of your business — CRM, AI, accounting, safety, fleet, and more.</p>
               <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 4 }}>
-                <a href="https://OS.E1Unico.com/register" target="_blank" rel="noreferrer" className="btn-indigo"
+                <a href="https://unicoos.app/register" target="_blank" rel="noreferrer" className="btn-indigo"
                   style={{ color: "white", fontWeight: 700, fontSize: 12, padding: "8px 16px", borderRadius: 8, textDecoration: "none" }}>🚀 Try Free</a>
-                <a href="https://OS.E1Unico.com" target="_blank" rel="noreferrer" style={{ fontSize: 12, color: "#818cf8", fontWeight: 700, textDecoration: "none", alignSelf: "center" }}>🌐 OS.E1Unico.com →</a>
+                <a href="https://unicoos.app" target="_blank" rel="noreferrer" style={{ fontSize: 12, color: "#818cf8", fontWeight: 700, textDecoration: "none", alignSelf: "center" }}>🌐 UnicoOS.app →</a>
               </div>
             </div>
 
@@ -575,7 +575,7 @@ export default function Home() {
       <footer style={{ borderTop: "1px solid rgba(255,255,255,0.06)", padding: "32px 20px", textAlign: "center" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "6px 24px", marginBottom: 16, fontSize: 12, color: "#4b5563" }}>
-            <a href="https://OS.E1Unico.com" target="_blank" rel="noreferrer" style={{ color: "#818cf8", textDecoration: "none", fontWeight: 600 }}>UnicoOS →</a>
+            <a href="https://unicoos.app" target="_blank" rel="noreferrer" style={{ color: "#818cf8", textDecoration: "none", fontWeight: 600 }}>UnicoOS →</a>
             <a href="https://IndustrialDrip.Net" target="_blank" rel="noreferrer" style={{ color: "#f87171", textDecoration: "none", fontWeight: 600 }}>IndustrialDrip.Net →</a>
             <a href="tel:18333186426" style={{ color: "#c9a84c", textDecoration: "none", fontWeight: 600 }}>1-833-E1-UNICO</a>
             <a href="mailto:Unico@E1Unico.com" style={{ color: "#c9a84c", textDecoration: "none", fontWeight: 600 }}>Unico@E1Unico.com</a>

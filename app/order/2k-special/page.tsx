@@ -37,7 +37,7 @@ export default function TwoKSpecialPage() {
           <h1 style={{ fontSize: "clamp(32px, 6vw, 56px)", fontWeight: 900, lineHeight: 1.1, marginBottom: 12 }}>
             The <span style={{ background: "linear-gradient(135deg, #f0c96e, #c9a84c)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>2K Special</span>
           </h1>
-          <p style={{ color: "#9ca3af", fontSize: 16, maxWidth: 480, margin: "0 auto" }}>Everything you need to launch a real business — handled for you. One flat fee.</p>
+          <p style={{ color: "#9ca3af", fontSize: 16, maxWidth: 520, margin: "0 auto" }}>Everything you need to launch a real business — handled for you. One-time launch fee + UnicoCare from $99/mo to keep you online (1st month free).</p>
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40, alignItems: "start" }} className="lg:grid-cols-2 grid-cols-1">
@@ -68,7 +68,7 @@ export default function TwoKSpecialPage() {
             <div style={{ background: "linear-gradient(145deg, rgba(201,168,76,0.12), rgba(79,70,229,0.12))", border: "1px solid rgba(201,168,76,0.25)", borderRadius: 24, padding: "28px 24px" }}>
               <div style={{ textAlign: "center", marginBottom: 24 }}>
                 <p style={{ fontSize: 42, fontWeight: 900, color: "white", lineHeight: 1 }}>$2,350</p>
-                <p style={{ color: "#6b7280", fontSize: 13, marginTop: 4 }}>One flat price · State filing fee included</p>
+                <p style={{ color: "#6b7280", fontSize: 13, marginTop: 4 }}>One-time launch fee · State filing fee included<br/>then UnicoCare from $99/mo (1st month free)</p>
               </div>
               <OrderForm product="2K Special" price="$2,000" />
               <div style={{ marginTop: 16, padding: "12px 14px", background: "rgba(99,102,241,0.10)", border: "1px solid rgba(99,102,241,0.30)", borderRadius: 12 }}>
