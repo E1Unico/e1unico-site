@@ -31,11 +31,10 @@ const PRICES: Record<string, { mode: "payment" | "subscription"; line_items: { p
   "website-care":           { mode: "subscription", line_items: [{ price: "price_1Tgc9NJS6gY9XerP3gGlWRRn", quantity: 1 }] }, // $97/mo
   "unicoos-website-bundle": { mode: "payment",      line_items: [{ price: "price_1TgcLjJS6gY9XerPCtfvNBP0", quantity: 1 }] }, // $2,497
   // ── UnicoCare (required monthly hosting + care plans; 1st month included with 2K Special) ──
-  // TODO: replace placeholder Stripe price IDs once created in Stripe dashboard
-  "unicocare-essential":    { mode: "subscription", line_items: [{ price: "price_UNICOCARE_ESSENTIAL_PLACEHOLDER", quantity: 1 }] }, // $99/mo
-  "unicocare-visible":      { mode: "subscription", line_items: [{ price: "price_UNICOCARE_VISIBLE_PLACEHOLDER",   quantity: 1 }] }, // $199/mo
-  "unicocare-ai":           { mode: "subscription", line_items: [{ price: "price_UNICOCARE_AI_PLACEHOLDER",        quantity: 1 }] }, // $299/mo
-  "unicocare-pro":          { mode: "subscription", line_items: [{ price: "price_UNICOCARE_PRO_PLACEHOLDER",       quantity: 1 }] }, // $499/mo
+  "unicocare-essential":    { mode: "subscription", line_items: [{ price: "price_1TlXt2JS6gY9XerPydmDx2FN", quantity: 1 }] }, // $99/mo
+  "unicocare-visible":      { mode: "subscription", line_items: [{ price: "price_1TlXt3JS6gY9XerPpRIjwsIa", quantity: 1 }] }, // $199/mo
+  "unicocare-ai":           { mode: "subscription", line_items: [{ price: "price_1TlXt3JS6gY9XerPy8EoLo1E", quantity: 1 }] }, // $299/mo
+  "unicocare-pro":          { mode: "subscription", line_items: [{ price: "price_1TlXt4JS6gY9XerPD2OQOZLN", quantity: 1 }] }, // $499/mo
   // ── Career & Documents ────────────────────────────────────────────────
   "career-bundle":          { mode: "payment",      line_items: [{ price: "price_1TgcLkJS6gY9XerPcJg8TiGm", quantity: 1 }] }, // $497
   "resume-writing":         { mode: "payment",      line_items: [{ price: "price_1Tgc77JS6gY9XerPwg3rgHvq", quantity: 1 }] }, // $149
