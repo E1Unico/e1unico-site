@@ -368,6 +368,42 @@ export default function Home() {
             ))}
           </div>
 
+          {/* UnicoCare — required monthly care */}
+          <div id="unicocare" style={{ marginTop: 40, marginBottom: 40, padding: "32px 24px", borderRadius: 24, background: "linear-gradient(155deg, rgba(99,102,241,0.12), rgba(201,168,76,0.08))", border: "1px solid rgba(99,102,241,0.30)" }}>
+            <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "flex-end", gap: 12, marginBottom: 20 }}>
+              <div>
+                <p style={{ fontSize: 11, fontWeight: 700, color: "#a5b4fc", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 8 }}>Required Monthly Care</p>
+                <h3 style={{ fontSize: "clamp(22px, 3vw, 30px)", fontWeight: 900, color: "white", marginBottom: 6 }}>
+                  <span style={{ background: "linear-gradient(135deg, #f0c96e, #c9a84c)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>UnicoCare</span>
+                  <span style={{ color: "white" }}> — keep your business alive online</span>
+                </h3>
+                <p style={{ color: "#9ca3af", fontSize: 13, maxWidth: 640 }}>
+                  Every E1 Unico launch includes <strong style={{ color: "#f0c96e" }}>1 month UnicoCare Essential free</strong>. After that, an active plan ($99/mo+) keeps your email + website hosted, secure, and supported. Upgrade for visibility, AI/AEO, or full done-for-you growth.
+                </p>
+              </div>
+              <a href="/order/unicocare" style={{ background: "linear-gradient(135deg, #6366f1, #c9a84c)", color: "white", fontWeight: 700, fontSize: 13, padding: "10px 18px", borderRadius: 999, textDecoration: "none", whiteSpace: "nowrap" }}>Compare All Plans →</a>
+            </div>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 12 }}>
+              {[
+                { product: "unicocare-essential", emoji: "🛟", title: "Essential", tag: "Required Floor", price: "$99",  desc: "Email + website hosting, SSL, backups, support." },
+                { product: "unicocare-visible",   emoji: "🔎", title: "Visible",   tag: "Add Visibility",  price: "$199", desc: "Local SEO, GBP mgmt, monthly content, reviews." },
+                { product: "unicocare-ai",        emoji: "🤖", title: "AI",        tag: "Recommended",     price: "$299", desc: "AEO — be cited by ChatGPT, Claude, Perplexity, Gemini.", highlight: true },
+                { product: "unicocare-pro",       emoji: "👑", title: "Pro",       tag: "Done For You",   price: "$499", desc: "Ads + social + 4hr updates + dedicated AM." },
+              ].map(t => (
+                <div key={t.product} style={{ position: "relative", background: t.highlight ? "linear-gradient(155deg, rgba(99,102,241,0.22), rgba(201,168,76,0.12))" : "rgba(255,255,255,0.04)", border: t.highlight ? "1px solid rgba(99,102,241,0.55)" : "1px solid rgba(255,255,255,0.08)", borderRadius: 16, padding: "18px 16px", display: "flex", flexDirection: "column" }} className="card-lift">
+                  <span style={{ fontSize: 10, fontWeight: 700, color: t.highlight ? "#a5b4fc" : "#9ca3af", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 6 }}>{t.tag}</span>
+                  <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", marginBottom: 6 }}>
+                    <p style={{ fontWeight: 900, fontSize: 16, color: "white" }}>{t.emoji} UnicoCare {t.title}</p>
+                  </div>
+                  <p style={{ fontSize: 26, fontWeight: 900, color: t.highlight ? "#a5b4fc" : "#c9a84c", lineHeight: 1 }}>{t.price}<span style={{ fontSize: 11, color: "#6b7280", fontWeight: 600 }}> /mo</span></p>
+                  <p style={{ color: "#9ca3af", fontSize: 11.5, lineHeight: 1.5, flex: 1, margin: "10px 0 14px" }}>{t.desc}</p>
+                  <BuyButton product={t.product} label={`Start — $${t.price.replace("$", "")}/mo`} className={t.highlight ? "btn-indigo" : "btn-gold"}
+                    style={{ display: "block", width: "100%", color: "white", fontWeight: 700, fontSize: 12, padding: "9px", borderRadius: 10, border: "none", cursor: "pointer" }} />
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* À la carte grid */}
           <p style={{ color: "#6b7280", fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.15em", marginBottom: 16 }}>À La Carte Services</p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: 14 }}>
@@ -378,7 +414,6 @@ export default function Home() {
               { product: "google-business",      emoji: "🗺️", title: "Google Business Setup",     price: "$149",      sub: "one-time",  desc: "Full profile setup + optimization for local search" },
               { product: "social-media-setup",   emoji: "📱", title: "Social Media Setup",         price: "$649",      sub: "+ $200/mo management",  desc: "Facebook, Instagram, LinkedIn — fully branded, set up, and managed for you every month." },
               { product: "website-starter",      emoji: "💻", title: "Business Website",           price: "$499",      sub: "one-time",  desc: "5-page professional site, mobile-ready, SEO-optimized" },
-              { product: "website-hosting",      emoji: "☁️", title: "Website Hosting",            price: "$97",       sub: "per month", desc: "Hosting, updates, security & maintenance" },
               { product: "strategy-session",     emoji: "🧠", title: "Strategy Session (1hr)",     price: "$150",      sub: "one-time",  desc: "1-on-1 with Unico — business plan, marketing, next steps" },
               { product: "consulting-retainer",  emoji: "📈", title: "Monthly Consulting",         price: "$500",      sub: "per month", desc: "Weekly meetings, number reviews, growth guidance" },
               { product: "unicoos-website-bundle",emoji: "⚡", title: "UnicoOS + Website Bundle", price: "$1,497",    sub: "one-time",  desc: "UnicoOS Pro (1 year) + custom business website" },
@@ -460,9 +495,7 @@ export default function Home() {
               { product: "website-redesign",      emoji: "🔄", title: "Website Redesign",       price: "$699",  sub: "one-time",   desc: "We rebuild your old site — modern, fast, mobile-first." },
               { product: "website-seo",           emoji: "🔍", title: "Website + SEO",          price: "$899",  sub: "one-time",   desc: "Site build plus full SEO setup and Google Search Console." },
               { product: "website-copywriting",   emoji: "✍️", title: "Website + Copywriting",  price: "$899",  sub: "one-time",   desc: "We build it AND write every word on every page." },
-              { product: "website-care",          emoji: "🛡️", title: "Website Care Plan",      price: "$97",   sub: "per month",  desc: "Backups, security, updates + 1hr content changes/mo." },
-              { product: "pro-hosting",           emoji: "☁️", title: "Pro Hosting",            price: "$197",  sub: "per month",  desc: "Hosting + SEO monitoring + speed optimization + support." },
-              { product: "ecommerce-hosting",     emoji: "📦", title: "E-Commerce Hosting",     price: "$247",  sub: "per month",  desc: "Store hosting, security, backups, and monthly reports." },
+
             ].map(s => (
               <div key={s.product} style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 14, padding: "18px 16px", display: "flex", flexDirection: "column" }} className="card-lift">
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 8 }}>
