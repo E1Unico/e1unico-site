@@ -87,7 +87,7 @@ export async function POST(req: NextRequest) {
 
   const when = new Date().toISOString();
   const text =
-`🤖 *New UniRo lead*
+`✨ *New e1unico.com lead* (Ask Unico widget)
 👤 *Name:* ${name}
 📞 *Contact:* ${contact}
 🧠 *Problem:* ${problem || "(not provided)"}
@@ -97,7 +97,7 @@ ${transcript ? "\n*Recent chat:*\n```\n" + transcript + "\n```" : ""}`;
 
   const html =
 `<div style="font-family:system-ui,sans-serif;line-height:1.5">
-<h2>🤖 New UniRo lead</h2>
+<h2>✨ New e1unico.com lead (Ask Unico widget)</h2>
 <p><b>Name:</b> ${name}<br/>
 <b>Contact:</b> ${contact}<br/>
 <b>Page:</b> ${page}<br/>
@@ -110,7 +110,7 @@ ${transcript ? `<p><b>Recent chat:</b></p><pre style="background:#f5f5f5;padding
   // Try every available channel — first one set will deliver, others noop.
   const results = await Promise.allSettled([
     notifyTelegram(text),
-    notifyResend(`🤖 UniRo lead — ${name}`, html),
+    notifyResend(`✨ e1unico.com lead — ${name}`, html),
     notifyWebhook({ name, contact, problem, page, source, when, transcript }),
   ]);
 
@@ -118,7 +118,7 @@ ${transcript ? `<p><b>Recent chat:</b></p><pre style="background:#f5f5f5;padding
 
   // Always log to Vercel runtime logs so leads are never silently dropped.
   // eslint-disable-next-line no-console
-  console.log("[uniro-lead]", { name, contact, problem, page, source, when, delivered });
+  console.log("[ask-unico-lead]", { name, contact, problem, page, source, when, delivered });
 
   return NextResponse.json({ ok: true, delivered });
 }
