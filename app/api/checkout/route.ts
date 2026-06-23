@@ -46,9 +46,13 @@ const PRICES: Record<string, { mode: "payment" | "subscription"; line_items: { p
   "reference-letter":       { mode: "payment",      line_items: [{ price: "price_1TgcLlJS6gY9XerPXqiEiwpp", quantity: 1 }] }, // $97
   "resume-review":          { mode: "payment",      line_items: [{ price: "price_1TgcLkJS6gY9XerPEQTJrK7O", quantity: 1 }] }, // $97
   // ── UnicoOS Plans ────────────────────────────────────────────────────
-  "unicoos-starter":        { mode: "subscription", line_items: [{ price: "price_1Tf4PfJS6gY9XerPXeTXVtd3", quantity: 1 }] }, // $97/mo
-  "unicoos-professional":   { mode: "subscription", line_items: [{ price: "price_1Tf4QKJS6gY9XerP4P8H7WzV", quantity: 1 }] }, // $297/mo
-  "unicoos-enterprise":     { mode: "subscription", line_items: [{ price: "price_1Tf4QnJS6gY9XerPadEX6FBG", quantity: 1 }] }, // $497/mo
+  "unicoos-unihustle":      { mode: "subscription", line_items: [{ price: "price_1TlcPJJS6gY9XerP8Z04X6ib", quantity: 1 }] }, // $49/mo
+  "unicoos-pro":            { mode: "subscription", line_items: [{ price: "price_1TlcPKJS6gY9XerPxsF9AQ9N", quantity: 1 }] }, // $97/mo
+  "unicoos-prox":           { mode: "subscription", line_items: [{ price: "price_1TlcPKJS6gY9XerPd2FiwTB7", quantity: 1 }] }, // $197/mo
+  "unicoos-enterprise":     { mode: "subscription", line_items: [{ price: "price_1TlcPLJS6gY9XerPEOOGT8vu", quantity: 1 }] }, // $249/mo
+  // Legacy aliases (kept so old emails / links don't 404). Map to closest equivalent in the new tier structure.
+  "unicoos-starter":        { mode: "subscription", line_items: [{ price: "price_1TlcPKJS6gY9XerPxsF9AQ9N", quantity: 1 }] }, // legacy Starter $97 → new Pro $97 (same price)
+  "unicoos-professional":   { mode: "subscription", line_items: [{ price: "price_1TlcPKJS6gY9XerPd2FiwTB7", quantity: 1 }] }, // legacy Professional → ProX $197
 };
 
 export async function POST(req: NextRequest) {
