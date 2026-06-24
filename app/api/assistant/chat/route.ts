@@ -45,15 +45,11 @@ export async function POST(req: NextRequest) {
   try { ({ messages } = await req.json()); } catch { /* ignore */ }
   const history = (messages || []).slice(-10);
 
-  const key = process.env.ABACUSAI_API_KEY || process.env.OPENAI_API_KEY;
-  const base = process.env.ABACUSAI_API_KEY
-    ? "https://routellm.abacus.ai/v1"
-    : process.env.OPENAI_API_KEY
-      ? "https://api.openai.com/v1"
-      : "";
-  const model = process.env.UNIRO_MODEL || (process.env.ABACUSAI_API_KEY ? "abacus/kimi-k2.6" : "gpt-4o-mini");
+  const hasGemini = !!process.env.GEMINI_API_KEY;
+  const hasAbacus = !!process.env.ABACUSAI_API_KEY;
+  const hasOpenAI = !!process.env.OPENAI_API_KEY;
 
-  if (!key || !base) {
+  if (!hasGemini && !hasAbacus && !hasOpenAI) {
     // Fallback: simple keyword routing
     const last = history[history.length - 1]?.content?.toLowerCase() || "";
     const reply =
@@ -68,6 +64,28 @@ export async function POST(req: NextRequest) {
   }
 
   try {
+    if (hasGemini) {
+      const model = process.env.UNIRO_MODEL_GEMINI || "gemini-2.5-flash";
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${process.env.GEMINI_API_KEY}`;
+      const contents = [
+        { role: "user", parts: [{ text: `${SYSTEM}\n\n${history[0]?.content ?? ""}` }] },
+        ...history.slice(1).map((m) => ({ role: m.role === "assistant" ? "model" : "user", parts: [{ text: m.content }] })),
+      ];
+      const res = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ contents, generationConfig: { temperature: 0.6, maxOutputTokens: 350 } }),
+      });
+      const data = await res.json();
+      const reply: string =
+        data?.candidates?.[0]?.content?.parts?.map((p: any) => p.text).join("").trim() ||
+        "I caught a glitch — please tap 🧠 Request a callback below and Unico will reach out directly.";
+      return NextResponse.json({ reply });
+    }
+
+    const base = hasAbacus ? "https://routellm.abacus.ai/v1" : "https://api.openai.com/v1";
+    const key = process.env.ABACUSAI_API_KEY || process.env.OPENAI_API_KEY;
+    const model = process.env.UNIRO_MODEL || (hasAbacus ? "abacus/kimi-k2.6" : "gpt-4o-mini");
     const res = await fetch(`${base}/chat/completions`, {
       method: "POST",
       headers: { "Content-Type": "application/json", Authorization: `Bearer ${key}` },
