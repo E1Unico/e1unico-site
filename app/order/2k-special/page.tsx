@@ -14,7 +14,7 @@ const included = [
   { emoji: "🎨", title: "Logo + Brand Kit",             desc: "Professional identity from day one" },
   { emoji: "📧", title: "Business Email",               desc: "you@yourbusiness.com" },
   { emoji: "🗺️", title: "Google Business Profile",     desc: "Show up on Google Maps" },
-  { emoji: "💻", title: "UnicoOS Starter — 1 Mo Free", desc: "Run your business from one platform" },
+  { emoji: "💻", title: "UnicoOS Pro — 1 Mo Free", desc: "Run your business from one platform" },
   { emoji: "🧠", title: "1-on-1 Strategy Session",     desc: "Map out your launch plan with us" },
   { emoji: "🛟", title: "UnicoCare Essential — 1 Mo Free", desc: "Email + website hosting, backups, support · then $99/mo" },
 ];

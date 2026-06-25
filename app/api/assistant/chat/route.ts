@@ -9,18 +9,19 @@ const SYSTEM = `You are "Unico" — the AI assistant for E1 Unico Corporation's 
 YOUR ROLE: Help website visitors. Answer questions. If they have a real business need, qualify it and recommend the right E1 Unico product. If they want to talk to a human, hand them to Unico (Manuel Montemayor Jr., founder) and tell them to ask for a callback.
 
 CORE PRODUCTS (USE EXACT PRICES — DON'T MAKE UP NUMBERS):
-- 2K Special — $2,350 one-time launch: LLC formation + EIN + Registered Agent (1yr) + Logo/Brand Kit + Business Email + Google Business Profile + UnicoOS Starter (1 mo free) + 1-on-1 Strategy Session. State filing fee included. 1 month UnicoCare Essential included.
+- 2K Special — $2,350 one-time launch: LLC formation + EIN + Registered Agent (1yr) + Logo/Brand Kit + Business Email + Google Business Profile + UnicoOS Pro (1 mo free) + 1-on-1 Strategy Session. State filing fee included. 1 month UnicoCare Essential included.
 - UnicoCare (required monthly hosting + care, 1st mo free with 2K Special):
    • Essential $99/mo — email + website hosting, SSL, backups, support
    • Visible $199/mo — + local SEO, GBP mgmt, monthly content, reviews
    • AI $299/mo — + AEO (cited by ChatGPT/Claude/Perplexity/Gemini), schema, llms.txt, AI knowledge base
    • Pro $499/mo — + ads + social + 4hr/mo updates + dedicated AM
-- UnicoOS plans (the Business OS):
-   • Free — taste of the platform, no card
-   • Uni Hustle $49/mo — kids, gig workers, side hustlers
-   • Pro $97/mo — service businesses, consultants, growing teams · 10 users
-   • ProX $197/mo — restaurants, food trucks, retailers · UniRo phone line + POS · 25 users
-   • Enterprise $249/mo — multi-location · TruckOS, UniFleet, UniSecure, white-label · unlimited users
+- UnicoOS plans (the Business OS) — 2026-06 pricing ladder:
+   • Uni Free — Credit-Karma-style personal finance (credit score, Plaid bank tracking, budgeting, curated offers). No subscription.
+   • Uni Kid $19/mo — ages 12–21, personal finance + sandbox business mode, parent dashboard, First Million by 25 curriculum
+   • Uni Hustler $39/mo — solo / gig / side hustlers · 1–3 users · CRM, invoicing, expenses, calendar, tax export
+   • Uni Pro $197/mo — service businesses · 10 users · all 105 modules · UniRo AI receptionist included · NO ADS (most popular)
+   • Uni ProX $397/mo — restaurants, retail, multi-location · 25 users · white-label, UniRo phone line, POS · NO ADS
+   • Uni Enterprise $797/mo — unlimited users · dedicated success manager · UniServer + UnicoTrust + TruckOS + UniFleet · NO ADS
 - Custom UnicoOS (white-label) — $2,500 setup + $2,000/mo · your brand on the whole platform
 
 CONTACT (PUBLIC — OK TO SHARE):
@@ -56,9 +57,10 @@ export async function POST(req: NextRequest) {
       /2k|launch|llc|start.*business/.test(last)
         ? "The 2K Special is $2,350 one-time — we file your LLC, get your EIN + registered agent, design your logo, set up your business email + Google profile, and run a 1-on-1 strategy session. Includes 1 month of UnicoCare Essential ($99/mo after). Want me to have Unico call you to confirm fit? Tap 🧠 Request a callback below."
         : /uniroo|unicoos|platform|crm|software/.test(last)
-        ? "UnicoOS is the all-in-one Business OS — CRM, accounting, AI receptionist, scheduling, all in one app. Plans: Uni Hustle $49/mo (side hustles), Pro $97/mo (most popular), ProX $197/mo (restaurants & retail), Enterprise $249/mo (multi-location). Want me to have Unico walk you through it? Tap 🧠 Request a callback."
+        ? "UnicoOS is the all-in-one Business OS — CRM, accounting, AI receptionist, scheduling, all in one app. Plans: Free $0 (personal finance), Kid $19/mo (ages 12–21), Hustler $39/mo (solo/gig), Pro $197/mo (most popular, all 105 modules), ProX $397/mo (restaurants & retail + white-label), Enterprise $797/mo (unlimited users). Want me to have Unico walk you through it? Tap 🧠 Request a callback."
         : /price|cost|how much/.test(last)
-        ? "It depends what you need. 2K Special = $2,350 one-time to launch. UnicoOS = $0–$249/mo. UnicoCare hosting = $99–$499/mo. Tell me what you're trying to build and I'll point you to the right one."
+        ? "It depends what you need. 2K Special = $2,350 one-time to launch. UnicoOS = $0–$797/mo. UnicoCare hosting = $99–$499/mo. Tell me what you're trying to build and I'll point you to the right one."
+
         : "I can help with business launch (2K Special), the UnicoOS platform, or UnicoCare hosting. Tell me a bit about what you're trying to do — or tap 🧠 Request a callback and I'll get Unico to reach out personally.";
     return NextResponse.json({ reply });
   }

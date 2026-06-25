@@ -31,7 +31,7 @@ const TIERS: Tier[] = [
       "DNS & domain management",
       "99.9% uptime monitoring",
       "1 support ticket / month",
-      "Includes UnicoOS Starter access",
+      "Includes UnicoOS Pro access",
     ],
   },
   {

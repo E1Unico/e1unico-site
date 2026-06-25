@@ -14,7 +14,7 @@ const services = [
   { emoji: "🎨", title: "Logo + Brand Kit",            desc: "Professional logo and brand identity from day one" },
   { emoji: "📧", title: "Business Email",              desc: "you@yourbusiness.com — not a Gmail" },
   { emoji: "🗺️", title: "Google Business Profile",    desc: "Show up on Google Maps, get found by local customers" },
-  { emoji: "💻", title: "UnicoOS Starter — 1 Mo Free", desc: "Run your entire business from one platform" },
+  { emoji: "💻", title: "UnicoOS Pro — 1 Mo Free", desc: "Run your entire business from one platform" },
   { emoji: "🧠", title: "1-on-1 Strategy Session",    desc: "We map out your launch plan together" },
 ];
 

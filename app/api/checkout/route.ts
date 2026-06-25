@@ -46,13 +46,21 @@ const PRICES: Record<string, { mode: "payment" | "subscription"; line_items: { p
   "reference-letter":       { mode: "payment",      line_items: [{ price: "price_1TgcLlJS6gY9XerPXqiEiwpp", quantity: 1 }] }, // $97
   "resume-review":          { mode: "payment",      line_items: [{ price: "price_1TgcLkJS6gY9XerPEQTJrK7O", quantity: 1 }] }, // $97
   // ── UnicoOS Plans ────────────────────────────────────────────────────
-  "unicoos-unihustle":      { mode: "subscription", line_items: [{ price: "price_1TlcPJJS6gY9XerP8Z04X6ib", quantity: 1 }] }, // $49/mo
-  "unicoos-pro":            { mode: "subscription", line_items: [{ price: "price_1TlcPKJS6gY9XerPxsF9AQ9N", quantity: 1 }] }, // $97/mo
-  "unicoos-prox":           { mode: "subscription", line_items: [{ price: "price_1TlcPKJS6gY9XerPd2FiwTB7", quantity: 1 }] }, // $197/mo
-  "unicoos-enterprise":     { mode: "subscription", line_items: [{ price: "price_1TlcPLJS6gY9XerPEOOGT8vu", quantity: 1 }] }, // $249/mo
-  // Legacy aliases (kept so old emails / links don't 404). Map to closest equivalent in the new tier structure.
-  "unicoos-starter":        { mode: "subscription", line_items: [{ price: "price_1TlcPKJS6gY9XerPxsF9AQ9N", quantity: 1 }] }, // legacy Starter $97 → new Pro $97 (same price)
-  "unicoos-professional":   { mode: "subscription", line_items: [{ price: "price_1TlcPKJS6gY9XerPd2FiwTB7", quantity: 1 }] }, // legacy Professional → ProX $197
+  // 2026-06 ladder. Each tier uses STRIPE_PRICE_<SLUG>_2026 if set (after
+  // unico-os/scripts/stripe-pricing-2026-06.ts is run against live Stripe),
+  // otherwise falls back to the closest legacy hardcoded price ID so existing
+  // checkout links don't break in the meantime.
+  "unicoos-kid":            { mode: "subscription", line_items: [{ price: process.env.STRIPE_PRICE_KID_2026         || "",                                  quantity: 1 }] }, // $19/mo (new tier; no legacy fallback)
+  "unicoos-hustler":        { mode: "subscription", line_items: [{ price: process.env.STRIPE_PRICE_HUSTLER_2026     || "price_1TlcPJJS6gY9XerP8Z04X6ib",       quantity: 1 }] }, // $39/mo (fallback: legacy $49 Uni Hustle)
+  "unicoos-pro":            { mode: "subscription", line_items: [{ price: process.env.STRIPE_PRICE_PRO_2026         || "price_1TlcPKJS6gY9XerPxsF9AQ9N",       quantity: 1 }] }, // $197/mo (fallback: legacy $97 Pro)
+  "unicoos-prox":           { mode: "subscription", line_items: [{ price: process.env.STRIPE_PRICE_PROX_2026        || "price_1TlcPKJS6gY9XerPd2FiwTB7",       quantity: 1 }] }, // $397/mo (fallback: legacy $197 ProX)
+  "unicoos-enterprise":     { mode: "subscription", line_items: [{ price: process.env.STRIPE_PRICE_ENTERPRISE_2026  || "price_1TlcPLJS6gY9XerPEOOGT8vu",       quantity: 1 }] }, // $797/mo (fallback: legacy $249 Enterprise)
+  // Legacy aliases (kept so old emails / links don't 404). Existing
+  // subscribers stay on their original Stripe subscription — these aliases
+  // only matter for *new* checkouts hitting old slugs.
+  "unicoos-unihustle":      { mode: "subscription", line_items: [{ price: process.env.STRIPE_PRICE_HUSTLER_2026     || "price_1TlcPJJS6gY9XerP8Z04X6ib",       quantity: 1 }] }, // legacy Uni Hustle → new Hustler
+  "unicoos-starter":        { mode: "subscription", line_items: [{ price: process.env.STRIPE_PRICE_PRO_2026         || "price_1TlcPKJS6gY9XerPxsF9AQ9N",       quantity: 1 }] }, // legacy Starter → new Pro
+  "unicoos-professional":   { mode: "subscription", line_items: [{ price: process.env.STRIPE_PRICE_PROX_2026        || "price_1TlcPKJS6gY9XerPd2FiwTB7",       quantity: 1 }] }, // legacy Professional → new ProX
 };
 
 export async function POST(req: NextRequest) {
