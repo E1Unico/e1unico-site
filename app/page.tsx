@@ -51,6 +51,9 @@ export default function Home() {
             <a href="https://unicoos.app" target="_blank" rel="noreferrer"
               style={{ fontSize: 13, color: "#9ca3af", textDecoration: "none", padding: "6px 14px" }}
               className="hidden sm:block">UnicoOS</a>
+            <a href="/unicojam"
+              style={{ fontSize: 13, color: "#a78bfa", textDecoration: "none", padding: "6px 14px", fontWeight: 600 }}
+              className="hidden sm:block">UnicoJam</a>
             <a href="#services"
               style={{ fontSize: 13, color: "#9ca3af", textDecoration: "none", padding: "6px 14px" }}
               className="hidden sm:block">Services</a>
@@ -302,6 +305,19 @@ export default function Home() {
                 <a href="https://unicoos.app/register" target="_blank" rel="noreferrer" className="btn-indigo"
                   style={{ color: "white", fontWeight: 700, fontSize: 12, padding: "8px 16px", borderRadius: 8, textDecoration: "none" }}>🚀 Try Free</a>
                 <a href="https://unicoos.app" target="_blank" rel="noreferrer" style={{ fontSize: 12, color: "#818cf8", fontWeight: 700, textDecoration: "none", alignSelf: "center" }}>🌐 UnicoOS.app →</a>
+              </div>
+            </div>
+
+            {/* UnicoJam */}
+            <div className="card-lift" style={{ borderRadius: 24, padding: "32px 28px", background: "rgba(124,58,237,0.08)", border: "1px solid rgba(124,58,237,0.28)" }}>
+              <div style={{ width: 64, height: 64, background: "linear-gradient(135deg, #a78bfa, #7c3aed)", borderRadius: 14, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 30, marginBottom: 20 }}>🎵</div>
+              <p style={{ fontWeight: 900, fontSize: 18, color: "white", marginBottom: 4 }}>UnicoJam</p>
+              <p style={{ fontSize: 12, color: "#a78bfa", fontWeight: 600, marginBottom: 14 }}>AI Music Studio · Launching Soon</p>
+              <p style={{ color: "#9ca3af", fontSize: 13, lineHeight: 1.7, marginBottom: 20 }}>Turn a prompt into a finished song — your genre, your words. One login across UnicoOS. Faith-friendly by design.</p>
+              <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 4 }}>
+                <a href="/unicojam" className="btn-indigo"
+                  style={{ color: "white", fontWeight: 700, fontSize: 12, padding: "8px 16px", borderRadius: 8, textDecoration: "none" }}>🎧 Join Waitlist</a>
+                <a href="/unicojam" style={{ fontSize: 12, color: "#a78bfa", fontWeight: 700, textDecoration: "none", alignSelf: "center" }}>Learn more →</a>
               </div>
             </div>
 
