@@ -61,12 +61,27 @@ const PRICES: Record<string, { mode: "payment" | "subscription"; line_items: { p
   "unicoos-unihustle":      { mode: "subscription", line_items: [{ price: process.env.STRIPE_PRICE_HUSTLER_2026     || "price_1TlcPJJS6gY9XerP8Z04X6ib",       quantity: 1 }] }, // legacy Uni Hustle → new Hustler
   "unicoos-starter":        { mode: "subscription", line_items: [{ price: process.env.STRIPE_PRICE_PRO_2026         || "price_1TlcPKJS6gY9XerPxsF9AQ9N",       quantity: 1 }] }, // legacy Starter → new Pro
   "unicoos-professional":   { mode: "subscription", line_items: [{ price: process.env.STRIPE_PRICE_PROX_2026        || "price_1TlcPKJS6gY9XerPd2FiwTB7",       quantity: 1 }] }, // legacy Professional → new ProX
+  // ── UnicoJam (AI music app) ──────────────────────────────────────────
+  // $14.99/week recurring. The price ID is a human prerequisite (Stripe price
+  // not created yet — see UNICO_BUILD_SPEC §4), so this is env-gated and stays
+  // inert until STRIPE_PRICE_UNICOJAM_WEEKLY is set. Until then the /unicojam
+  // page routes users to the waitlist, not this checkout.
+  "unicojam-pro":           { mode: "subscription", line_items: [{ price: process.env.STRIPE_PRICE_UNICOJAM_WEEKLY  || "",                                    quantity: 1 }] }, // $14.99/wk
 };
 
 export async function POST(req: NextRequest) {
   const { product } = await req.json();
   const config = PRICES[product];
   if (!config) return NextResponse.json({ error: "Unknown product" }, { status: 400 });
+
+  // Some tiers ship before their Stripe price ID exists (env-gated placeholder).
+  // Fail clearly instead of handing Stripe an empty price and 500-ing.
+  if (config.line_items.some(li => !li.price)) {
+    return NextResponse.json(
+      { error: "This plan isn't available for checkout yet. Join the waitlist and we'll email you the moment it opens." },
+      { status: 409 }
+    );
+  }
 
   const origin = req.headers.get("origin") || "https://e1unico.com";
 

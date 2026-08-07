@@ -33,6 +33,42 @@ const COMPARE: { feature: string; unicojam: string; others: string }[] = [
 
 const GENRES = ["Gospel", "Hip-Hop", "R&B", "Lo-Fi", "Trap", "Country", "Afrobeat", "Worship", "Pop", "EDM", "Corridos", "Jazz", "Drill", "Soul"];
 
+const FAQ: { q: string; a: string }[] = [
+  { q: "How is this different from Suno, Udio, or Donna?", a: "UnicoJam makes full songs from a prompt like they do — but it's built into UnicoOS. One login runs your whole business AND your music, credits are shared across the ecosystem, every track meets a faith-friendly standard by default, and serious artists get a real label path through Multi Genre Records. It's a music studio that lives where you already work." },
+  { q: "Do I own the songs I make?", a: "Yes. Tracks you generate are yours to download in studio quality, share, and release. Your library stays in your account across every device." },
+  { q: "What does $14.99/week actually get me?", a: "A weekly generation allowance of full songs plus downloads and public share pages. If you go big in a given week, overages ride on UnicoAI credits — so you only ever pay for what you actually make, never a surprise lockout." },
+  { q: "Do I need UnicoOS to use it?", a: "No. UnicoJam works as a standalone app with its own login. But if you already run your business on UnicoOS, it shows up as one of your apps automatically — same account, same balance." },
+  { q: "Can it write the lyrics for me?", a: "Either way. Paste your own lyrics, or describe a vibe and let UnicoJam write them. You stay in control of the final track." },
+  { q: "Is the content family- and faith-friendly?", a: "By design. UnicoJam applies the same faith-affirming content standard used across the whole Unico ecosystem, so what you make stays clean." },
+  { q: "When can I actually use it?", a: "Early access opens in waves. Join the waitlist and you'll be first in line — plus founder pricing locked before public launch." },
+];
+
+// Structured data so AI answer engines (the whole UnicoCare AEO pitch) can
+// read and cite UnicoJam. Kept in sync with the FAQ + pricing above.
+const JSON_LD = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      name: "UnicoJam",
+      applicationCategory: "MultimediaApplication",
+      operatingSystem: "Web, iOS, Android",
+      description:
+        "AI music studio that turns a prompt into a finished, radio-ready song. Part of the UnicoOS ecosystem with a single login, shared credits, and a faith-friendly content standard.",
+      offers: { "@type": "Offer", price: "14.99", priceCurrency: "USD", description: "$14.99 per week" },
+      publisher: { "@type": "Organization", name: "E1 Unico Corporation", url: "https://e1unico.com" },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: FAQ.map(f => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    },
+  ],
+};
+
 const PRICE_INCLUDES = [
   "Full-song generation (vocals + instrumental)",
   "Bring your own lyrics or auto-write them",
@@ -48,6 +84,7 @@ const gold = "#c9a84c";
 export default function UnicoJamPage() {
   return (
     <main style={{ minHeight: "100vh", background: "#05050a", color: "white", overflow: "hidden" }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }} />
       {/* ── NAV ── */}
       <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 50, background: "rgba(5,5,10,0.9)", backdropFilter: "blur(16px)", borderBottom: "1px solid rgba(255,255,255,0.06)", padding: "12px 20px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
@@ -254,6 +291,24 @@ export default function UnicoJamPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <div className="section-line" />
+
+      {/* ── FAQ ── */}
+      <section style={{ padding: "100px 20px" }}>
+        <div style={{ maxWidth: 760, margin: "0 auto" }}>
+          <div style={{ textAlign: "center", marginBottom: 40 }}>
+            <p style={{ fontSize: 11, fontWeight: 700, color: "#c4b5fd", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 12 }}>Straight Answers</p>
+            <h2 style={{ fontSize: "clamp(28px, 4.5vw, 46px)", fontWeight: 900, letterSpacing: "-0.02em" }}>Questions, answered.</h2>
+          </div>
+          {FAQ.map(f => (
+            <details key={f.q} style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: 12, padding: "16px 20px", marginBottom: 10 }}>
+              <summary style={{ cursor: "pointer", fontWeight: 700, fontSize: 15, color: "white" }}>{f.q}</summary>
+              <p style={{ marginTop: 10, fontSize: 14, color: "#9ca3af", lineHeight: 1.65 }}>{f.a}</p>
+            </details>
+          ))}
         </div>
       </section>
 
