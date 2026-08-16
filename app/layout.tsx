@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import AskUnico from "./components/AskUnico";
+import ConditionalAskUnico from "./components/ConditionalAskUnico";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,6 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://e1unico.com"),
   title: "E1 Unico Corporation — Launch Your Business · BBB Accredited",
   description: "BBB Accredited Texas business launch and consulting. The 2K Special gets you registered, branded, and operating. Call 1-833-E1-UNICO.",
 };
@@ -38,7 +39,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col">
         {children}
-        <AskUnico />
+        <ConditionalAskUnico />
       </body>
     </html>
   );
