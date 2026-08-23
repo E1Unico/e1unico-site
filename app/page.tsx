@@ -199,6 +199,10 @@ export default function Home() {
                     <Image src="https://seal-houston.bbb.org/customer-reviews/badge-10-bbb-90076784.png" alt="BBB" width={48} height={32} style={{ height: 32, width: "auto" }} unoptimized />
                     <span style={{ fontSize: 11, color: "#6b7280" }}>BBB® Accredited 2026</span>
                   </a>
+                  <a href="https://www.gleif.org/en/lei-data/search" target="_blank" rel="noreferrer"
+                    style={{ display: "block", textAlign: "center", marginTop: 10, fontSize: 10, color: "#4b5563", textDecoration: "none" }}>
+                    LEI: 25490045C323WM1H6539 · Verify at GLEIF.org
+                  </a>
                 </div>
               </div>
             </div>
@@ -596,7 +600,7 @@ export default function Home() {
             <a href="tel:18333186426" style={{ color: "#c9a84c", textDecoration: "none", fontWeight: 600 }}>1-833-E1-UNICO</a>
             <a href="mailto:Unico@E1Unico.com" style={{ color: "#c9a84c", textDecoration: "none", fontWeight: 600 }}>Unico@E1Unico.com</a>
           </div>
-          <p style={{ fontSize: 11, color: "#374151" }}>© 2026 E1 Unico Corporation · BBB® Accredited · Texas · Building the Empire 🦅</p>
+          <p style={{ fontSize: 11, color: "#374151" }}>© 2026 E1 Unico Corporation · LEI: 25490045C323WM1H6539 · BBB® Accredited · Texas · Building the Empire 🦅</p>
         </div>
       </footer>
 
