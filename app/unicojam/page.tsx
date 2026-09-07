@@ -341,6 +341,8 @@ export default function UnicoJamPage() {
             <a href="https://unicoos.app" target="_blank" rel="noreferrer" style={{ color: "#818cf8", textDecoration: "none", fontWeight: 600 }}>UnicoOS →</a>
             <span style={{ color: "#7c3aed", fontWeight: 600 }}>UnicoJam</span>
             <a href="#pricing" style={{ color: gold, textDecoration: "none", fontWeight: 600 }}>Pricing</a>
+            <Link href="/legal/privacy" style={{ color: "#4b5563", textDecoration: "none", fontWeight: 600 }}>Privacy Policy</Link>
+            <Link href="/legal/terms" style={{ color: "#4b5563", textDecoration: "none", fontWeight: 600 }}>Terms of Service</Link>
           </div>
           <p style={{ fontSize: 11, color: "#374151" }}>© 2026 E1 Unico Corporation · UnicoJam is a UnicoOS app · Multi Genre Records · Building the Empire 🦅</p>
         </div>

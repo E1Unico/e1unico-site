@@ -599,6 +599,8 @@ export default function Home() {
             <a href="https://IndustrialDrip.Net" target="_blank" rel="noreferrer" style={{ color: "#f87171", textDecoration: "none", fontWeight: 600 }}>IndustrialDrip.Net →</a>
             <a href="tel:18333186426" style={{ color: "#c9a84c", textDecoration: "none", fontWeight: 600 }}>1-833-E1-UNICO</a>
             <a href="mailto:Unico@E1Unico.com" style={{ color: "#c9a84c", textDecoration: "none", fontWeight: 600 }}>Unico@E1Unico.com</a>
+            <a href="/legal/privacy" style={{ color: "#4b5563", textDecoration: "none", fontWeight: 600 }}>Privacy Policy</a>
+            <a href="/legal/terms" style={{ color: "#4b5563", textDecoration: "none", fontWeight: 600 }}>Terms of Service</a>
           </div>
           <p style={{ fontSize: 11, color: "#374151" }}>© 2026 E1 Unico Corporation · LEI: 25490045C323WM1H6539 · BBB® Accredited · Texas · Building the Empire 🦅</p>
         </div>
