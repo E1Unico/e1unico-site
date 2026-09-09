@@ -79,12 +79,19 @@ export default function Home() {
         <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.03) 1px, transparent 0)", backgroundSize: "40px 40px", pointerEvents: "none" }} />
 
         <div style={{ position: "relative", zIndex: 10, maxWidth: 860 }}>
-          {/* BBB pill */}
-          <a href="https://www.bbb.org/us/tx/spring/profile/business-consultant/e1-unico-corporation-0915-90076784/" target="_blank" rel="nofollow"
-            style={{ display: "inline-flex", alignItems: "center", gap: 10, background: "rgba(201,168,76,0.1)", border: "1px solid rgba(201,168,76,0.3)", borderRadius: 999, padding: "8px 18px", marginBottom: 32, textDecoration: "none", cursor: "pointer" }}>
-            <Image src="https://seal-houston.bbb.org/customer-reviews/badge-10-bbb-90076784.png" alt="BBB" width={40} height={28} style={{ height: 28, width: "auto" }} unoptimized />
-            <span style={{ fontSize: 12, fontWeight: 700, color: "#c9a84c" }}>BBB® Accredited Business · E1 Unico Corporation</span>
-          </a>
+          {/* Trust badges */}
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, justifyContent: "center", marginBottom: 32 }}>
+            <a href="https://www.bbb.org/us/tx/spring/profile/business-consultant/e1-unico-corporation-0915-90076784/" target="_blank" rel="nofollow"
+              style={{ display: "inline-flex", alignItems: "center", gap: 10, background: "rgba(201,168,76,0.1)", border: "1px solid rgba(201,168,76,0.3)", borderRadius: 999, padding: "8px 18px", textDecoration: "none", cursor: "pointer" }}>
+              <Image src="https://seal-houston.bbb.org/customer-reviews/badge-10-bbb-90076784.png" alt="BBB" width={40} height={28} style={{ height: 28, width: "auto" }} unoptimized />
+              <span style={{ fontSize: 12, fontWeight: 700, color: "#c9a84c" }}>BBB® Accredited Business · E1 Unico Corporation</span>
+            </a>
+            <a href="/trust"
+              style={{ display: "inline-flex", alignItems: "center", gap: 10, background: "rgba(79,70,229,0.1)", border: "1px solid rgba(79,70,229,0.3)", borderRadius: 999, padding: "8px 18px", textDecoration: "none", cursor: "pointer" }}>
+              <span style={{ fontSize: 16 }} aria-hidden>🏛️</span>
+              <span style={{ fontSize: 12, fontWeight: 700, color: "#818cf8" }}>SAM.gov Verified · Federally Registered Contractor</span>
+            </a>
+          </div>
 
           {/* Logo */}
           <div style={{ display: "flex", justifyContent: "center", marginBottom: 32 }}>
@@ -577,7 +584,7 @@ export default function Home() {
               style={{ color: "white", fontWeight: 800, fontSize: 16, padding: "18px 36px", borderRadius: 18, border: "none", cursor: "pointer" }} />
           </div>
 
-          <div style={{ marginTop: 48 }}>
+          <div style={{ marginTop: 48, display: "flex", flexWrap: "wrap", gap: 16, justifyContent: "center" }}>
             <a href="https://www.bbb.org/us/tx/spring/profile/business-consultant/e1-unico-corporation-0915-90076784/" target="_blank" rel="nofollow"
               style={{ display: "inline-flex", alignItems: "center", gap: 12, background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.2)", borderRadius: 16, padding: "12px 24px", textDecoration: "none" }}>
               <Image src="https://seal-houston.bbb.org/customer-reviews/badge-10-bbb-90076784.png" alt="BBB" width={56} height={38} style={{ height: 38, width: "auto" }} unoptimized />
@@ -585,6 +592,14 @@ export default function Home() {
                 <p style={{ fontSize: 12, fontWeight: 700, color: "white" }}>BBB® Accredited Business</p>
                 <a href="https://www.bbb.org/houston/customer-reviews/business-consultant/e1-unico-corporation-in-spring-tx-90076784/add/" target="_blank" rel="nofollow"
                   style={{ fontSize: 10, color: "#c9a84c", textDecoration: "none", fontWeight: 600 }}>Leave a BBB Review →</a>
+              </div>
+            </a>
+            <a href="/trust"
+              style={{ display: "inline-flex", alignItems: "center", gap: 12, background: "rgba(79,70,229,0.06)", border: "1px solid rgba(79,70,229,0.2)", borderRadius: 16, padding: "12px 24px", textDecoration: "none" }}>
+              <span style={{ fontSize: 28 }} aria-hidden>🏛️</span>
+              <div style={{ textAlign: "left" }}>
+                <p style={{ fontSize: 12, fontWeight: 700, color: "white" }}>SAM.gov Registered · UEI: YSEHX6CMMWA9</p>
+                <span style={{ fontSize: 10, color: "#818cf8", fontWeight: 600 }}>Eligible for federal, state &amp; local contract awards →</span>
               </div>
             </a>
           </div>
@@ -601,8 +616,9 @@ export default function Home() {
             <a href="mailto:Unico@E1Unico.com" style={{ color: "#c9a84c", textDecoration: "none", fontWeight: 600 }}>Unico@E1Unico.com</a>
             <a href="/legal/privacy" style={{ color: "#4b5563", textDecoration: "none", fontWeight: 600 }}>Privacy Policy</a>
             <a href="/legal/terms" style={{ color: "#4b5563", textDecoration: "none", fontWeight: 600 }}>Terms of Service</a>
+            <a href="/trust" style={{ color: "#4b5563", textDecoration: "none", fontWeight: 600 }}>Trust &amp; Compliance</a>
           </div>
-          <p style={{ fontSize: 11, color: "#374151" }}>© 2026 E1 Unico Corporation · LEI: 25490045C323WM1H6539 · BBB® Accredited · Texas · Building the Empire 🦅</p>
+          <p style={{ fontSize: 11, color: "#374151" }}>© 2026 E1 Unico Corporation · LEI: 25490045C323WM1H6539 · SAM.gov Registered (UEI: YSEHX6CMMWA9) · BBB® Accredited · Texas · Building the Empire 🦅</p>
         </div>
       </footer>
 
