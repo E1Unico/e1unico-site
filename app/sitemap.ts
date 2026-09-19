@@ -10,6 +10,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/trust", priority: 0.6, changeFrequency: "monthly" as const },
     { path: "/order/2k-special", priority: 0.7, changeFrequency: "monthly" as const },
     { path: "/order/custom-unicoos", priority: 0.7, changeFrequency: "monthly" as const },
+    { path: "/order/lite-website-app", priority: 0.7, changeFrequency: "monthly" as const },
+    { path: "/order/custom-website-app", priority: 0.7, changeFrequency: "monthly" as const },
     { path: "/order/unicocare", priority: 0.7, changeFrequency: "monthly" as const },
     { path: "/legal/privacy", priority: 0.3, changeFrequency: "yearly" as const },
     { path: "/legal/terms", priority: 0.3, changeFrequency: "yearly" as const },
