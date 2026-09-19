@@ -19,10 +19,13 @@ const services = [
 ];
 
 const features = [
-  "CRM & Sales Pipeline", "AI Agents (6 Specialists)", "UniRo AI Receptionist",
-  "UniBook Accounting", "HSE Safety Module", "TruckOS + Fleet",
-  "Insurance CRM & Rater", "Restaurant Manager",
-  "Equipment Rentals", "UniCredit Score", "UniFleet GPS", "UniGuard Loss Prevention",
+  "CRM & Sales Pipeline", "PowUni Social Network", "UniRo AI Receptionist",
+  "App Store — 40+ Modules", "UniHub — 15+ Integrations", "UniBook Accounting",
+  "UniDesk Ticketing & SLAs", "UniDocs Vault & E-Signature",
+  "UniServer IT Discovery", "UniPublish AI Book Creator",
+  "UniTwin AI Workflow Builder", "UniGovCon + Proposals",
+  "UnicoAlive Overnight AI Team", "HSE Safety Module",
+  "TruckOS + Fleet", "Restaurant Manager",
 ];
 
 const stats = [
