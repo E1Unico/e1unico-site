@@ -82,9 +82,29 @@ const TIERS: Tier[] = [
   },
 ];
 
+const FAQS = [
+  { q: "Is UnicoCare required?", a: "Yes. Every 2K Special launch includes 1 month of UnicoCare Essential free. After that, an active UnicoCare plan ($99/mo minimum) is required so your email + website stay live, secure, and supported." },
+  { q: "Can I upgrade or downgrade later?", a: "Anytime. Move between Essential, Visible, AI, and Pro from your UnicoOS account. Changes apply the next billing cycle." },
+  { q: "What is AEO?", a: "Answer Engine Optimization — making sure ChatGPT, Claude, Perplexity, Gemini, and Google AI Overviews can find, understand, and cite your business when people ask AI questions in your niche." },
+  { q: "What if I already have hosting?", a: "We migrate it. Part of onboarding. You end up on one bill, one phone number, one team." },
+];
+
+// Reuses the exact FAQ copy rendered below — structured data must match
+// what's actually visible on the page, not a paraphrase of it.
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map(f => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
 export default function UnicoCarePage() {
   return (
     <main style={{ minHeight: "100vh", background: "#05050a", color: "white", paddingTop: 80 }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 50, background: "rgba(5,5,10,0.9)", backdropFilter: "blur(16px)", borderBottom: "1px solid rgba(255,255,255,0.06)", padding: "12px 20px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <a href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
           <Image src="/e1unico-logo.jpg" alt="E1 Unico" width={32} height={32} style={{ width: 32, height: 32, objectFit: "contain", borderRadius: 8, background: "white", padding: 2 }} />
@@ -199,12 +219,7 @@ export default function UnicoCarePage() {
         {/* FAQ */}
         <div style={{ maxWidth: 760, margin: "0 auto", marginBottom: 60 }}>
           <h2 style={{ fontSize: 20, fontWeight: 800, marginBottom: 18, color: "white", textAlign: "center" }}>Quick answers</h2>
-          {[
-            { q: "Is UnicoCare required?", a: "Yes. Every 2K Special launch includes 1 month of UnicoCare Essential free. After that, an active UnicoCare plan ($99/mo minimum) is required so your email + website stay live, secure, and supported." },
-            { q: "Can I upgrade or downgrade later?", a: "Anytime. Move between Essential, Visible, AI, and Pro from your UnicoOS account. Changes apply the next billing cycle." },
-            { q: "What is AEO?", a: "Answer Engine Optimization — making sure ChatGPT, Claude, Perplexity, Gemini, and Google AI Overviews can find, understand, and cite your business when people ask AI questions in your niche." },
-            { q: "What if I already have hosting?", a: "We migrate it. Part of onboarding. You end up on one bill, one phone number, one team." },
-          ].map(f => (
+          {FAQS.map(f => (
             <details key={f.q} style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: 12, padding: "14px 18px", marginBottom: 10 }}>
               <summary style={{ cursor: "pointer", fontWeight: 700, fontSize: 14, color: "white" }}>{f.q}</summary>
               <p style={{ marginTop: 10, fontSize: 13.5, color: "#9ca3af", lineHeight: 1.6 }}>{f.a}</p>

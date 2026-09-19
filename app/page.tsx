@@ -32,9 +32,43 @@ const stats = [
   { val: "100%", label: "Texas Built" },
 ];
 
+// Reuses the same address already published (and verifiable) on /trust —
+// keeps this from drifting into a second, differently-worded source of truth.
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "E1 Unico Corporation",
+  url: "https://e1unico.com",
+  logo: "https://e1unico.com/e1unico-logo.jpg",
+  image: "https://e1unico.com/e1unico-logo.jpg",
+  description: "BBB Accredited Texas business launch and consulting company. The 2K Special gets businesses registered, branded, and operating.",
+  telephone: "+18333186426",
+  email: "Unico@E1Unico.com",
+  priceRange: "$$",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "4402 Rosegate Dr",
+    addressLocality: "Spring",
+    addressRegion: "TX",
+    postalCode: "77373-6743",
+    addressCountry: "US",
+  },
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    opens: "19:30",
+    closes: "21:30",
+  },
+  sameAs: [
+    "https://www.bbb.org/us/tx/spring/profile/business-consultant/e1-unico-corporation-0915-90076784/",
+    "https://sam.gov/entity/YSEHX6CMMWA9",
+  ],
+};
+
 export default function Home() {
   return (
     <main className="min-h-screen" style={{ background: "#05050a", color: "white" }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* ── NAV ── */}
       <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 50, background: "rgba(5,5,10,0.85)", backdropFilter: "blur(16px)", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
