@@ -278,6 +278,7 @@ export default function UnicoMobilePage() {
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "6px 24px", marginBottom: 16, fontSize: 12 }}>
             <Link href="/" style={{ color: "#9ca3af", textDecoration: "none", fontWeight: 600 }}>← E1Unico.com</Link>
+            <Link href="/unicocard" style={{ color: "#f0c96e", textDecoration: "none", fontWeight: 600 }}>UnicoCard</Link>
             <a href="https://unicoos.app" target="_blank" rel="noreferrer" style={{ color: "#818cf8", textDecoration: "none", fontWeight: 600 }}>UnicoOS →</a>
             <span style={{ color: sky, fontWeight: 600 }}>UnicoMobile</span>
             <Link href="/legal/privacy" style={{ color: "#4b5563", textDecoration: "none", fontWeight: 600 }}>Privacy Policy</Link>

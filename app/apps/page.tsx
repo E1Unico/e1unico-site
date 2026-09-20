@@ -57,8 +57,9 @@ const GROUPS: { key: string; label: string; sub: string; apps: App[] }[] = [
   {
     key: "connect",
     label: "Connect",
-    sub: "Keep your business — and your team — in signal.",
+    sub: "Keep your business — and your team — in signal, and one tap from everyone you meet.",
     apps: [
+      { name: "Unico", tail: "Card", wordmarkTail: "Card", emoji: "💳", status: "Live", statusColor: "#f0c96e", blurb: "Tap-to-share smart business card — send your contact and links, capture the lead into your CRM, and track every tap. Roadmap: provision your Unico Mobile eSIM.", href: "/unicocard", grad: "linear-gradient(135deg,#f0c96e,#c9a84c)", accent: "#f0c96e" },
       { name: "Unico", tail: "Mobile", wordmarkTail: "Mobile", emoji: "📶", status: "Coming Soon", statusColor: "#7dd3fc", blurb: "Business wireless designed to live inside UnicoOS — team lines, one bill, tied to your CRM and UniRo. Carrier-neutral by design.", href: "/unicomobile", grad: "linear-gradient(135deg,#7dd3fc,#0ea5e9)", accent: "#7dd3fc" },
     ],
   },
