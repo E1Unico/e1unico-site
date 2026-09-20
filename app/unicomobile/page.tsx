@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     "UnicoMobile is business wireless designed to live inside UnicoOS — your team's phone lines, one bill, one login, tied to your CRM and AI receptionist. Carrier-neutral by design. Join the early-access waitlist.",
   openGraph: {
     title: "UnicoMobile — Wireless, Built Into Your Business",
-    description: "Business phone lines that live inside UnicoOS. One bill, one login, tied to your CRM and UniRo. Carrier-neutral. Coming soon.",
+    description: "Business phone lines designed to live inside UnicoOS — one bill, one login, built to connect with your CRM and UniRo. Carrier-neutral by design. In development — join the waitlist.",
   },
 };
 
@@ -50,7 +50,6 @@ const JSON_LD = {
       description:
         "Upcoming business wireless service (in development, early-access waitlist open) designed to live inside UnicoOS — team phone lines managed alongside CRM, invoicing, and the UniRo AI receptionist. Carrier-neutral by design. Coverage, plans, and pricing to be announced.",
       provider: { "@type": "Organization", name: "E1 Unico Corporation", url: "https://e1unico.com" },
-      areaServed: "US",
     },
     {
       "@type": "FAQPage",

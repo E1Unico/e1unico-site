@@ -67,7 +67,7 @@ export default function Image() {
             Now with a signal.
           </div>
           <div style={{ display: "flex", marginTop: 24, fontSize: 34, color: "#9ca3af" }}>
-            Business wireless, built into UnicoOS. Carrier-neutral.
+            Business wireless for UnicoOS. Carrier-neutral by design.
           </div>
         </div>
 
