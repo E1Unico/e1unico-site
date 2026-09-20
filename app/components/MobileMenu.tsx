@@ -19,6 +19,7 @@ const LINKS: LinkItem[] = [
   { label: "UnicoClip", href: "/unicoclip", color: "#5eead4" },
   { label: "UnicoMobile", href: "/unicomobile", color: "#7dd3fc" },
   { label: "UnicoCard", href: "/unicocard", color: "#f0c96e" },
+  { label: "UniPersonal", href: "/unipersonal", color: "#6ee7b7" },
   { label: "Our Companies", href: "#companies", color: "#d1d5db" },
   { label: "Contact", href: "#contact", color: "#d1d5db" },
 ];

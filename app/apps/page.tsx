@@ -34,6 +34,7 @@ const GROUPS: { key: string; label: string; sub: string; apps: App[] }[] = [
     sub: "The operating system everything else plugs into.",
     apps: [
       { name: "Unico", tail: "OS", wordmarkTail: "OS", emoji: "🧩", status: "Live", statusColor: "#818cf8", blurb: "The all-in-one Business Operating System — CRM, invoicing, AI receptionist, accounting, and 40+ modules under one login.", href: "https://unicoos.app", external: true, grad: "linear-gradient(135deg,#818cf8,#06b6d4)", accent: "#818cf8" },
+      { name: "Uni", tail: "Personal", wordmarkTail: "Personal", emoji: "💚", status: "Live", statusColor: "#6ee7b7", blurb: "The free personal-finance side of UnicoOS — net worth, budgets, bills, subscription detection, and your personal money next to your business money, walled apart.", href: "/unipersonal", grad: "linear-gradient(135deg,#6ee7b7,#10b981)", accent: "#6ee7b7" },
     ],
   },
   {
