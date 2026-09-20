@@ -34,7 +34,8 @@ const FAQ: { q: string; a: string }[] = [
   { q: "What is UnicoMobile?", a: "It's business wireless designed to live inside UnicoOS — phone lines for you and your team, managed from the same place you run your CRM, invoicing, and AI receptionist. The goal is one company for your whole operation, connectivity included." },
   { q: "Is it available yet?", a: "Not yet — UnicoMobile is in development and opening early access in waves. Join the waitlist and we'll reach out as it becomes available in your area. Nothing here is a live offer or a coverage guarantee." },
   { q: "Which network does it use?", a: "We're building it carrier-neutral — the idea is to run on established networks rather than lock you to one. We'll share the specifics (networks, coverage, plans, and pricing) as they're finalized and announced, not before." },
-  { q: "Will I need a physical SIM?", a: "The plan is eSIM — your line downloads to your phone over the air, with no plastic SIM to wait for. We're designing it so you can provision it by tapping your UnicoCard. Exact device support will be confirmed at launch." },
+  { q: "Will I need a physical SIM?", a: "No — the plan is eSIM. No plastic SIM, no store visit." },
+  { q: "How do I activate my line?", a: "The plan is a QR code (or a one-tap link) we email you: open it on your phone, confirm, and your line installs over the air in a couple of minutes. You'll also be able to activate by tapping your UnicoCard. It's near-instant, though you always tap once to confirm — a line is never installed without you. Exact device support will be confirmed at launch." },
   { q: "Will it work with my UnicoOS number and UniRo?", a: "That's the plan. UnicoMobile is being designed to connect with your UnicoOS business number, your CRM, and the UniRo AI receptionist, so calls, texts, and follow-ups all live in one place. Exact capabilities will be confirmed at launch." },
   { q: "How much will it cost?", a: "Pricing isn't set yet, and we won't post a number we can't stand behind. Waitlist members will be the first to see plans — and to lock any founder pricing before public launch." },
   { q: "Do I need UnicoOS to use it?", a: "UnicoMobile is being built as part of the UnicoOS ecosystem. If you already run your business on UnicoOS, it's designed to show up as one of your apps — same account. Standalone details will be shared closer to launch." },
@@ -66,7 +67,7 @@ const JSON_LD = {
 
 const PLANNED = [
   "Business phone lines for you and your team",
-  "eSIM you activate over the air — the goal is a tap of your UnicoCard, no chasing a physical SIM",
+  "eSIM you activate in minutes — scan a QR code or tap a link we email you (or tap your UnicoCard). No store visit, no physical SIM",
   "Managed from inside UnicoOS — one login",
   "Designed to connect with your CRM + UniRo",
   "Carrier-neutral approach, not locked to one network",
