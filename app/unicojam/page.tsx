@@ -340,6 +340,9 @@ export default function UnicoJamPage() {
             <Link href="/" style={{ color: "#9ca3af", textDecoration: "none", fontWeight: 600 }}>← E1Unico.com</Link>
             <a href="https://unicoos.app" target="_blank" rel="noreferrer" style={{ color: "#818cf8", textDecoration: "none", fontWeight: 600 }}>UnicoOS →</a>
             <span style={{ color: "#7c3aed", fontWeight: 600 }}>UnicoJam</span>
+            <Link href="/unicomusic" style={{ color: "#f9a8d4", textDecoration: "none", fontWeight: 600 }}>UnicoMusic</Link>
+            <Link href="/unicotube" style={{ color: "#fca5a5", textDecoration: "none", fontWeight: 600 }}>UnicoTube</Link>
+            <Link href="/unicoclip" style={{ color: "#5eead4", textDecoration: "none", fontWeight: 600 }}>UnicoClip</Link>
             <a href="#pricing" style={{ color: gold, textDecoration: "none", fontWeight: 600 }}>Pricing</a>
             <Link href="/legal/privacy" style={{ color: "#4b5563", textDecoration: "none", fontWeight: 600 }}>Privacy Policy</Link>
             <Link href="/legal/terms" style={{ color: "#4b5563", textDecoration: "none", fontWeight: 600 }}>Terms of Service</Link>

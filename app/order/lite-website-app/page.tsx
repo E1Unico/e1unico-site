@@ -4,22 +4,20 @@ import Link from "next/link";
 import OrderForm from "../2k-special/form";
 
 export const metadata: Metadata = {
-  title: "Order Custom UnicoOS — Your Own Branded Business Platform",
-  description: "Get UnicoOS built under your brand. Custom name, logo, domain. $2,500 setup + $2,000/month. E1 Unico Corporation.",
+  title: "Order Lite Website / App — E1 Unico Corporation",
+  description: "A professional website or mobile-ready web app, managed for you every month. $2,000/mo + $2,500 setup. E1 Unico Corporation.",
 };
 
 const included = [
-  { emoji: "🎨", title: "Custom Name, Logo & Colors",      desc: "Your brand on every screen your clients see" },
-  { emoji: "🌐", title: "Your Own Domain",                 desc: "yourplatform.com — not ours" },
-  { emoji: "🏢", title: "Dedicated Instance",              desc: "Your data, your clients — completely separate" },
-  { emoji: "⭐", title: "Full Enterprise Feature Set",     desc: "Every module, every AI tool, unlocked" },
-  { emoji: "🤖", title: "UniAgents + UniRo Included",      desc: "AI team and AI receptionist ready to go" },
-  { emoji: "🔄", title: "Monthly Updates",                 desc: "As we keep building, you get every new feature" },
-  { emoji: "📞", title: "Priority Phone & Chat Support",   desc: "Dedicated support line for you and your clients" },
-  { emoji: "🎓", title: "Onboarding & Training Call",      desc: "We get you and your team fully set up" },
+  { emoji: "💻", title: "Professional Design",         desc: "Clean, modern, built to convert visitors into customers" },
+  { emoji: "📱", title: "Mobile-Ready",                 desc: "Looks and works great on phones, tablets, and desktop" },
+  { emoji: "🔍", title: "SEO-Ready",                    desc: "Structured to get found on Google from day one" },
+  { emoji: "⚡", title: "Fast Hosting Included",        desc: "Speed, uptime, and SSL handled — no separate hosting bill" },
+  { emoji: "🔄", title: "Monthly Updates",              desc: "Content changes and small edits handled every month" },
+  { emoji: "📞", title: "Ongoing Support",              desc: "Call or email us when something needs to change" },
 ];
 
-export default function CustomUnicoOSPage() {
+export default function LiteWebsiteAppPage() {
   return (
     <main style={{ minHeight: "100vh", background: "#05050a", color: "white", paddingTop: 80 }}>
       <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 50, background: "rgba(5,5,10,0.9)", backdropFilter: "blur(16px)", borderBottom: "1px solid rgba(255,255,255,0.06)", padding: "12px 20px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
@@ -32,11 +30,11 @@ export default function CustomUnicoOSPage() {
 
       <div style={{ maxWidth: 900, margin: "0 auto", padding: "40px 20px" }}>
         <div style={{ textAlign: "center", marginBottom: 48 }}>
-          <span style={{ display: "inline-block", background: "rgba(79,70,229,0.15)", border: "1px solid rgba(79,70,229,0.3)", color: "#818cf8", fontSize: 11, fontWeight: 700, padding: "4px 14px", borderRadius: 999, letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 16 }}>White-Label Platform</span>
+          <span style={{ display: "inline-block", background: "rgba(79,70,229,0.15)", border: "1px solid rgba(79,70,229,0.3)", color: "#818cf8", fontSize: 11, fontWeight: 700, padding: "4px 14px", borderRadius: 999, letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 16 }}>Get Online</span>
           <h1 style={{ fontSize: "clamp(28px, 5vw, 52px)", fontWeight: 900, lineHeight: 1.1, marginBottom: 12 }}>
-            Custom <span style={{ background: "linear-gradient(135deg, #818cf8, #06b6d4)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>UnicoOS</span>
+            Lite Website <span style={{ background: "linear-gradient(135deg, #818cf8, #06b6d4)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>/ App</span>
           </h1>
-          <p style={{ color: "#9ca3af", fontSize: 16, maxWidth: 500, margin: "0 auto" }}>Your own fully branded Business OS. Your clients log into YOUR platform — not ours.</p>
+          <p style={{ color: "#9ca3af", fontSize: 16, maxWidth: 520, margin: "0 auto" }}>A professional website or mobile-ready web app. Clean design, fast, SEO-ready — managed for you every month.</p>
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40, alignItems: "start" }} className="lg:grid-cols-2 grid-cols-1">
@@ -63,9 +61,9 @@ export default function CustomUnicoOSPage() {
                 <p style={{ color: "#6b7280", fontSize: 12, marginTop: 6 }}>+ $2,500 one-time setup fee</p>
                 <p style={{ color: "#9ca3af", fontSize: 11, marginTop: 4 }}>No contracts · Cancel anytime</p>
               </div>
-              <OrderForm product="Custom UnicoOS" price="$2,000/mo + $2,500 setup" />
+              <OrderForm product="Lite Website / App" price="$2,000/mo + $2,500 setup" />
               <p style={{ fontSize: 11, color: "#4b5563", textAlign: "center", marginTop: 14 }}>
-                We&apos;ll reach out within 24 hours to start your custom build.<br />
+                We&apos;ll reach out within 24 hours to start your build.<br />
                 1-833-E1-UNICO · Evenings 7:30–9:30 PM
               </p>
             </div>

@@ -175,7 +175,7 @@ export default function AskUnico() {
           {view === "menu" && (
             <div className="ask-unico-body">
               <p style={{ fontSize: 13, color: "#d1d5db", lineHeight: 1.55, marginBottom: 12 }}>
-                Hey 👋 I'm Unico's AI. I can answer your questions, get you to the right number, or schedule a personal callback.
+                Hey 👋 I&apos;m Unico&apos;s AI. I can answer your questions, get you to the right number, or schedule a personal callback.
               </p>
               <div style={{ display: "grid", gap: 8 }}>
                 <a href={`tel:${E1_PHONE_TEL}`} className="ask-unico-action-card">
@@ -196,14 +196,14 @@ export default function AskUnico() {
                   <span style={{ fontSize: 22 }}>💬</span>
                   <div style={{ textAlign: "left" }}>
                     <p style={{ fontWeight: 800, fontSize: 13 }}>Ask me a question</p>
-                    <p style={{ fontSize: 11, color: "#9ca3af" }}>I'll try to help right here.</p>
+                    <p style={{ fontSize: 11, color: "#9ca3af" }}>I&apos;ll try to help right here.</p>
                   </div>
                 </button>
                 <button onClick={() => setView("callback")} className="ask-unico-action-card ask-unico-clickable">
                   <span style={{ fontSize: 22 }}>🧠</span>
                   <div style={{ textAlign: "left" }}>
                     <p style={{ fontWeight: 800, fontSize: 13 }}>Request a callback from Unico</p>
-                    <p style={{ fontSize: 11, color: "#9ca3af" }}>Tell me your problem — he'll reach out personally.</p>
+                    <p style={{ fontSize: 11, color: "#9ca3af" }}>Tell me your problem — he&apos;ll reach out personally.</p>
                   </div>
                 </button>
               </div>
@@ -235,7 +235,7 @@ export default function AskUnico() {
           {view === "callback" && (
             <div className="ask-unico-body">
               <p style={{ fontSize: 13, color: "#d1d5db", marginBottom: 12 }}>
-                I'll pass this straight to Unico (Manuel) — he calls back evenings 7:30–9:30 PM.
+                I&apos;ll pass this straight to Unico (Manuel) — he calls back evenings 7:30–9:30 PM.
               </p>
               <div style={{ display: "grid", gap: 10 }}>
                 <input className="ask-unico-field" placeholder="Your name *" value={name} onChange={(e) => setName(e.target.value)} />
@@ -257,7 +257,7 @@ export default function AskUnico() {
               <div style={{ fontSize: 44 }}>📨</div>
               <p style={{ fontWeight: 900, fontSize: 16, marginTop: 6 }}>Sent to Unico!</p>
               <p style={{ fontSize: 12, color: "#9ca3af", margin: "10px 0 18px" }}>
-                He'll reach out personally. Need something now? Call <a href={`tel:${E1_PHONE_TEL}`} style={{ color: "#c9a84c", fontWeight: 700 }}>{E1_PHONE_DISPLAY}</a> or the 24/7 UnicoOS line <a href={`tel:${UNICOOS_PHONE_TEL}`} style={{ color: "#a5b4fc", fontWeight: 700 }}>{UNICOOS_PHONE_DISPLAY}</a>.
+                He&apos;ll reach out personally. Need something now? Call <a href={`tel:${E1_PHONE_TEL}`} style={{ color: "#c9a84c", fontWeight: 700 }}>{E1_PHONE_DISPLAY}</a> or the 24/7 UnicoOS line <a href={`tel:${UNICOOS_PHONE_TEL}`} style={{ color: "#a5b4fc", fontWeight: 700 }}>{UNICOOS_PHONE_DISPLAY}</a>.
               </p>
               <button onClick={() => { setView("menu"); setName(""); setContact(""); setProblem(""); }} className="ask-unico-submit" style={{ background: "rgba(255,255,255,0.08)" }}>Done</button>
             </div>

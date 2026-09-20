@@ -40,7 +40,7 @@ export const VENTURES: Venture[] = [
   {
     name: "UnicoOS",
     tag: "Business Operating System · SaaS Platform",
-    desc: "The all-in-one platform I built to run every part of a business from one login.",
+    desc: "The all-in-one platform I built to run every part of a business — CRM, AI receptionist, even its own social network — from one login.",
     url: "https://unicoos.app",
     logo: "/unicoos-logo.jpg",
     accent: "rgba(79,70,229,0.28)",

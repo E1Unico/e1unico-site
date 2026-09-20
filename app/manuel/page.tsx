@@ -2,9 +2,26 @@ import Image from "next/image";
 import Link from "next/link";
 import { CONTACT_EMAIL, SOCIALS, VENTURES } from "./data";
 
+// Same AEO pattern as e1unico.com and UnicoJam — real, published data only,
+// no fabricated profiles for socials that aren't live yet.
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Manuel Montemayor",
+  alternateName: "El Único",
+  url: "https://manuelmontemayor.com",
+  image: "https://manuelmontemayor.com/manuel/portrait.jpg",
+  jobTitle: "Founder",
+  description: "Texas-based entrepreneur — founder of E1 Unico Corporation and the family of companies behind it.",
+  email: CONTACT_EMAIL,
+  worksFor: VENTURES.map((v) => ({ "@type": "Organization", name: v.name, url: v.url })),
+  sameAs: [...VENTURES.map((v) => v.url), ...SOCIALS.filter((s) => s.url).map((s) => s.url)],
+};
+
 export default function ManuelHome() {
   return (
     <div style={{ minHeight: "100vh" }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       {/* ── HERO ── */}
       <section
         style={{

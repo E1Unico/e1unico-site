@@ -24,7 +24,8 @@ export default function PrivacyPolicy() {
           <p style={pStyle}>
             E1 Unico Corporation (&quot;E1 Unico,&quot; &quot;we,&quot; &quot;us&quot;) is a BBB Accredited Texas business
             based in Spring, TX. This policy covers E1Unico.com and the ordering, chat, and
-            waitlist tools on it (including UnicoJam&apos;s early-access page). It does not cover
+            waitlist tools on it (including the early-access pages for UnicoJam, UnicoMusic,
+            UnicoTube, UnicoClip, and UnicoMobile). It does not cover
             UnicoOS.app, which has its own privacy policy.
           </p>
         </div>

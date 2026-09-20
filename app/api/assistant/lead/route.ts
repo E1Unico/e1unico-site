@@ -147,7 +147,6 @@ Problem: ${problem || "(none)"}
   const delivered = results.some(r => r.status === "fulfilled" && r.value === true);
 
   // Always log to Vercel runtime logs so leads are never silently dropped.
-  // eslint-disable-next-line no-console
   console.log("[ask-unico-lead]", { name, contact, problem, page, source, when, delivered });
 
   return NextResponse.json({ ok: true, delivered });

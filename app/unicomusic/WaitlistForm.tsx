@@ -2,13 +2,13 @@
 import { useState } from "react";
 import Link from "next/link";
 
-const USE_CASES = ["Recording artist", "Content creator", "Church / worship", "Label / A&R", "Just for fun"];
+const ROLES = ["Recording artist", "Producer / beatmaker", "Content creator", "Church / worship", "Label / A&R", "Just here to listen"];
 
 export default function WaitlistForm() {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [genres, setGenres] = useState("");
-  const [useCase, setUseCase] = useState("");
+  const [role, setRole] = useState("");
   const [state, setState] = useState<"idle" | "loading" | "done" | "error">("idle");
   const [error, setError] = useState("");
 
@@ -18,10 +18,10 @@ export default function WaitlistForm() {
     setState("loading");
     setError("");
     try {
-      const res = await fetch("/api/unicojam/waitlist", {
+      const res = await fetch("/api/unicomusic/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, name, genres, useCase, page: "/unicojam", source: "unicojam-landing" }),
+        body: JSON.stringify({ email, name, genres, role, page: "/unicomusic", source: "unicomusic-landing" }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
@@ -40,8 +40,8 @@ export default function WaitlistForm() {
     return (
       <div
         style={{
-          background: "linear-gradient(155deg, rgba(124,58,237,0.18), rgba(201,168,76,0.10))",
-          border: "1px solid rgba(124,58,237,0.4)",
+          background: "linear-gradient(155deg, rgba(236,72,153,0.18), rgba(201,168,76,0.10))",
+          border: "1px solid rgba(236,72,153,0.4)",
           borderRadius: 18,
           padding: "28px 24px",
           textAlign: "center",
@@ -49,9 +49,9 @@ export default function WaitlistForm() {
       >
         <div style={{ fontSize: 44, marginBottom: 10 }}>🎧</div>
         <p style={{ fontSize: 20, fontWeight: 900, color: "white", marginBottom: 8 }}>You&apos;re on the list.</p>
-        <p style={{ color: "#c4b5fd", fontSize: 14, lineHeight: 1.6 }}>
-          We&apos;ll email <strong style={{ color: "white" }}>{email}</strong> the moment UnicoJam early access opens.
-          First drop gets founder pricing.
+        <p style={{ color: "#f9a8d4", fontSize: 14, lineHeight: 1.6 }}>
+          We&apos;ll email <strong style={{ color: "white" }}>{email}</strong> the moment UnicoMusic early access opens.
+          Creators who join early get priority placement.
         </p>
         <Link href="/apps" style={{ display: "inline-block", marginTop: 16, fontSize: 13, color: "#818cf8", fontWeight: 700, textDecoration: "none" }}>
           While you wait, explore the whole Unico ecosystem →
@@ -76,16 +76,16 @@ export default function WaitlistForm() {
       onSubmit={submit}
       style={{
         background: "rgba(14,14,24,0.85)",
-        border: "1px solid rgba(124,58,237,0.3)",
+        border: "1px solid rgba(236,72,153,0.3)",
         borderRadius: 20,
         padding: "26px 22px",
         display: "flex",
         flexDirection: "column",
         gap: 12,
-        boxShadow: "0 0 50px rgba(124,58,237,0.12)",
+        boxShadow: "0 0 50px rgba(236,72,153,0.12)",
       }}
     >
-      <p style={{ fontSize: 12, fontWeight: 700, color: "#c4b5fd", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+      <p style={{ fontSize: 12, fontWeight: 700, color: "#f9a8d4", letterSpacing: "0.15em", textTransform: "uppercase" }}>
         Join the Waitlist
       </p>
       <input
@@ -105,29 +105,29 @@ export default function WaitlistForm() {
       />
       <input
         type="text"
-        placeholder="What do you want to make? (e.g. gospel, trap, lo-fi)"
+        placeholder="What do you make or love? (e.g. gospel, trap, lo-fi)"
         value={genres}
         onChange={e => setGenres(e.target.value)}
         style={inputStyle}
       />
       <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 2 }}>
-        {USE_CASES.map(u => (
+        {ROLES.map(r => (
           <button
-            key={u}
+            key={r}
             type="button"
-            onClick={() => setUseCase(u === useCase ? "" : u)}
+            onClick={() => setRole(r === role ? "" : r)}
             style={{
               fontSize: 12,
               fontWeight: 600,
               padding: "7px 13px",
               borderRadius: 999,
               cursor: "pointer",
-              border: `1px solid ${useCase === u ? "rgba(124,58,237,0.7)" : "rgba(255,255,255,0.12)"}`,
-              background: useCase === u ? "rgba(124,58,237,0.25)" : "rgba(255,255,255,0.03)",
-              color: useCase === u ? "white" : "#9ca3af",
+              border: `1px solid ${role === r ? "rgba(236,72,153,0.7)" : "rgba(255,255,255,0.12)"}`,
+              background: role === r ? "rgba(236,72,153,0.25)" : "rgba(255,255,255,0.03)",
+              color: role === r ? "white" : "#9ca3af",
             }}
           >
-            {u}
+            {r}
           </button>
         ))}
       </div>
@@ -139,7 +139,6 @@ export default function WaitlistForm() {
       <button
         type="submit"
         disabled={state === "loading"}
-        className="btn-indigo"
         style={{
           width: "100%",
           color: "white",
@@ -150,12 +149,13 @@ export default function WaitlistForm() {
           border: "none",
           cursor: state === "loading" ? "wait" : "pointer",
           marginTop: 4,
+          background: "linear-gradient(135deg,#ec4899,#a855f7)",
         }}
       >
-        {state === "loading" ? "⏳ Adding you…" : "🎵 Get Early Access"}
+        {state === "loading" ? "⏳ Adding you…" : "🎧 Get Early Access"}
       </button>
       <p style={{ fontSize: 11, color: "#6b7280", textAlign: "center", lineHeight: 1.5 }}>
-        No spam. One login across UnicoOS. Faith-friendly by design. Cancel anytime.
+        No spam. One login across UnicoOS. Faith-friendly by design.
       </p>
     </form>
   );

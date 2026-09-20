@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Metadata } from "next";
 import BuyButton from "./components/BuyButton";
+import MobileMenu from "./components/MobileMenu";
 
 export const metadata: Metadata = {
   title: "E1 Unico Corporation — All-In-One Business Launch & Consulting",
@@ -19,10 +20,11 @@ const services = [
 ];
 
 const features = [
-  "CRM & Sales Pipeline", "AI Agents (6 Specialists)", "UniRo AI Receptionist",
-  "UniBook Accounting", "HSE Safety Module", "TruckOS + Fleet",
+  "CRM & Sales Pipeline", "PowUni Social Network", "UniRo AI Receptionist",
+  "App Store — 40+ Modules", "UniHub Integrations", "UniBook Accounting",
+  "HSE Safety Module", "TruckOS + Fleet",
   "Insurance CRM & Rater", "Restaurant Manager",
-  "Equipment Rentals", "UniCredit Score", "UniFleet GPS", "UniGuard Loss Prevention",
+  "Equipment Rentals", "UniGovCon + Proposals",
 ];
 
 const stats = [
@@ -32,9 +34,43 @@ const stats = [
   { val: "100%", label: "Texas Built" },
 ];
 
+// Reuses the same address already published (and verifiable) on /trust —
+// keeps this from drifting into a second, differently-worded source of truth.
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "E1 Unico Corporation",
+  url: "https://e1unico.com",
+  logo: "https://e1unico.com/e1unico-logo.jpg",
+  image: "https://e1unico.com/e1unico-logo.jpg",
+  description: "BBB Accredited Texas business launch and consulting company. The 2K Special gets businesses registered, branded, and operating.",
+  telephone: "+18333186426",
+  email: "Unico@E1Unico.com",
+  priceRange: "$$",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "4402 Rosegate Dr",
+    addressLocality: "Spring",
+    addressRegion: "TX",
+    postalCode: "77373-6743",
+    addressCountry: "US",
+  },
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    opens: "19:30",
+    closes: "21:30",
+  },
+  sameAs: [
+    "https://www.bbb.org/us/tx/spring/profile/business-consultant/e1-unico-corporation-0915-90076784/",
+    "https://sam.gov/entity/YSEHX6CMMWA9",
+  ],
+};
+
 export default function Home() {
   return (
     <main className="min-h-screen" style={{ background: "#05050a", color: "white" }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* ── NAV ── */}
       <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 50, background: "rgba(5,5,10,0.85)", backdropFilter: "blur(16px)", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
@@ -54,6 +90,15 @@ export default function Home() {
             <a href="/unicojam"
               style={{ fontSize: 13, color: "#a78bfa", textDecoration: "none", padding: "6px 14px", fontWeight: 600 }}
               className="hidden sm:block">UnicoJam</a>
+            <a href="/unicomusic"
+              style={{ fontSize: 13, color: "#f9a8d4", textDecoration: "none", padding: "6px 14px", fontWeight: 600 }}
+              className="hidden md:block">UnicoMusic</a>
+            <a href="/unicotube"
+              style={{ fontSize: 13, color: "#fca5a5", textDecoration: "none", padding: "6px 14px", fontWeight: 600 }}
+              className="hidden md:block">UnicoTube</a>
+            <a href="/unicoclip"
+              style={{ fontSize: 13, color: "#5eead4", textDecoration: "none", padding: "6px 14px", fontWeight: 600 }}
+              className="hidden lg:block">UnicoClip</a>
             <a href="#services"
               style={{ fontSize: 13, color: "#9ca3af", textDecoration: "none", padding: "6px 14px" }}
               className="hidden sm:block">Services</a>
@@ -64,6 +109,7 @@ export default function Home() {
               style={{ color: "white", fontWeight: 700, fontSize: 13, padding: "8px 18px", borderRadius: 999, textDecoration: "none", display: "inline-block" }}>
               📞 Call Now
             </a>
+            <MobileMenu />
           </div>
         </div>
       </nav>
@@ -170,7 +216,7 @@ export default function Home() {
 
           <div style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: 40, alignItems: "start" }} className="lg:grid-cols-[1fr_320px] grid-cols-1">
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }} className="sm:grid-cols-2 grid-cols-1">
-              {services.map((item, i) => (
+              {services.map((item) => (
                 <div key={item.title} className="card-lift gold-border" style={{ borderRadius: 16, padding: "18px 20px", background: "rgba(14,14,24,0.8)" }}>
                   <div style={{ display: "flex", alignItems: "flex-start", gap: 14 }}>
                     <span style={{ fontSize: 24, flexShrink: 0, marginTop: 2 }}>{item.emoji}</span>
@@ -290,6 +336,9 @@ export default function Home() {
           <div style={{ textAlign: "center", marginBottom: 60 }}>
             <p style={{ fontSize: 11, fontWeight: 700, color: "#c9a84c", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 12 }}>The E1 Unico Family</p>
             <h2 style={{ fontSize: "clamp(28px, 4vw, 52px)", fontWeight: 900, letterSpacing: "-0.02em" }}>Our Companies</h2>
+            <p style={{ marginTop: 14 }}>
+              <a href="/apps" style={{ fontSize: 14, color: "#818cf8", fontWeight: 700, textDecoration: "none" }}>Explore the whole Unico app ecosystem →</a>
+            </p>
           </div>
 
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }} className="sm:grid-cols-2 grid-cols-1">
@@ -329,6 +378,58 @@ export default function Home() {
                 <a href="/unicojam" className="btn-indigo"
                   style={{ color: "white", fontWeight: 700, fontSize: 12, padding: "8px 16px", borderRadius: 8, textDecoration: "none" }}>🎧 Join Waitlist</a>
                 <a href="/unicojam" style={{ fontSize: 12, color: "#a78bfa", fontWeight: 700, textDecoration: "none", alignSelf: "center" }}>Learn more →</a>
+              </div>
+            </div>
+
+            {/* UnicoMusic */}
+            <div className="card-lift" style={{ borderRadius: 24, padding: "32px 28px", background: "rgba(236,72,153,0.08)", border: "1px solid rgba(236,72,153,0.28)" }}>
+              <div style={{ width: 64, height: 64, background: "linear-gradient(135deg, #f9a8d4, #ec4899)", borderRadius: 14, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 30, marginBottom: 20 }}>🎧</div>
+              <p style={{ fontWeight: 900, fontSize: 18, color: "white", marginBottom: 4 }}>UnicoMusic</p>
+              <p style={{ fontSize: 12, color: "#f9a8d4", fontWeight: 600, marginBottom: 14 }}>Music Streaming · Launching Soon</p>
+              <p style={{ color: "#9ca3af", fontSize: 13, lineHeight: 1.7, marginBottom: 20 }}>Stream the music people make — publish straight from UnicoJam, reach listeners, and earn your share of ad revenue.</p>
+              <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 4 }}>
+                <a href="/unicomusic"
+                  style={{ background: "linear-gradient(135deg,#ec4899,#a855f7)", color: "white", fontWeight: 700, fontSize: 12, padding: "8px 16px", borderRadius: 8, textDecoration: "none" }}>🎧 Join Waitlist</a>
+                <a href="/unicomusic" style={{ fontSize: 12, color: "#f9a8d4", fontWeight: 700, textDecoration: "none", alignSelf: "center" }}>Learn more →</a>
+              </div>
+            </div>
+
+            {/* UnicoTube */}
+            <div className="card-lift" style={{ borderRadius: 24, padding: "32px 28px", background: "rgba(239,68,68,0.08)", border: "1px solid rgba(239,68,68,0.28)" }}>
+              <div style={{ width: 64, height: 64, background: "linear-gradient(135deg, #f97316, #ef4444)", borderRadius: 14, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 30, marginBottom: 20 }}>▶️</div>
+              <p style={{ fontWeight: 900, fontSize: 18, color: "white", marginBottom: 4 }}>UnicoTube</p>
+              <p style={{ fontSize: 12, color: "#fca5a5", fontWeight: 600, marginBottom: 14 }}>Video Platform · Launching Soon</p>
+              <p style={{ color: "#9ca3af", fontSize: 13, lineHeight: 1.7, marginBottom: 20 }}>Your channel, your audience, your cut. Publish from UnicoClip, grow a real following, and earn from ad revenue.</p>
+              <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 4 }}>
+                <a href="/unicotube"
+                  style={{ background: "linear-gradient(135deg,#ef4444,#f97316)", color: "white", fontWeight: 700, fontSize: 12, padding: "8px 16px", borderRadius: 8, textDecoration: "none" }}>▶️ Join Waitlist</a>
+                <a href="/unicotube" style={{ fontSize: 12, color: "#fca5a5", fontWeight: 700, textDecoration: "none", alignSelf: "center" }}>Learn more →</a>
+              </div>
+            </div>
+
+            {/* UnicoClip */}
+            <div className="card-lift" style={{ borderRadius: 24, padding: "32px 28px", background: "rgba(6,182,212,0.08)", border: "1px solid rgba(6,182,212,0.28)" }}>
+              <div style={{ width: 64, height: 64, background: "linear-gradient(135deg, #5eead4, #06b6d4)", borderRadius: 14, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 30, marginBottom: 20 }}>🎬</div>
+              <p style={{ fontWeight: 900, fontSize: 18, color: "white", marginBottom: 4 }}>UnicoClip</p>
+              <p style={{ fontSize: 12, color: "#5eead4", fontWeight: 600, marginBottom: 14 }}>Video Studio · Launching Soon</p>
+              <p style={{ color: "#9ca3af", fontSize: 13, lineHeight: 1.7, marginBottom: 20 }}>Turn footage, ideas, and your UnicoJam tracks into short videos in minutes — then publish straight to UnicoTube.</p>
+              <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 4 }}>
+                <a href="/unicoclip"
+                  style={{ background: "linear-gradient(135deg,#06b6d4,#14b8a6)", color: "white", fontWeight: 700, fontSize: 12, padding: "8px 16px", borderRadius: 8, textDecoration: "none" }}>🎬 Join Waitlist</a>
+                <a href="/unicoclip" style={{ fontSize: 12, color: "#5eead4", fontWeight: 700, textDecoration: "none", alignSelf: "center" }}>Learn more →</a>
+              </div>
+            </div>
+
+            {/* UnicoMobile */}
+            <div className="card-lift" style={{ borderRadius: 24, padding: "32px 28px", background: "rgba(14,165,233,0.08)", border: "1px solid rgba(14,165,233,0.28)" }}>
+              <div style={{ width: 64, height: 64, background: "linear-gradient(135deg, #7dd3fc, #0ea5e9)", borderRadius: 14, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 30, marginBottom: 20 }}>📶</div>
+              <p style={{ fontWeight: 900, fontSize: 18, color: "white", marginBottom: 4 }}>UnicoMobile</p>
+              <p style={{ fontSize: 12, color: "#7dd3fc", fontWeight: 600, marginBottom: 14 }}>Business Wireless · Coming Soon</p>
+              <p style={{ color: "#9ca3af", fontSize: 13, lineHeight: 1.7, marginBottom: 20 }}>Team phone lines built into UnicoOS — one bill, one login, tied to your CRM and UniRo. Carrier-neutral, in development.</p>
+              <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 4 }}>
+                <a href="/unicomobile"
+                  style={{ background: "linear-gradient(135deg,#0ea5e9,#2563eb)", color: "white", fontWeight: 700, fontSize: 12, padding: "8px 16px", borderRadius: 8, textDecoration: "none" }}>📶 Join Waitlist</a>
+                <a href="/unicomobile" style={{ fontSize: 12, color: "#7dd3fc", fontWeight: 700, textDecoration: "none", alignSelf: "center" }}>Learn more →</a>
               </div>
             </div>
 
@@ -376,9 +477,9 @@ export default function Home() {
           {/* Flagship row */}
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20, marginBottom: 20 }}>
             {[
-              { product: "2k-special", emoji: "🚀", title: "The 2K Special", tag: "Most Popular", price: "$2,350", sub: "State fee included", desc: "Entity formation, EIN, registered agent, logo, email, Google profile, UnicoOS + strategy session. Everything to launch.", highlight: true },
-              { product: "lite-website-app", emoji: "💻", title: "Lite Website / App", tag: "Get Online", price: "$2,000/mo", sub: "+ $2,500 setup", desc: "Professional website or mobile-ready web app. Clean design, fast, SEO-ready. Perfect for businesses that need a strong online presence fast.", highlight: false },
-              { product: "custom-website-app", emoji: "⚡", title: "Custom Website / App", tag: "Premium Build", price: "$10,000", sub: "+ $2,500/mo maintenance", desc: "Fully custom-built website or web app. Unique design, advanced features, built to scale. We maintain it every month so it stays sharp.", highlight: false },
+              { product: "2k-special", emoji: "🚀", title: "The 2K Special", tag: "Most Popular", price: "$2,350", sub: "State fee included", desc: "Entity formation, EIN, registered agent, logo, email, Google profile, UnicoOS + strategy session. Everything to launch.", highlight: true, orderPage: null },
+              { product: "lite-website-app", emoji: "💻", title: "Lite Website / App", tag: "Get Online", price: "$2,000/mo", sub: "+ $2,500 setup", desc: "Professional website or mobile-ready web app. Clean design, fast, SEO-ready. Perfect for businesses that need a strong online presence fast.", highlight: false, orderPage: "/order/lite-website-app" },
+              { product: "custom-website-app", emoji: "⚡", title: "Custom Website / App", tag: "Premium Build", price: "$10,000", sub: "+ $2,500/mo maintenance", desc: "Fully custom-built website or web app. Unique design, advanced features, built to scale. We maintain it every month so it stays sharp.", highlight: false, orderPage: "/order/custom-website-app" },
             ].map(s => (
               <div key={s.product} style={{ background: s.highlight ? "linear-gradient(145deg, rgba(201,168,76,0.15), rgba(79,70,229,0.1))" : "rgba(255,255,255,0.03)", border: `1px solid ${s.highlight ? "rgba(201,168,76,0.35)" : "rgba(255,255,255,0.08)"}`, borderRadius: 20, padding: "28px 24px" }} className="card-lift">
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 12 }}>
@@ -389,8 +490,15 @@ export default function Home() {
                 <p style={{ fontSize: 22, fontWeight: 900, color: s.highlight ? "#c9a84c" : "#818cf8", lineHeight: 1, marginBottom: 2 }}>{s.price}</p>
                 <p style={{ fontSize: 11, color: "#6b7280", marginBottom: 14 }}>{s.sub}</p>
                 <p style={{ color: "#9ca3af", fontSize: 12, lineHeight: 1.6, marginBottom: 20 }}>{s.desc}</p>
-                <BuyButton product={s.product} label="🛒 Order Now" className={s.highlight ? "btn-gold" : "btn-indigo"}
-                  style={{ display: "block", width: "100%", color: "white", fontWeight: 700, fontSize: 14, padding: "12px", borderRadius: 12, border: "none", cursor: "pointer" }} />
+                {s.orderPage ? (
+                  <a href={s.orderPage} className={s.highlight ? "btn-gold" : "btn-indigo"}
+                    style={{ display: "block", width: "100%", boxSizing: "border-box", textAlign: "center", color: "white", fontWeight: 700, fontSize: 14, padding: "12px", borderRadius: 12, border: "none", cursor: "pointer", textDecoration: "none" }}>
+                    🛒 Order Now
+                  </a>
+                ) : (
+                  <BuyButton product={s.product} label="🛒 Order Now" className={s.highlight ? "btn-gold" : "btn-indigo"}
+                    style={{ display: "block", width: "100%", color: "white", fontWeight: 700, fontSize: 14, padding: "12px", borderRadius: 12, border: "none", cursor: "pointer" }} />
+                )}
               </div>
             ))}
           </div>
