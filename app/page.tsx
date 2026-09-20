@@ -95,6 +95,9 @@ export default function Home() {
             <a href="/unicotube"
               style={{ fontSize: 13, color: "#fca5a5", textDecoration: "none", padding: "6px 14px", fontWeight: 600 }}
               className="hidden md:block">UnicoTube</a>
+            <a href="/unicoclip"
+              style={{ fontSize: 13, color: "#5eead4", textDecoration: "none", padding: "6px 14px", fontWeight: 600 }}
+              className="hidden lg:block">UnicoClip</a>
             <a href="#services"
               style={{ fontSize: 13, color: "#9ca3af", textDecoration: "none", padding: "6px 14px" }}
               className="hidden sm:block">Services</a>
@@ -396,6 +399,19 @@ export default function Home() {
                 <a href="/unicotube"
                   style={{ background: "linear-gradient(135deg,#ef4444,#f97316)", color: "white", fontWeight: 700, fontSize: 12, padding: "8px 16px", borderRadius: 8, textDecoration: "none" }}>▶️ Join Waitlist</a>
                 <a href="/unicotube" style={{ fontSize: 12, color: "#fca5a5", fontWeight: 700, textDecoration: "none", alignSelf: "center" }}>Learn more →</a>
+              </div>
+            </div>
+
+            {/* UnicoClip */}
+            <div className="card-lift" style={{ borderRadius: 24, padding: "32px 28px", background: "rgba(6,182,212,0.08)", border: "1px solid rgba(6,182,212,0.28)" }}>
+              <div style={{ width: 64, height: 64, background: "linear-gradient(135deg, #5eead4, #06b6d4)", borderRadius: 14, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 30, marginBottom: 20 }}>🎬</div>
+              <p style={{ fontWeight: 900, fontSize: 18, color: "white", marginBottom: 4 }}>UnicoClip</p>
+              <p style={{ fontSize: 12, color: "#5eead4", fontWeight: 600, marginBottom: 14 }}>Video Studio · Launching Soon</p>
+              <p style={{ color: "#9ca3af", fontSize: 13, lineHeight: 1.7, marginBottom: 20 }}>Turn footage, ideas, and your UnicoJam tracks into short videos in minutes — then publish straight to UnicoTube.</p>
+              <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 4 }}>
+                <a href="/unicoclip"
+                  style={{ background: "linear-gradient(135deg,#06b6d4,#14b8a6)", color: "white", fontWeight: 700, fontSize: 12, padding: "8px 16px", borderRadius: 8, textDecoration: "none" }}>🎬 Join Waitlist</a>
+                <a href="/unicoclip" style={{ fontSize: 12, color: "#5eead4", fontWeight: 700, textDecoration: "none", alignSelf: "center" }}>Learn more →</a>
               </div>
             </div>
 

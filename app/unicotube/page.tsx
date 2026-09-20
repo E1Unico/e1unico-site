@@ -338,6 +338,7 @@ export default function UnicoTubePage() {
             <Link href="/" style={{ color: "#9ca3af", textDecoration: "none", fontWeight: 600 }}>← E1Unico.com</Link>
             <Link href="/unicomusic" style={{ color: "#f9a8d4", textDecoration: "none", fontWeight: 600 }}>UnicoMusic</Link>
             <Link href="/unicojam" style={{ color: "#c4b5fd", textDecoration: "none", fontWeight: 600 }}>UnicoJam</Link>
+            <Link href="/unicoclip" style={{ color: "#5eead4", textDecoration: "none", fontWeight: 600 }}>UnicoClip</Link>
             <span style={{ color: red, fontWeight: 600 }}>UnicoTube</span>
             <a href="https://unicoos.app" target="_blank" rel="noreferrer" style={{ color: "#818cf8", textDecoration: "none", fontWeight: 600 }}>UnicoOS →</a>
             <Link href="/legal/privacy" style={{ color: "#4b5563", textDecoration: "none", fontWeight: 600 }}>Privacy Policy</Link>

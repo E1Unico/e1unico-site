@@ -342,6 +342,7 @@ export default function UnicoJamPage() {
             <span style={{ color: "#7c3aed", fontWeight: 600 }}>UnicoJam</span>
             <Link href="/unicomusic" style={{ color: "#f9a8d4", textDecoration: "none", fontWeight: 600 }}>UnicoMusic</Link>
             <Link href="/unicotube" style={{ color: "#fca5a5", textDecoration: "none", fontWeight: 600 }}>UnicoTube</Link>
+            <Link href="/unicoclip" style={{ color: "#5eead4", textDecoration: "none", fontWeight: 600 }}>UnicoClip</Link>
             <a href="#pricing" style={{ color: gold, textDecoration: "none", fontWeight: 600 }}>Pricing</a>
             <Link href="/legal/privacy" style={{ color: "#4b5563", textDecoration: "none", fontWeight: 600 }}>Privacy Policy</Link>
             <Link href="/legal/terms" style={{ color: "#4b5563", textDecoration: "none", fontWeight: 600 }}>Terms of Service</Link>
