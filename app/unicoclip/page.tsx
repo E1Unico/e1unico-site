@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     title: "UnicoClip — Make the Video. In Minutes.",
     description: "The video studio for creators. Cut short videos fast, add your UnicoJam soundtrack, publish to UnicoTube. Part of the UnicoOS ecosystem.",
   },
+  alternates: { canonical: "/unicoclip" },
 };
 
 const HOW = [

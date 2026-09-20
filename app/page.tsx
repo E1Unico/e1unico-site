@@ -6,6 +6,7 @@ import MobileMenu from "./components/MobileMenu";
 export const metadata: Metadata = {
   title: "E1 Unico Corporation — All-In-One Business Launch & Consulting",
   description: "BBB Accredited. We launch real businesses. The 2K Special gets you registered, branded, and operating. Call 1-833-E1-UNICO.",
+  alternates: { canonical: "/" },
 };
 
 const services = [
@@ -430,6 +431,19 @@ export default function Home() {
                 <a href="/unicomobile"
                   style={{ background: "linear-gradient(135deg,#0ea5e9,#2563eb)", color: "white", fontWeight: 700, fontSize: 12, padding: "8px 16px", borderRadius: 8, textDecoration: "none" }}>📶 Join Waitlist</a>
                 <a href="/unicomobile" style={{ fontSize: 12, color: "#7dd3fc", fontWeight: 700, textDecoration: "none", alignSelf: "center" }}>Learn more →</a>
+              </div>
+            </div>
+
+            {/* UnicoCard */}
+            <div className="card-lift gold-border" style={{ borderRadius: 24, padding: "32px 28px", background: "rgba(14,14,24,0.9)" }}>
+              <div style={{ width: 64, height: 64, background: "linear-gradient(135deg, #f0c96e, #c9a84c)", borderRadius: 14, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 30, marginBottom: 20 }}>💳</div>
+              <p style={{ fontWeight: 900, fontSize: 18, color: "white", marginBottom: 4 }}>UnicoCard</p>
+              <p style={{ fontSize: 12, color: "#c9a84c", fontWeight: 600, marginBottom: 14 }}>Smart NFC Business Card · Live</p>
+              <p style={{ color: "#9ca3af", fontSize: 13, lineHeight: 1.7, marginBottom: 20 }}>One tap shares your contact and links, captures the lead into your CRM, and tracks every tap. Roadmap: provision your Unico Mobile eSIM.</p>
+              <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 4 }}>
+                <a href="/unicocard" className="btn-gold"
+                  style={{ color: "white", fontWeight: 700, fontSize: 12, padding: "8px 16px", borderRadius: 8, textDecoration: "none" }}>💳 Learn more</a>
+                <a href="https://unicoos.app" target="_blank" rel="noreferrer" style={{ fontSize: 12, color: "#c9a84c", fontWeight: 700, textDecoration: "none", alignSelf: "center" }}>Get on UnicoOS →</a>
               </div>
             </div>
 

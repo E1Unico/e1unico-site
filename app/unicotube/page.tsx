@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     title: "UnicoTube — Your Channel. Your Audience. Your Cut.",
     description: "The creator-first video platform. Publish from UnicoClip, grow a channel, earn a share of ad revenue. Part of the UnicoOS ecosystem.",
   },
+  alternates: { canonical: "/unicotube" },
 };
 
 const HOW = [
