@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 
 const SIZES = ["Just me", "2–5 lines", "6–20 lines", "20+ lines", "Not sure yet"];
 
@@ -52,6 +53,9 @@ export default function WaitlistForm() {
           We&apos;ll email <strong style={{ color: "white" }}>{email}</strong> as UnicoMobile opens in your area.
           No commitment — this just saves your spot.
         </p>
+        <Link href="/apps" style={{ display: "inline-block", marginTop: 16, fontSize: 13, color: "#818cf8", fontWeight: 700, textDecoration: "none" }}>
+          While you wait, explore the whole Unico ecosystem →
+        </Link>
       </div>
     );
   }

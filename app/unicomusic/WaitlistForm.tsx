@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 
 const ROLES = ["Recording artist", "Producer / beatmaker", "Content creator", "Church / worship", "Label / A&R", "Just here to listen"];
 
@@ -52,6 +53,9 @@ export default function WaitlistForm() {
           We&apos;ll email <strong style={{ color: "white" }}>{email}</strong> the moment UnicoMusic early access opens.
           Creators who join early get priority placement.
         </p>
+        <Link href="/apps" style={{ display: "inline-block", marginTop: 16, fontSize: 13, color: "#818cf8", fontWeight: 700, textDecoration: "none" }}>
+          While you wait, explore the whole Unico ecosystem →
+        </Link>
       </div>
     );
   }

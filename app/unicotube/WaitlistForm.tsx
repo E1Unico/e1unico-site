@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 
 const ROLES = ["Video creator", "Vlogger", "Musician / music videos", "Church / ministry", "Business / brand", "Just here to watch"];
 
@@ -52,6 +53,9 @@ export default function WaitlistForm() {
           We&apos;ll email <strong style={{ color: "white" }}>{email}</strong> the moment UnicoTube early access opens.
           Creators who join early get priority placement and first pick of channel handles.
         </p>
+        <Link href="/apps" style={{ display: "inline-block", marginTop: 16, fontSize: 13, color: "#818cf8", fontWeight: 700, textDecoration: "none" }}>
+          While you wait, explore the whole Unico ecosystem →
+        </Link>
       </div>
     );
   }
