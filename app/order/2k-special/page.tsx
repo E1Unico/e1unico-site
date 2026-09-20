@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import OrderForm from "./form";
 
 export const metadata: Metadata = {
@@ -23,10 +24,10 @@ export default function TwoKSpecialPage() {
   return (
     <main style={{ minHeight: "100vh", background: "#05050a", color: "white", paddingTop: 80 }}>
       <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 50, background: "rgba(5,5,10,0.9)", backdropFilter: "blur(16px)", borderBottom: "1px solid rgba(255,255,255,0.06)", padding: "12px 20px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-        <a href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
+        <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
           <Image src="/e1unico-logo.jpg" alt="E1 Unico" width={32} height={32} style={{ width: 32, height: 32, objectFit: "contain", borderRadius: 8, background: "white", padding: 2 }} />
           <span style={{ fontWeight: 900, fontSize: 14, color: "white" }}>E1 Unico <span style={{ color: "#c9a84c" }}>Corporation</span></span>
-        </a>
+        </Link>
         <a href="tel:18333186426" style={{ background: "linear-gradient(135deg, #c9a84c, #9a7a2e)", color: "white", fontWeight: 700, fontSize: 13, padding: "8px 18px", borderRadius: 999, textDecoration: "none" }}>📞 Call Now</a>
       </nav>
 

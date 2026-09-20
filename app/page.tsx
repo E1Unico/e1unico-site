@@ -216,7 +216,7 @@ export default function Home() {
 
           <div style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: 40, alignItems: "start" }} className="lg:grid-cols-[1fr_320px] grid-cols-1">
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }} className="sm:grid-cols-2 grid-cols-1">
-              {services.map((item, i) => (
+              {services.map((item) => (
                 <div key={item.title} className="card-lift gold-border" style={{ borderRadius: 16, padding: "18px 20px", background: "rgba(14,14,24,0.8)" }}>
                   <div style={{ display: "flex", alignItems: "flex-start", gap: 14 }}>
                     <span style={{ fontSize: 24, flexShrink: 0, marginTop: 2 }}>{item.emoji}</span>

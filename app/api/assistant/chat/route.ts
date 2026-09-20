@@ -80,7 +80,7 @@ export async function POST(req: NextRequest) {
       });
       const data = await res.json();
       const reply: string =
-        data?.candidates?.[0]?.content?.parts?.map((p: any) => p.text).join("").trim() ||
+        data?.candidates?.[0]?.content?.parts?.map((p: { text?: string }) => p.text).join("").trim() ||
         "I caught a glitch — please tap 🧠 Request a callback below and Unico will reach out directly.";
       return NextResponse.json({ reply });
     }

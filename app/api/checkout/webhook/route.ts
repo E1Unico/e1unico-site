@@ -156,7 +156,6 @@ Reach out within 24 hours.`;
   const delivered = results.some(r => r.status === "fulfilled" && r.value === true);
 
   // Always log to Vercel runtime logs so a sale is never silently dropped.
-  // eslint-disable-next-line no-console
   console.log("[checkout-webhook] sale", { product, amount, email, delivered });
 
   return NextResponse.json({ received: true, delivered });
