@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     title: "UnicoMusic — Stream It. Share It. Get Paid.",
     description: "The streaming platform for creators. Publish from UnicoJam, reach listeners, earn a share of ad revenue. Part of the UnicoOS ecosystem.",
   },
+  alternates: { canonical: "/unicomusic" },
 };
 
 const HOW = [

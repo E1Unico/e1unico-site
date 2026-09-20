@@ -6,6 +6,7 @@ import MobileMenu from "./components/MobileMenu";
 export const metadata: Metadata = {
   title: "E1 Unico Corporation — All-In-One Business Launch & Consulting",
   description: "BBB Accredited. We launch real businesses. The 2K Special gets you registered, branded, and operating. Call 1-833-E1-UNICO.",
+  alternates: { canonical: "/" },
 };
 
 const services = [

@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     title: "UnicoMobile — Wireless, Built Into Your Business",
     description: "Business phone lines designed to live inside UnicoOS — one bill, one login, built to connect with your CRM and UniRo. Carrier-neutral by design. In development — join the waitlist.",
   },
+  alternates: { canonical: "/unicomobile" },
 };
 
 const HOW = [

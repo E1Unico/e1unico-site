@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     title: "UnicoJam — AI Music Studio",
     description: "Type it. Hear it. Own it. Full AI songs from a single prompt. Part of the UnicoOS ecosystem.",
   },
+  alternates: { canonical: "/unicojam" },
 };
 
 const HOW = [

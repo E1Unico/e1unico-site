@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     title: "The Unico App Ecosystem",
     description: "Run your business, create, distribute, earn, and connect — all under one login. See every Unico app.",
   },
+  alternates: { canonical: "/apps" },
 };
 
 type App = {
