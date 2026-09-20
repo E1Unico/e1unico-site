@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Metadata } from "next";
 import BuyButton from "./components/BuyButton";
+import MobileMenu from "./components/MobileMenu";
 
 export const metadata: Metadata = {
   title: "E1 Unico Corporation — All-In-One Business Launch & Consulting",
@@ -108,6 +109,7 @@ export default function Home() {
               style={{ color: "white", fontWeight: 700, fontSize: 13, padding: "8px 18px", borderRadius: 999, textDecoration: "none", display: "inline-block" }}>
               📞 Call Now
             </a>
+            <MobileMenu />
           </div>
         </div>
       </nav>
