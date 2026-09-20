@@ -24,9 +24,9 @@ const HOW = [
 const COMPARE: { feature: string; unicotube: string; others: string }[] = [
   { feature: "Publish straight from your studio", unicotube: "One tap from UnicoClip", others: "Export, re-encode, re-upload" },
   { feature: "One login for your whole business", unicotube: "UnicoOS single sign-on", others: "Separate account, siloed" },
-  { feature: "When monetization turns on", unicotube: "Built in from launch — no subscriber gate", others: "Locked behind 1,000-sub thresholds" },
+  { feature: "When monetization turns on", unicotube: "No subscriber gate to start", others: "Often gated behind subscriber thresholds" },
   { feature: "Faith-friendly content standard", unicotube: "On by default", others: "None" },
-  { feature: "Own your content", unicotube: "Yours — you keep your rights", others: "Varies / restrictive terms" },
+  { feature: "Keep your videos", unicotube: "Yours to share and re-post", others: "Varies / restrictive terms" },
   { feature: "Runs where your business already lives", unicotube: "Inside UnicoOS + standalone", others: "Standalone only" },
 ];
 
@@ -36,7 +36,7 @@ const FAQ: { q: string; a: string }[] = [
   { q: "What is UnicoTube?", a: "It's the video platform for the Unico ecosystem — a home where creators upload and grow channels, viewers watch for free, and the videos people make (including clips created in UnicoClip) get discovered. Think a creator-first take on video." },
   { q: "How do I get my videos on it?", a: "If you made it in UnicoClip, you'll be able to publish it to your UnicoTube channel in a single tap. You can also upload your own finished videos with your own thumbnail, title, and description." },
   { q: "How do creators make money?", a: "UnicoTube is built to be ad-supported with a creator revenue share, so your views turn into earnings — without the big-platform subscriber thresholds. The exact split and payout details are being finalized ahead of launch. Join the waitlist to see them first." },
-  { q: "Do I own my videos?", a: "Yes. You keep your content and your rights. UnicoTube is a place to reach viewers and earn — not a rights grab." },
+  { q: "Do I own my videos?", a: "Your videos are yours — yours to share, re-post, and take with you. UnicoTube is a place to reach viewers and earn, not a rights grab." },
   { q: "Do I need UnicoOS to use it?", a: "No. UnicoTube works with its own login. But if you already run your business or make content on UnicoOS, it shows up as one of your apps automatically — same account, same balance." },
   { q: "Is the content family- and faith-friendly?", a: "By design. UnicoTube applies the same faith-affirming content standard used across the whole Unico ecosystem." },
   { q: "When does it launch?", a: "Early access opens in waves. Join the waitlist to be first in line — creators who join early get priority placement and channel handles when the doors open." },
@@ -53,7 +53,7 @@ const JSON_LD = {
       applicationCategory: "MultimediaApplication",
       operatingSystem: "Web, iOS, Android",
       description:
-        "Video platform for the Unico ecosystem. Creators upload videos (including clips made in UnicoClip), grow channels, viewers watch, and creators earn a share of ad revenue. One login across UnicoOS with a faith-friendly content standard.",
+        "Video platform for the Unico ecosystem, launching soon (early-access waitlist open). Creators upload videos (including clips made in UnicoClip), grow channels, viewers watch, and creators earn a share of ad revenue. One login across UnicoOS with a faith-friendly content standard.",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD", description: "Free to watch; creators earn from ad revenue share" },
       publisher: { "@type": "Organization", name: "E1 Unico Corporation", url: "https://e1unico.com" },
     },
@@ -73,8 +73,8 @@ const CREATOR_GETS = [
   "Upload your own finished videos",
   "A real channel viewers can subscribe to",
   "Ad-supported streaming with a creator revenue share",
-  "No subscriber threshold to start earning",
-  "Keep your content and your rights",
+  "No subscriber threshold gating monetization",
+  "Keep your videos — yours to share and re-post",
   "One account across UnicoOS + the standalone app",
 ];
 
@@ -94,7 +94,8 @@ export default function UnicoTubePage() {
         </Link>
         <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
           <a href="#how" className="hidden sm:block" style={{ fontSize: 13, color: "#9ca3af", textDecoration: "none", padding: "6px 12px" }}>How it works</a>
-          <a href="/unicomusic" className="hidden sm:block" style={{ fontSize: 13, color: "#f9a8d4", textDecoration: "none", padding: "6px 12px" }}>UnicoMusic</a>
+          <a href="/unicomusic" className="hidden md:block" style={{ fontSize: 13, color: "#f9a8d4", textDecoration: "none", padding: "6px 12px" }}>UnicoMusic</a>
+          <a href="/unicojam" className="hidden sm:block" style={{ fontSize: 13, color: "#c4b5fd", textDecoration: "none", padding: "6px 12px" }}>UnicoJam</a>
           <a href="#waitlist" style={{ color: "white", fontWeight: 700, fontSize: 13, padding: "8px 18px", borderRadius: 999, textDecoration: "none", background: "linear-gradient(135deg,#ef4444,#f97316)" }}>Get Early Access</a>
         </div>
       </nav>
@@ -218,10 +219,10 @@ export default function UnicoTubePage() {
           <div style={{ textAlign: "center", marginBottom: 48 }}>
             <p style={{ fontSize: 11, fontWeight: 700, color: "#fca5a5", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 12 }}>Why UnicoTube</p>
             <h2 style={{ fontSize: "clamp(28px, 4.5vw, 48px)", fontWeight: 900, letterSpacing: "-0.02em", marginBottom: 14 }}>
-              No 1,000-subscriber wall to start earning.
+              No subscriber wall before you can earn.
             </h2>
             <p style={{ color: "#6b7280", fontSize: 15, maxWidth: 560, margin: "0 auto", lineHeight: 1.6 }}>
-              The big platforms make you grind to a threshold before they share a dime. UnicoTube is being built creator-first — your work counts from day one.
+              The big platforms often make you grind to a subscriber threshold before they share a dime. UnicoTube is being built creator-first — monetization isn&apos;t gated behind a follower count.
             </p>
           </div>
 

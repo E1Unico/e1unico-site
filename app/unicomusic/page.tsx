@@ -24,9 +24,9 @@ const HOW = [
 const COMPARE: { feature: string; unicomusic: string; others: string }[] = [
   { feature: "Publish straight from your AI studio", unicomusic: "One tap from UnicoJam", others: "Export, re-upload, distributor fees" },
   { feature: "One login for your whole business", unicomusic: "UnicoOS single sign-on", others: "Separate account, siloed" },
-  { feature: "Creator gets paid", unicomusic: "Ad revenue share, built in", others: "Fractions of a cent, gated behind thresholds" },
+  { feature: "Creator gets paid", unicomusic: "Ad revenue share, built in", others: "Often a fraction of a cent per stream" },
   { feature: "Faith-friendly content standard", unicomusic: "On by default", others: "None" },
-  { feature: "Own your masters", unicomusic: "Yours — you keep your rights", others: "Varies / restrictive terms" },
+  { feature: "Keep your tracks", unicomusic: "Yours to share and release", others: "Varies / restrictive terms" },
   { feature: "Label path for serious artists", unicomusic: "Multi Genre Records", others: "You're on your own" },
 ];
 
@@ -36,7 +36,7 @@ const FAQ: { q: string; a: string }[] = [
   { q: "What is UnicoMusic?", a: "It's the streaming platform for the Unico ecosystem — think a home where the music people make (including songs created in UnicoJam) gets published, discovered, and streamed. Listeners play for free; creators earn from ad revenue." },
   { q: "How do I get my music on it?", a: "If you made it in UnicoJam, you'll be able to publish it to UnicoMusic in a single tap — no distributor, no re-upload. You can also upload your own finished tracks with your own cover art and credits." },
   { q: "How do creators make money?", a: "UnicoMusic is built to be ad-supported with a creator revenue share, so your plays turn into earnings. The exact split and payout details are being finalized ahead of launch — join the waitlist and you'll be first to see them." },
-  { q: "Do I own my music?", a: "Yes. You keep your masters and your rights. UnicoMusic is a place to reach listeners and earn — not a rights grab." },
+  { q: "Do I own my music?", a: "Your music is yours — yours to share, release, and take with you. UnicoMusic is a place to reach listeners and earn, not a rights grab." },
   { q: "Do I need UnicoOS to use it?", a: "No. UnicoMusic works with its own login. But if you already run your business or make music on UnicoOS, it shows up as one of your apps automatically — same account, same balance." },
   { q: "Is the content family- and faith-friendly?", a: "By design. UnicoMusic applies the same faith-affirming content standard used across the whole Unico ecosystem." },
   { q: "When does it launch?", a: "Early access opens in waves. Join the waitlist to be first in line — creators who join early get priority placement when the doors open." },
@@ -53,7 +53,7 @@ const JSON_LD = {
       applicationCategory: "MultimediaApplication",
       operatingSystem: "Web, iOS, Android",
       description:
-        "Music streaming platform for the Unico ecosystem. Creators publish songs (including tracks made in UnicoJam), listeners stream, and creators earn a share of ad revenue. One login across UnicoOS with a faith-friendly content standard.",
+        "Music streaming platform for the Unico ecosystem, launching soon (early-access waitlist open). Creators publish songs (including tracks made in UnicoJam), listeners stream, and creators earn a share of ad revenue. One login across UnicoOS with a faith-friendly content standard.",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD", description: "Free to listen; creators earn from ad revenue share" },
       publisher: { "@type": "Organization", name: "E1 Unico Corporation", url: "https://e1unico.com" },
     },
@@ -73,7 +73,7 @@ const CREATOR_GETS = [
   "Upload your own finished tracks",
   "A real, searchable catalog + listener follows",
   "Ad-supported streaming with a creator revenue share",
-  "Keep your masters and your rights",
+  "Keep your tracks — yours to share and release",
   "One account across UnicoOS + the standalone app",
   "Label path through Multi Genre Records",
 ];
@@ -93,6 +93,7 @@ export default function UnicoMusicPage() {
         </Link>
         <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
           <a href="#how" className="hidden sm:block" style={{ fontSize: 13, color: "#9ca3af", textDecoration: "none", padding: "6px 12px" }}>How it works</a>
+          <a href="/unicotube" className="hidden md:block" style={{ fontSize: 13, color: "#fca5a5", textDecoration: "none", padding: "6px 12px" }}>UnicoTube</a>
           <a href="/unicojam" className="hidden sm:block" style={{ fontSize: 13, color: "#c4b5fd", textDecoration: "none", padding: "6px 12px" }}>UnicoJam</a>
           <a href="#waitlist" style={{ color: "white", fontWeight: 700, fontSize: 13, padding: "8px 18px", borderRadius: 999, textDecoration: "none", background: "linear-gradient(135deg,#ec4899,#a855f7)" }}>Get Early Access</a>
         </div>

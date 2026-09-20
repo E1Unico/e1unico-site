@@ -91,7 +91,7 @@ export default function Home() {
               className="hidden sm:block">UnicoJam</a>
             <a href="/unicomusic"
               style={{ fontSize: 13, color: "#f9a8d4", textDecoration: "none", padding: "6px 14px", fontWeight: 600 }}
-              className="hidden sm:block">UnicoMusic</a>
+              className="hidden md:block">UnicoMusic</a>
             <a href="/unicotube"
               style={{ fontSize: 13, color: "#fca5a5", textDecoration: "none", padding: "6px 14px", fontWeight: 600 }}
               className="hidden md:block">UnicoTube</a>
