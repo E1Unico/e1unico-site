@@ -336,7 +336,7 @@ export default function UnicoMusicPage() {
           <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "6px 24px", marginBottom: 16, fontSize: 12 }}>
             <Link href="/" style={{ color: "#9ca3af", textDecoration: "none", fontWeight: 600 }}>← E1Unico.com</Link>
             <Link href="/unicojam" style={{ color: "#c4b5fd", textDecoration: "none", fontWeight: 600 }}>UnicoJam</Link>
-            <Link href="/unicotube" style={{ color: "#f87171", textDecoration: "none", fontWeight: 600 }}>UnicoTube</Link>
+            <Link href="/unicotube" style={{ color: "#fca5a5", textDecoration: "none", fontWeight: 600 }}>UnicoTube</Link>
             <Link href="/unicoclip" style={{ color: "#5eead4", textDecoration: "none", fontWeight: 600 }}>UnicoClip</Link>
             <span style={{ color: pink, fontWeight: 600 }}>UnicoMusic</span>
             <a href="https://unicoos.app" target="_blank" rel="noreferrer" style={{ color: "#818cf8", textDecoration: "none", fontWeight: 600 }}>UnicoOS →</a>

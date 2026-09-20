@@ -23,6 +23,7 @@ E1 Unico Corporation is a SAM.gov registered federal contractor (UEI: YSEHX6CMMW
 - [UnicoMusic](https://e1unico.com/unicomusic): Music streaming platform, launching soon — creators publish songs (including tracks made in UnicoJam), listeners stream free, and creators earn a share of ad revenue.
 - [UnicoTube](https://e1unico.com/unicotube): Video platform, launching soon — creators upload videos (including clips made in UnicoClip), grow channels, viewers watch free, and creators earn a share of ad revenue.
 - [UnicoClip](https://e1unico.com/unicoclip): Video creation studio, launching soon — turn footage, ideas, and UnicoJam tracks into short shareable videos, then publish straight to a UnicoTube channel.
+- [UnicoMobile](https://e1unico.com/unicomobile): Business wireless in development (coming soon) — team phone lines designed to live inside UnicoOS, one bill and one login, tied to the CRM and UniRo AI receptionist. Carrier-neutral by design; coverage, plans, and pricing to be announced.
 - [Industrial Drip](https://industrialdrip.net): PPE and safety gear e-commerce.
 
 ## Trust & Compliance
