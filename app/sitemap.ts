@@ -5,6 +5,7 @@ const BASE_URL = "https://e1unico.com";
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     { path: "/", priority: 1, changeFrequency: "weekly" as const },
+    { path: "/apps", priority: 0.9, changeFrequency: "weekly" as const },
     { path: "/unicojam", priority: 0.8, changeFrequency: "weekly" as const },
     { path: "/unicomusic", priority: 0.8, changeFrequency: "weekly" as const },
     { path: "/unicotube", priority: 0.8, changeFrequency: "weekly" as const },

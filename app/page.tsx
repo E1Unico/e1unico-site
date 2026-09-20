@@ -336,6 +336,9 @@ export default function Home() {
           <div style={{ textAlign: "center", marginBottom: 60 }}>
             <p style={{ fontSize: 11, fontWeight: 700, color: "#c9a84c", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 12 }}>The E1 Unico Family</p>
             <h2 style={{ fontSize: "clamp(28px, 4vw, 52px)", fontWeight: 900, letterSpacing: "-0.02em" }}>Our Companies</h2>
+            <p style={{ marginTop: 14 }}>
+              <a href="/apps" style={{ fontSize: 14, color: "#818cf8", fontWeight: 700, textDecoration: "none" }}>Explore the whole Unico app ecosystem →</a>
+            </p>
           </div>
 
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }} className="sm:grid-cols-2 grid-cols-1">

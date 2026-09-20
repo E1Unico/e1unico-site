@@ -11,6 +11,7 @@ type LinkItem = { label: string; href: string; color?: string; external?: boolea
 
 const LINKS: LinkItem[] = [
   { label: "The 2K Special", href: "#services", color: "#c9a84c" },
+  { label: "All Unico Apps", href: "/apps", color: "#818cf8" },
   { label: "UnicoOS", href: "https://unicoos.app", color: "#818cf8", external: true },
   { label: "UnicoJam", href: "/unicojam", color: "#a78bfa" },
   { label: "UnicoMusic", href: "/unicomusic", color: "#f9a8d4" },
