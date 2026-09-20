@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 };
 
 const HOW = [
-  { emoji: "🎬", title: "Start it", desc: "Drop in your footage, pick a template, or start from a script. Add captions, your logo, and a UnicoJam track for the soundtrack." },
+  { emoji: "🎬", title: "Start it", desc: "Drop in your footage, pick a template, or start from a simple outline. Add captions, your logo, and a UnicoJam track for the soundtrack." },
   { emoji: "✂️", title: "Cut it", desc: "Trim, caption, and arrange in a simple timeline built for speed — no pro editor required. What used to take hours takes minutes." },
   { emoji: "🚀", title: "Publish it", desc: "Export a clean video, or push it straight to your UnicoTube channel in a tap. Same account, same ecosystem — no re-upload." },
 ];
@@ -25,7 +25,7 @@ const COMPARE: { feature: string; unicoclip: string; others: string }[] = [
   { feature: "Publish straight to your channel", unicoclip: "One tap to UnicoTube", others: "Export, re-encode, re-upload" },
   { feature: "One login for your whole business", unicoclip: "UnicoOS single sign-on", others: "Separate account, siloed" },
   { feature: "Your soundtrack, in-house", unicoclip: "Drop in a UnicoJam track", others: "Hunt for royalty-free music" },
-  { feature: "Honest about AI", unicoclip: "AI helps; we tell you what's AI", others: "Fuzzy or overstated claims" },
+  { feature: "Honest about AI", unicoclip: "AI helps; we tell you what's AI", others: "Often vague about it" },
   { feature: "Faith-friendly content standard", unicoclip: "On by default", others: "None" },
   { feature: "Runs where your business already lives", unicoclip: "Inside UnicoOS + standalone", others: "Standalone only" },
 ];
@@ -33,7 +33,7 @@ const COMPARE: { feature: string; unicoclip: string; others: string }[] = [
 const USES = ["Shorts", "Reels", "Promos", "Vlogs", "Tutorials", "Music Videos", "Ads", "Testimonials", "Explainers", "Recaps", "Announcements", "Faith", "How-To", "Behind-the-Scenes"];
 
 const FAQ: { q: string; a: string }[] = [
-  { q: "What is UnicoClip?", a: "It's the video studio for the Unico ecosystem — the fastest way to turn footage, ideas, and your UnicoJam tracks into short, shareable videos. It's the make-it half of video; UnicoTube is where you publish and grow." },
+  { q: "What is UnicoClip?", a: "It's the video studio for the Unico ecosystem — a fast way to turn footage, ideas, and your UnicoJam tracks into short, shareable videos. It's the make-it half of video; UnicoTube is where you publish and grow." },
   { q: "How is it connected to UnicoTube?", a: "They're built to work as one. Cut a video in UnicoClip, then publish it straight to your UnicoTube channel in a tap — no export-and-re-upload dance. Same account across the whole ecosystem." },
   { q: "Does it use AI?", a: "AI helps where it saves you time — and we're honest about it. Where a feature relies on AI, we say so plainly rather than overstating what it can do. You stay in control of the final cut." },
   { q: "Do I own what I make?", a: "Your videos are yours — yours to export, share, and take with you. UnicoClip is a tool to make your content faster, not a rights grab." },
