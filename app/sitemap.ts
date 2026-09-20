@@ -6,6 +6,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     { path: "/", priority: 1, changeFrequency: "weekly" as const },
     { path: "/unicojam", priority: 0.8, changeFrequency: "weekly" as const },
+    { path: "/unicomusic", priority: 0.8, changeFrequency: "weekly" as const },
+    { path: "/unicotube", priority: 0.8, changeFrequency: "weekly" as const },
     { path: "/manuel", priority: 0.5, changeFrequency: "monthly" as const },
     { path: "/trust", priority: 0.6, changeFrequency: "monthly" as const },
     { path: "/order/2k-special", priority: 0.7, changeFrequency: "monthly" as const },
