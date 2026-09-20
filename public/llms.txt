@@ -15,7 +15,7 @@ E1 Unico Corporation is a SAM.gov registered federal contractor (UEI: YSEHX6CMMW
 
 ## UnicoOS
 
-[UnicoOS](https://unicoos.app) is E1 Unico Corporation's all-in-one Business Operating System — CRM, invoicing, an AI receptionist (UniRo), accounting, safety, fleet management, and 100+ modules under one login. Plans range from a free personal-finance tier to $797/mo for unlimited-user enterprise use. Register at https://unicoos.app/register.
+[UnicoOS](https://unicoos.app) is E1 Unico Corporation's all-in-one Business Operating System — CRM, invoicing, an AI receptionist (UniRo), accounting, safety, fleet management, and 40+ modules under one login. Plans range from a free personal-finance tier to $797/mo for unlimited-user enterprise use. Register at https://unicoos.app/register.
 
 ## App Ecosystem
 

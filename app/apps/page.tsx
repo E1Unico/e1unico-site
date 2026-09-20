@@ -32,7 +32,7 @@ const GROUPS: { key: string; label: string; sub: string; apps: App[] }[] = [
     label: "Run your business",
     sub: "The operating system everything else plugs into.",
     apps: [
-      { name: "Unico", tail: "OS", wordmarkTail: "OS", emoji: "🧩", status: "Live", statusColor: "#818cf8", blurb: "The all-in-one Business Operating System — CRM, invoicing, AI receptionist, accounting, and 100+ modules under one login.", href: "https://unicoos.app", external: true, grad: "linear-gradient(135deg,#818cf8,#06b6d4)", accent: "#818cf8" },
+      { name: "Unico", tail: "OS", wordmarkTail: "OS", emoji: "🧩", status: "Live", statusColor: "#818cf8", blurb: "The all-in-one Business Operating System — CRM, invoicing, AI receptionist, accounting, and 40+ modules under one login.", href: "https://unicoos.app", external: true, grad: "linear-gradient(135deg,#818cf8,#06b6d4)", accent: "#818cf8" },
     ],
   },
   {
@@ -115,8 +115,8 @@ export default function AppsPage() {
             One login.<br /><span className="gold-text">One empire.</span>
           </h1>
           <p style={{ fontSize: 18, color: "#9ca3af", maxWidth: 620, margin: "0 auto", lineHeight: 1.6 }}>
-            Every Unico app works on its own — and better together. Run your business, create music and video,
-            publish and earn, and stay connected. Same account, same balance, one ecosystem.
+            Every Unico app is built to work on its own — and better together. Run your business, create music and video,
+            publish and earn, and stay connected. One account, one balance, one ecosystem.
           </p>
         </div>
       </section>
@@ -188,8 +188,8 @@ export default function AppsPage() {
           </h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))", gap: 16 }}>
             {[
-              { emoji: "🔑", title: "One login", desc: "The same account signs you into every Unico app. No new password per product." },
-              { emoji: "💳", title: "One balance", desc: "UnicoAI credits are shared across the ecosystem — spend them wherever you need." },
+              { emoji: "🔑", title: "One login", desc: "One Unico account is built to sign you into every app as it launches — no new password per product." },
+              { emoji: "💳", title: "One balance", desc: "UnicoAI credits are designed to work across the ecosystem — spend them wherever you go." },
               { emoji: "🙏", title: "Faith-friendly", desc: "A family- and faith-affirming content standard runs across the whole ecosystem, by default." },
               { emoji: "🦅", title: "One company", desc: "All built and backed by E1 Unico Corporation — BBB accredited, Texas based." },
             ].map(c => (
