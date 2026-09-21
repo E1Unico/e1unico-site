@@ -27,13 +27,16 @@ const LIVE = [
   { emoji: "🏷️", title: "Categories built for tax time", desc: "Around 180 detailed categories — rent, dentist, church, a tax refund, a reimbursement, an IRA contribution — each with a plain note on how it usually lands at tax time. New bank rows arrive already sorted; a rule applies your pick to the rest." },
   { emoji: "📋", title: "A year-end tax worksheet", desc: "Your year grouped the way a preparer asks: what may qualify for a deduction or credit, income by the form it arrives on, money in that isn't income, payments that aren't expenses. One CSV for your preparer. Pointers, never a determination." },
   { emoji: "📎", title: "Receipts on the charge", desc: "Snap a photo or drop a PDF onto any transaction. It rides your deductible export and, if you file with UniTax File, goes to the preparer with the return." },
-  { emoji: "🧾", title: "It feeds your return", desc: "On UniTax File, the Deductions and Credits steps suggest figures straight from your worksheet and the Income step lists the forms to expect. Suggestions you confirm — nothing reaches the return on its own." },
+  { emoji: "🧾", title: "It feeds your return", desc: "On UniTax File, the Deductions and Credits steps suggest figures straight from your worksheet, the Income step lists the forms to expect, and the Payments step lists the estimated payments your feed already saw — one tap records each. Suggestions you confirm; nothing reaches the return on its own. Hand the return to the preparer and the worksheet rides along as a CSV." },
+  { emoji: "↗️", title: "Worksheet to return, one tap", desc: "Each pile on the Taxes tab links to the UniTax File step that reads it, and the \"sort these\" notes open your ledger on exactly those rows." },
+  { emoji: "🗓️", title: "Estimated-tax pointer", desc: "Self-employment or gig income in your feed? See the income so far, the estimated payments already sent and the next federal date — moved off weekends and holidays the way the IRS does — with an opt-in reminder before each one. What's owed stays your preparer's call." },
+  { emoji: "☑️", title: "Sort a batch at once", desc: "Tick the rows, then set one category or the Deductible tag for the lot — on your phone too. Fast picking is the whole point of the categories." },
 ];
 
 // Built and in review — the owner merges each one after a look.
 const ROLLING = [
-  { emoji: "↗️", title: "Worksheet to return, one tap", desc: "Each pile on the Taxes tab links to the UniTax File step that reads it, and the \"sort these\" notes open your ledger on exactly those rows." },
-  { emoji: "🗓️", title: "Estimated-tax pointer", desc: "Self-employment or gig income in your feed? See the income so far, the estimated payments already sent and the next federal date — with an opt-in reminder before each one. What's owed stays your preparer's call." },
+  { emoji: "✅", title: "Ready to hand off?", desc: "One checklist on the Taxes tab: rows still unsorted, income under the bank's own label, deductible charges without a receipt, forms the feed expects that aren't on your return, estimated payments not yet recorded, and where the return stands — each line a link to the place that fixes it." },
+  { emoji: "🔍", title: "Compared with last year", desc: "The lines last year's worksheet had that this year hasn't seen yet — a property-tax bill, a December donation — compared through today, so you can chase a row still under the bank's label before the worksheet goes out." },
 ];
 
 // Qualitative on purpose — no competitor prices or feature claims we can't stand behind.
@@ -43,7 +46,7 @@ const COMPARE: { feature: string; uni: string; others: string }[] = [
   { feature: "Your business money too", uni: "Same login, side by side, walled apart", others: "Personal only" },
   { feature: "Who can see your personal accounts", uni: "You. Never your company or teammates", others: "Varies" },
   { feature: "Cancelling a subscription", uni: "Guided, then verified against the next charge", others: "Done-for-you, typically paid" },
-  { feature: "Tax time", uni: "Categories with tax notes, a year-end worksheet, receipts on the charge — free", others: "Often a paid tier, or a separate app" },
+  { feature: "Tax time", uni: "Categories with tax notes, batch sorting, a year-end worksheet, receipts on the charge, an estimated-tax pointer — free", others: "Often a paid tier, or a separate app" },
 ];
 
 const FAQ: { q: string; a: string }[] = [
