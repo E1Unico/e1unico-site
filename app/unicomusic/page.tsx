@@ -26,7 +26,7 @@ const COMPARE: { feature: string; unicomusic: string; others: string }[] = [
   { feature: "Publish straight from your AI studio", unicomusic: "One tap from UnicoJam", others: "Export, re-upload, distributor fees" },
   { feature: "One login for your whole business", unicomusic: "UnicoOS single sign-on", others: "Separate account, siloed" },
   { feature: "Creator gets paid", unicomusic: "Ad revenue share, built in", others: "Often a fraction of a cent per stream" },
-  { feature: "Faith-friendly content standard", unicomusic: "On by default", others: "None" },
+  { feature: "Every genre welcome", unicomusic: "Gospel to drill to EDM, one platform", others: "Whatever the algorithm favors" },
   { feature: "Keep your tracks", unicomusic: "Yours to share and release", others: "Varies / restrictive terms" },
   { feature: "Label path for serious artists", unicomusic: "Multi Genre Records", others: "You're on your own" },
 ];
@@ -39,7 +39,7 @@ const FAQ: { q: string; a: string }[] = [
   { q: "How do creators make money?", a: "UnicoMusic is built to be ad-supported with a creator revenue share, so your plays turn into earnings. The exact split and payout details are being finalized ahead of launch — join the waitlist and you'll be first to see them." },
   { q: "Do I own my music?", a: "Your music is yours — yours to share, release, and take with you. UnicoMusic is a place to reach listeners and earn, not a rights grab." },
   { q: "Do I need UnicoOS to use it?", a: "No. UnicoMusic works with its own login. But if you already run your business or make music on UnicoOS, it shows up as one of your apps automatically — same account, same balance." },
-  { q: "Is the content family- and faith-friendly?", a: "By design. UnicoMusic applies the same faith-affirming content standard used across the whole Unico ecosystem." },
+  { q: "What kind of music is on UnicoMusic?", a: "All of it. Gospel, hip-hop, R&B, country, EDM, drill, whatever you make — UnicoMusic isn't built around one genre or one audience, it's built for every artist in the Unico ecosystem." },
   { q: "When does it launch?", a: "Early access opens in waves. Join the waitlist to be first in line — creators who join early get priority placement when the doors open." },
 ];
 
@@ -54,7 +54,7 @@ const JSON_LD = {
       applicationCategory: "MultimediaApplication",
       operatingSystem: "Web, iOS, Android",
       description:
-        "Music streaming platform for the Unico ecosystem, launching soon (early-access waitlist open). Creators publish songs (including tracks made in UnicoJam), listeners stream, and creators earn a share of ad revenue. One login across UnicoOS with a faith-friendly content standard.",
+        "Music streaming platform for the Unico ecosystem, launching soon (early-access waitlist open). Creators publish songs (including tracks made in UnicoJam), listeners stream, and creators earn a share of ad revenue. One login across UnicoOS, every genre welcome.",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD", description: "Free to listen; creators earn from ad revenue share" },
       publisher: { "@type": "Organization", name: "E1 Unico Corporation", url: "https://e1unico.com" },
     },
@@ -122,7 +122,7 @@ export default function UnicoMusicPage() {
               reach real listeners, and earn your share of the ad revenue your plays bring in.
             </p>
             <p style={{ fontSize: 14, color: "#6b7280", marginBottom: 32, lineHeight: 1.6 }}>
-              One login across UnicoOS. Faith-friendly by design. Built by <strong style={{ color: "white" }}>E1 Unico</strong> · label home: <strong style={{ color: gold }}>Multi Genre Records</strong>.
+              One login across UnicoOS. Every genre welcome. Built by <strong style={{ color: "white" }}>E1 Unico</strong> · label home: <strong style={{ color: gold }}>Multi Genre Records</strong>.
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 14 }}>
               <a href="#waitlist" style={{ color: "white", fontWeight: 800, fontSize: 16, padding: "16px 34px", borderRadius: 16, textDecoration: "none", background: "linear-gradient(135deg,#ec4899,#a855f7)", boxShadow: "0 8px 40px rgba(236,72,153,0.35)" }}>
