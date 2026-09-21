@@ -33,12 +33,12 @@ const LIVE = [
   { emoji: "☑️", title: "Sort a batch at once", desc: "Tick the rows, then set one category or the Deductible tag for the lot — on your phone too. Fast picking is the whole point of the categories." },
   { emoji: "✅", title: "Ready to hand off?", desc: "One checklist on the Taxes tab: rows still unsorted, income under the bank's own label, deductible charges without a receipt, forms the feed expects that aren't on your return, estimated payments not yet recorded, and where the return stands — each line a link to the place that fixes it." },
   { emoji: "🔍", title: "Compared with last year", desc: "The lines last year's worksheet had that this year hasn't seen yet — a property-tax bill, a December donation — compared through today, so you can chase a row still under the bank's label before the worksheet goes out." },
+  { emoji: "📄", title: "Your deductible rows, itemised for the preparer", desc: "When a return is handed to the preparer, the charges you tagged Deductible ride along as their own sheet — date, merchant, amount, category with its tax note, and the receipt link on each row — next to the worksheet and the receipts." },
+  { emoji: "📬", title: "See exactly what your preparer gets", desc: "Before you send, one card on the Review step lists everything the hand-off will include — your confirmed forms, this year's vault documents, the worksheet, the itemised deductible sheet, your receipts — each line marked included or not, and why." },
 ];
 
 // Built and in review — the owner merges each one after a look.
-const ROLLING = [
-  { emoji: "📄", title: "Your deductible rows, itemised for the preparer", desc: "When a return is handed to the preparer, the charges you tagged Deductible ride along as their own sheet — date, merchant, amount, category with its tax note, and the receipt link on each row — next to the worksheet and the receipts." },
-];
+const ROLLING: { emoji: string; title: string; desc: string }[] = [];
 
 // Qualitative on purpose — no competitor prices or feature claims we can't stand behind.
 const COMPARE: { feature: string; uni: string; others: string }[] = [
@@ -213,29 +213,33 @@ export default function UniPersonalPage() {
         </div>
       </section>
 
-      <div className="section-line" />
+      {ROLLING.length > 0 && (
+        <>
+          <div className="section-line" />
 
-      {/* ── ROLLING OUT ── */}
-      <section style={{ padding: "100px 20px" }}>
-        <div style={{ maxWidth: 1000, margin: "0 auto" }}>
-          <div style={{ textAlign: "center", marginBottom: 48 }}>
-            <p style={{ fontSize: 11, fontWeight: 700, color: "#818cf8", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 12 }}>Rolling Out</p>
-            <h2 style={{ fontSize: "clamp(28px, 4.5vw, 48px)", fontWeight: 900, letterSpacing: "-0.02em", marginBottom: 14 }}>Next up.</h2>
-            <p style={{ color: "#6b7280", fontSize: 15, maxWidth: 560, margin: "0 auto", lineHeight: 1.6 }}>
-              Built and in review — arriving in UnicoOS over the coming releases.
-            </p>
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 16 }}>
-            {ROLLING.map(c => (
-              <div key={c.title} className="card-lift" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 18, padding: "26px 24px" }}>
-                <p style={{ fontSize: 30, marginBottom: 12 }}>{c.emoji}</p>
-                <p style={{ fontWeight: 800, fontSize: 17, color: "white", marginBottom: 8 }}>{c.title}</p>
-                <p style={{ color: "#9ca3af", fontSize: 13.5, lineHeight: 1.6 }}>{c.desc}</p>
+          {/* ── ROLLING OUT ── */}
+          <section style={{ padding: "100px 20px" }}>
+            <div style={{ maxWidth: 1000, margin: "0 auto" }}>
+              <div style={{ textAlign: "center", marginBottom: 48 }}>
+                <p style={{ fontSize: 11, fontWeight: 700, color: "#818cf8", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 12 }}>Rolling Out</p>
+                <h2 style={{ fontSize: "clamp(28px, 4.5vw, 48px)", fontWeight: 900, letterSpacing: "-0.02em", marginBottom: 14 }}>Next up.</h2>
+                <p style={{ color: "#6b7280", fontSize: 15, maxWidth: 560, margin: "0 auto", lineHeight: 1.6 }}>
+                  Built and in review — arriving in UnicoOS over the coming releases.
+                </p>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 16 }}>
+                {ROLLING.map(c => (
+                  <div key={c.title} className="card-lift" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 18, padding: "26px 24px" }}>
+                    <p style={{ fontSize: 30, marginBottom: 12 }}>{c.emoji}</p>
+                    <p style={{ fontWeight: 800, fontSize: 17, color: "white", marginBottom: 8 }}>{c.title}</p>
+                    <p style={{ color: "#9ca3af", fontSize: 13.5, lineHeight: 1.6 }}>{c.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        </>
+      )}
 
       <div className="section-line" />
 
