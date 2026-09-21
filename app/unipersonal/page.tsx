@@ -31,12 +31,13 @@ const LIVE = [
   { emoji: "↗️", title: "Worksheet to return, one tap", desc: "Each pile on the Taxes tab links to the UniTax File step that reads it, and the \"sort these\" notes open your ledger on exactly those rows." },
   { emoji: "🗓️", title: "Estimated-tax pointer", desc: "Self-employment or gig income in your feed? See the income so far, the estimated payments already sent and the next federal date — moved off weekends and holidays the way the IRS does — with an opt-in reminder before each one. What's owed stays your preparer's call." },
   { emoji: "☑️", title: "Sort a batch at once", desc: "Tick the rows, then set one category or the Deductible tag for the lot — on your phone too. Fast picking is the whole point of the categories." },
+  { emoji: "✅", title: "Ready to hand off?", desc: "One checklist on the Taxes tab: rows still unsorted, income under the bank's own label, deductible charges without a receipt, forms the feed expects that aren't on your return, estimated payments not yet recorded, and where the return stands — each line a link to the place that fixes it." },
+  { emoji: "🔍", title: "Compared with last year", desc: "The lines last year's worksheet had that this year hasn't seen yet — a property-tax bill, a December donation — compared through today, so you can chase a row still under the bank's label before the worksheet goes out." },
 ];
 
 // Built and in review — the owner merges each one after a look.
 const ROLLING = [
-  { emoji: "✅", title: "Ready to hand off?", desc: "One checklist on the Taxes tab: rows still unsorted, income under the bank's own label, deductible charges without a receipt, forms the feed expects that aren't on your return, estimated payments not yet recorded, and where the return stands — each line a link to the place that fixes it." },
-  { emoji: "🔍", title: "Compared with last year", desc: "The lines last year's worksheet had that this year hasn't seen yet — a property-tax bill, a December donation — compared through today, so you can chase a row still under the bank's label before the worksheet goes out." },
+  { emoji: "📄", title: "Your deductible rows, itemised for the preparer", desc: "When a return is handed to the preparer, the charges you tagged Deductible ride along as their own sheet — date, merchant, amount, category with its tax note, and the receipt link on each row — next to the worksheet and the receipts." },
 ];
 
 // Qualitative on purpose — no competitor prices or feature claims we can't stand behind.
@@ -46,7 +47,7 @@ const COMPARE: { feature: string; uni: string; others: string }[] = [
   { feature: "Your business money too", uni: "Same login, side by side, walled apart", others: "Personal only" },
   { feature: "Who can see your personal accounts", uni: "You. Never your company or teammates", others: "Varies" },
   { feature: "Cancelling a subscription", uni: "Guided, then verified against the next charge", others: "Done-for-you, typically paid" },
-  { feature: "Tax time", uni: "Categories with tax notes, batch sorting, a year-end worksheet, receipts on the charge, an estimated-tax pointer — free", others: "Often a paid tier, or a separate app" },
+  { feature: "Tax time", uni: "Categories with tax notes, batch sorting, a year-end worksheet, receipts on the charge, an estimated-tax pointer, a hand-off checklist — free", others: "Often a paid tier, or a separate app" },
 ];
 
 const FAQ: { q: string; a: string }[] = [
