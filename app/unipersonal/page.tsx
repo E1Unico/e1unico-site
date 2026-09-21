@@ -5,10 +5,10 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "UniPersonal — Your Money and Your Business, One View, Free | UnicoOS",
   description:
-    "UniPersonal is the free personal-finance side of UnicoOS: link your bank with Plaid, see your net worth, budget, bills and recurring charges — and, if you run a business, see your personal and business money side by side with a wall between them.",
+    "UniPersonal is the free personal-finance side of UnicoOS: link your bank with Plaid, see your net worth, budget, bills and recurring charges, sort your year with tax-ready categories and receipts — and, if you run a business, see your personal and business money side by side with a wall between them.",
   openGraph: {
     title: "UniPersonal — Your Money and Your Business, One View, Free",
-    description: "Free net worth, budgets, bills and subscription detection — and your personal money next to your business money, kept apart. Part of UnicoOS.",
+    description: "Free net worth, budgets, bills, subscription detection and a tax-ready year-end worksheet — and your personal money next to your business money, kept apart. Part of UnicoOS.",
   },
   alternates: { canonical: "/unipersonal" },
 };
@@ -21,12 +21,19 @@ const LIVE = [
   { emoji: "🧮", title: "Budgets, bills and alerts", desc: "Category budgets with rollover, a bills calendar, and alerts for low balances, big charges, bank fees, deposits and bills due — all in the app." },
   { emoji: "🏠", title: "Share with your household", desc: "Choose which accounts your household sees and budget together. Everything else stays yours alone." },
   { emoji: "🧱", title: "Personal and business, side by side", desc: "If you also run a business on UnicoOS, one screen shows your personal money next to your company's — read separately, never mixed — and lists what you're paying on both sides." },
-];
-
-const ROLLING = [
   { emoji: "🧭", title: "Guided cancellation that checks itself", desc: "A cancel guide for any subscription — the merchant's site, the steps, a ready-to-send email — and then we watch the next expected charge: it either stops (confirmed) or lands again (flagged)." },
   { emoji: "📲", title: "Money alerts on your phone", desc: "Bill due, low balance, a bank fee, a large charge — pushed to your device, with the same mute and quiet-hours controls as every UnicoOS notification." },
   { emoji: "💬", title: "Ask about your money", desc: "Plain-language answers over your own figures — where it went this month, why it was tight, which personal tools your business already pays for." },
+  { emoji: "🏷️", title: "Categories built for tax time", desc: "Around 180 detailed categories — rent, dentist, church, a tax refund, a reimbursement, an IRA contribution — each with a plain note on how it usually lands at tax time. New bank rows arrive already sorted; a rule applies your pick to the rest." },
+  { emoji: "📋", title: "A year-end tax worksheet", desc: "Your year grouped the way a preparer asks: what may qualify for a deduction or credit, income by the form it arrives on, money in that isn't income, payments that aren't expenses. One CSV for your preparer. Pointers, never a determination." },
+  { emoji: "📎", title: "Receipts on the charge", desc: "Snap a photo or drop a PDF onto any transaction. It rides your deductible export and, if you file with UniTax File, goes to the preparer with the return." },
+  { emoji: "🧾", title: "It feeds your return", desc: "On UniTax File, the Deductions and Credits steps suggest figures straight from your worksheet and the Income step lists the forms to expect. Suggestions you confirm — nothing reaches the return on its own." },
+];
+
+// Built and in review — the owner merges each one after a look.
+const ROLLING = [
+  { emoji: "↗️", title: "Worksheet to return, one tap", desc: "Each pile on the Taxes tab links to the UniTax File step that reads it, and the \"sort these\" notes open your ledger on exactly those rows." },
+  { emoji: "🗓️", title: "Estimated-tax pointer", desc: "Self-employment or gig income in your feed? See the income so far, the estimated payments already sent and the next federal date — with an opt-in reminder before each one. What's owed stays your preparer's call." },
 ];
 
 // Qualitative on purpose — no competitor prices or feature claims we can't stand behind.
@@ -35,7 +42,8 @@ const COMPARE: { feature: string; uni: string; others: string }[] = [
   { feature: "Subscriptions found from your feed", uni: "Free, from your own transactions", others: "Usually the hook — sometimes the upsell" },
   { feature: "Your business money too", uni: "Same login, side by side, walled apart", others: "Personal only" },
   { feature: "Who can see your personal accounts", uni: "You. Never your company or teammates", others: "Varies" },
-  { feature: "Cancelling a subscription", uni: "Guided, then verified against the next charge (rolling out)", others: "Done-for-you, typically paid" },
+  { feature: "Cancelling a subscription", uni: "Guided, then verified against the next charge", others: "Done-for-you, typically paid" },
+  { feature: "Tax time", uni: "Categories with tax notes, a year-end worksheet, receipts on the charge — free", others: "Often a paid tier, or a separate app" },
 ];
 
 const FAQ: { q: string; a: string }[] = [
@@ -45,6 +53,7 @@ const FAQ: { q: string; a: string }[] = [
   { q: "How does subscription detection work?", a: "It's our own detection over your linked transactions: the same merchant on a weekly, biweekly, monthly, quarterly or yearly rhythm with a steady amount. You can mark anything as ignored, cancelled or add it to a budget." },
   { q: "What does 'a wall between them' mean?", a: "Your personal accounts are read as you; your company's accounts are read as the company. They are never queried together, and nobody on your team can see your personal side. The one screen that shows both simply puts the two next to each other." },
   { q: "Can I use it without a business?", a: "Yes. Sign up for UnicoOS, link an account, and the personal side works on its own. The business column fills in only if you ever run a business there." },
+  { q: "Does UniPersonal do my taxes?", a: "No. It sorts your own transactions by the tax note on each category, keeps the receipts, and hands the figures to UniTax File or to your preparer as pointers — what may qualify, which form to expect. Nothing in UniPersonal decides what is deductible or what you owe; you or your preparer confirm every figure." },
 ];
 
 const JSON_LD = {
@@ -57,7 +66,7 @@ const JSON_LD = {
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD", description: "Personal finance is included in the free UnicoOS tier." },
       description:
-        "The free personal-finance side of UnicoOS: bank linking via Plaid, net worth, budgets, bills, alerts, recurring-charge detection, household sharing, and a personal + business money view kept apart by an origin wall.",
+        "The free personal-finance side of UnicoOS: bank linking via Plaid, net worth, budgets, bills, alerts on your phone, recurring-charge detection with guided cancellation, household sharing, tax-ready categories with a year-end worksheet and receipts, and a personal + business money view kept apart by an origin wall.",
       publisher: { "@type": "Organization", name: "E1 Unico Corporation", url: "https://e1unico.com" },
       url: "https://unicoos.app",
     },
