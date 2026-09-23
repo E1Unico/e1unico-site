@@ -6,7 +6,7 @@ import WaitlistForm from "./WaitlistForm";
 export const metadata: Metadata = {
   title: "UnicoJam — AI Music Studio | Make Full Songs From a Prompt",
   description:
-    "UnicoJam turns a prompt into a finished, radio-ready song — your genre, your mood, your lyrics. One login across UnicoOS. Faith-friendly by design. Join the early-access waitlist.",
+    "UnicoJam turns a prompt into a finished, radio-ready song — your genre, your mood, your lyrics. One login across UnicoOS. Every genre welcome. Join the early-access waitlist.",
   openGraph: {
     title: "UnicoJam — AI Music Studio",
     description: "Type it. Hear it. Own it. Full AI songs from a single prompt. Part of the UnicoOS ecosystem.",
@@ -26,7 +26,7 @@ const COMPARE: { feature: string; unicojam: string; others: string }[] = [
   { feature: "Full songs from one prompt", unicojam: "Yes — vocals + instruments + mix", others: "Yes, quality varies" },
   { feature: "One login for your whole business", unicojam: "UnicoOS single sign-on (P28)", others: "Separate account, siloed" },
   { feature: "Works standalone AND inside your OS", unicojam: "Both — same account, same credits", others: "Standalone only" },
-  { feature: "Faith-friendly content standard", unicojam: "On by default", others: "None" },
+  { feature: "Every genre welcome", unicojam: "Gospel to drill to EDM, one platform", others: "Whatever the algorithm favors" },
   { feature: "Overage billing", unicojam: "UnicoAI credits — pay only for what you use", others: "Hard caps or surprise tiers" },
   { feature: "Your own artist voice (coming)", unicojam: "Voice cloning on the roadmap", others: "Limited / not offered" },
   { feature: "Label path for serious artists", unicojam: "Multi Genre Records", others: "You're on your own" },
@@ -35,12 +35,12 @@ const COMPARE: { feature: string; unicojam: string; others: string }[] = [
 const GENRES = ["Gospel", "Hip-Hop", "R&B", "Lo-Fi", "Trap", "Country", "Afrobeat", "Worship", "Pop", "EDM", "Corridos", "Jazz", "Drill", "Soul"];
 
 const FAQ: { q: string; a: string }[] = [
-  { q: "How is this different from Suno, Udio, or Donna?", a: "UnicoJam makes full songs from a prompt like they do — but it's built into UnicoOS. One login runs your whole business AND your music, credits are shared across the ecosystem, every track meets a faith-friendly standard by default, and serious artists get a real label path through Multi Genre Records. It's a music studio that lives where you already work." },
+  { q: "How is this different from Suno, Udio, or Donna?", a: "UnicoJam makes full songs from a prompt like they do — but it's built into UnicoOS. One login runs your whole business AND your music, credits are shared across the ecosystem, every genre is welcome from gospel to drill, and serious artists get a real label path through Multi Genre Records. It's a music studio that lives where you already work." },
   { q: "Do I own the songs I make?", a: "Yes. Tracks you generate are yours to download in studio quality, share, and release. Your library stays in your account across every device." },
   { q: "What does $14.99/week actually get me?", a: "A weekly generation allowance of full songs plus downloads and public share pages. If you go big in a given week, overages ride on UnicoAI credits — so you only ever pay for what you actually make, never a surprise lockout." },
   { q: "Do I need UnicoOS to use it?", a: "No. UnicoJam works as a standalone app with its own login. But if you already run your business on UnicoOS, it shows up as one of your apps automatically — same account, same balance." },
   { q: "Can it write the lyrics for me?", a: "Either way. Paste your own lyrics, or describe a vibe and let UnicoJam write them. You stay in control of the final track." },
-  { q: "Is the content family- and faith-friendly?", a: "By design. UnicoJam applies the same faith-affirming content standard used across the whole Unico ecosystem, so what you make stays clean." },
+  { q: "What kind of music can I make with UnicoJam?", a: "Whatever you want. Gospel, hip-hop, R&B, country, EDM, drill — UnicoJam isn't built around one genre or one audience, it's built for every artist in the Unico ecosystem." },
   { q: "When can I actually use it?", a: "Early access opens in waves. Join the waitlist and you'll be first in line — plus founder pricing locked before public launch." },
 ];
 
@@ -55,7 +55,7 @@ const JSON_LD = {
       applicationCategory: "MultimediaApplication",
       operatingSystem: "Web, iOS, Android",
       description:
-        "AI music studio that turns a prompt into a finished, radio-ready song. Part of the UnicoOS ecosystem with a single login, shared credits, and a faith-friendly content standard.",
+        "AI music studio that turns a prompt into a finished, radio-ready song. Part of the UnicoOS ecosystem with a single login, shared credits, and every genre welcome.",
       offers: { "@type": "Offer", price: "14.99", priceCurrency: "USD", description: "$14.99 per week" },
       publisher: { "@type": "Organization", name: "E1 Unico Corporation", url: "https://e1unico.com" },
     },
@@ -121,7 +121,7 @@ export default function UnicoJamPage() {
               No studio. No band. No limits on your imagination.
             </p>
             <p style={{ fontSize: 14, color: "#6b7280", marginBottom: 32, lineHeight: 1.6 }}>
-              One login across UnicoOS. Faith-friendly by design. Built by <strong style={{ color: "white" }}>E1 Unico</strong> · label home: <strong style={{ color: gold }}>Multi Genre Records</strong>.
+              One login across UnicoOS. Every genre welcome. Built by <strong style={{ color: "white" }}>E1 Unico</strong> · label home: <strong style={{ color: gold }}>Multi Genre Records</strong>.
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 14 }}>
               <a href="#waitlist" className="btn-indigo" style={{ color: "white", fontWeight: 800, fontSize: 16, padding: "16px 34px", borderRadius: 16, textDecoration: "none", boxShadow: "0 8px 40px rgba(124,58,237,0.35)" }}>
@@ -283,7 +283,7 @@ export default function UnicoJamPage() {
               { emoji: "🔗", title: "Deep-linked", desc: "Jump from a UnicoOS campaign straight into a fresh beat and back again. It's all one flow." },
               { emoji: "💳", title: "One balance", desc: "Credits are shared across the whole ecosystem. Spend them on a song today, a receptionist tomorrow." },
               { emoji: "🎙️", title: "Your voice, later", desc: "Voice cloning is on the roadmap — including an artist voice for Multi Genre Records releases." },
-              { emoji: "🙏", title: "Faith-friendly", desc: "Every track meets a family- and faith-affirming content standard, ecosystem-wide, by default." },
+              { emoji: "🎸", title: "Every genre", desc: "Gospel to drill to EDM — UnicoJam isn't built around one sound, it's built for every artist." },
             ].map(c => (
               <div key={c.title} className="card-lift" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 18, padding: "24px 22px" }}>
                 <p style={{ fontSize: 30, marginBottom: 12 }}>{c.emoji}</p>

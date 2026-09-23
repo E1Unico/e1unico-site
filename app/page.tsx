@@ -374,7 +374,7 @@ export default function Home() {
               <div style={{ width: 64, height: 64, background: "linear-gradient(135deg, #a78bfa, #7c3aed)", borderRadius: 14, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 30, marginBottom: 20 }}>🎵</div>
               <p style={{ fontWeight: 900, fontSize: 18, color: "white", marginBottom: 4 }}>UnicoJam</p>
               <p style={{ fontSize: 12, color: "#a78bfa", fontWeight: 600, marginBottom: 14 }}>AI Music Studio · Launching Soon</p>
-              <p style={{ color: "#9ca3af", fontSize: 13, lineHeight: 1.7, marginBottom: 20 }}>Turn a prompt into a finished song — your genre, your words. One login across UnicoOS. Faith-friendly by design.</p>
+              <p style={{ color: "#9ca3af", fontSize: 13, lineHeight: 1.7, marginBottom: 20 }}>Turn a prompt into a finished song — your genre, your words. One login across UnicoOS. Every genre welcome.</p>
               <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 4 }}>
                 <a href="/unicojam" className="btn-indigo"
                   style={{ color: "white", fontWeight: 700, fontSize: 12, padding: "8px 16px", borderRadius: 8, textDecoration: "none" }}>🎧 Join Waitlist</a>

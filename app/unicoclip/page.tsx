@@ -27,7 +27,7 @@ const COMPARE: { feature: string; unicoclip: string; others: string }[] = [
   { feature: "One login for your whole business", unicoclip: "UnicoOS single sign-on", others: "Separate account, siloed" },
   { feature: "Your soundtrack, in-house", unicoclip: "Drop in a UnicoJam track", others: "Hunt for royalty-free music" },
   { feature: "Honest about AI", unicoclip: "AI helps; we tell you what's AI", others: "Often vague about it" },
-  { feature: "Faith-friendly content standard", unicoclip: "On by default", others: "None" },
+  { feature: "Every content category welcome", unicoclip: "Shorts to faith to business, wide open", others: "Narrower niches only" },
   { feature: "Runs where your business already lives", unicoclip: "Inside UnicoOS + standalone", others: "Standalone only" },
 ];
 
@@ -39,7 +39,7 @@ const FAQ: { q: string; a: string }[] = [
   { q: "Does it use AI?", a: "AI helps where it saves you time — and we're honest about it. Where a feature relies on AI, we say so plainly rather than overstating what it can do. You stay in control of the final cut." },
   { q: "Do I own what I make?", a: "Your videos are yours — yours to export, share, and take with you. UnicoClip is a tool to make your content faster, not a rights grab." },
   { q: "Do I need UnicoOS to use it?", a: "No. UnicoClip works with its own login. But if you already run your business on UnicoOS, it shows up as one of your apps automatically — same account, same balance." },
-  { q: "Is the content family- and faith-friendly?", a: "By design. UnicoClip applies the same faith-affirming content standard used across the whole Unico ecosystem." },
+  { q: "What kind of videos can I make?", a: "Whatever you make. Shorts, reels, promos, tutorials, faith, business, comedy — UnicoClip isn't built around one category, it's built for every creator in the Unico ecosystem." },
   { q: "When does it launch?", a: "Early access opens in waves. Join the waitlist to be first in line — plus founder pricing locked before public launch." },
 ];
 
@@ -54,7 +54,7 @@ const JSON_LD = {
       applicationCategory: "MultimediaApplication",
       operatingSystem: "Web, iOS, Android",
       description:
-        "Video creation studio for the Unico ecosystem, launching soon (early-access waitlist open). Turn footage, ideas, and UnicoJam tracks into short shareable videos, then publish to a UnicoTube channel. One login across UnicoOS with a faith-friendly content standard.",
+        "Video creation studio for the Unico ecosystem, launching soon (early-access waitlist open). Turn footage, ideas, and UnicoJam tracks into short shareable videos, then publish to a UnicoTube channel. One login across UnicoOS, every creator welcome.",
       publisher: { "@type": "Organization", name: "E1 Unico Corporation", url: "https://e1unico.com" },
     },
     {
@@ -122,7 +122,7 @@ export default function UnicoClipPage() {
               Cut it here, then publish straight to your UnicoTube channel.
             </p>
             <p style={{ fontSize: 14, color: "#6b7280", marginBottom: 32, lineHeight: 1.6 }}>
-              One login across UnicoOS. Faith-friendly by design. Honest about what&apos;s AI. Built by <strong style={{ color: "white" }}>E1 Unico</strong>.
+              One login across UnicoOS. Every creator welcome. Honest about what&apos;s AI. Built by <strong style={{ color: "white" }}>E1 Unico</strong>.
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 14 }}>
               <a href="#waitlist" style={{ color: "white", fontWeight: 800, fontSize: 16, padding: "16px 34px", borderRadius: 16, textDecoration: "none", background: "linear-gradient(135deg,#06b6d4,#14b8a6)", boxShadow: "0 8px 40px rgba(6,182,212,0.35)" }}>

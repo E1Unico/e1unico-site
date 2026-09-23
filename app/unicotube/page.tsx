@@ -26,7 +26,7 @@ const COMPARE: { feature: string; unicotube: string; others: string }[] = [
   { feature: "Publish straight from your studio", unicotube: "One tap from UnicoClip", others: "Export, re-encode, re-upload" },
   { feature: "One login for your whole business", unicotube: "UnicoOS single sign-on", others: "Separate account, siloed" },
   { feature: "When monetization turns on", unicotube: "No subscriber gate to start", others: "Often gated behind subscriber thresholds" },
-  { feature: "Faith-friendly content standard", unicotube: "On by default", others: "None" },
+  { feature: "Every content category welcome", unicotube: "Vlogs, gaming, faith, business, and more", others: "Narrower niches only" },
   { feature: "Keep your videos", unicotube: "Yours to share and re-post", others: "Varies / restrictive terms" },
   { feature: "Runs where your business already lives", unicotube: "Inside UnicoOS + standalone", others: "Standalone only" },
 ];
@@ -39,7 +39,7 @@ const FAQ: { q: string; a: string }[] = [
   { q: "How do creators make money?", a: "UnicoTube is built to be ad-supported with a creator revenue share, so your views turn into earnings — without the big-platform subscriber thresholds. The exact split and payout details are being finalized ahead of launch. Join the waitlist to see them first." },
   { q: "Do I own my videos?", a: "Your videos are yours — yours to share, re-post, and take with you. UnicoTube is a place to reach viewers and earn, not a rights grab." },
   { q: "Do I need UnicoOS to use it?", a: "No. UnicoTube works with its own login. But if you already run your business or make content on UnicoOS, it shows up as one of your apps automatically — same account, same balance." },
-  { q: "Is the content family- and faith-friendly?", a: "By design. UnicoTube applies the same faith-affirming content standard used across the whole Unico ecosystem." },
+  { q: "What kind of videos can I upload?", a: "Whatever you make. Vlogs, tutorials, music videos, gaming, business, faith, comedy — UnicoTube isn't built around one category, it's built for every creator in the Unico ecosystem." },
   { q: "When does it launch?", a: "Early access opens in waves. Join the waitlist to be first in line — creators who join early get priority placement and channel handles when the doors open." },
 ];
 
@@ -54,7 +54,7 @@ const JSON_LD = {
       applicationCategory: "MultimediaApplication",
       operatingSystem: "Web, iOS, Android",
       description:
-        "Video platform for the Unico ecosystem, launching soon (early-access waitlist open). Creators upload videos (including clips made in UnicoClip), grow channels, viewers watch, and creators earn a share of ad revenue. One login across UnicoOS with a faith-friendly content standard.",
+        "Video platform for the Unico ecosystem, launching soon (early-access waitlist open). Creators upload videos (including clips made in UnicoClip), grow channels, viewers watch, and creators earn a share of ad revenue. One login across UnicoOS, every creator welcome.",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD", description: "Free to watch; creators earn from ad revenue share" },
       publisher: { "@type": "Organization", name: "E1 Unico Corporation", url: "https://e1unico.com" },
     },
@@ -123,7 +123,7 @@ export default function UnicoTubePage() {
               make in UnicoClip — grow a real audience, and earn your share of the ad revenue your views bring in.
             </p>
             <p style={{ fontSize: 14, color: "#6b7280", marginBottom: 32, lineHeight: 1.6 }}>
-              One login across UnicoOS. Faith-friendly by design. Built by <strong style={{ color: "white" }}>E1 Unico</strong>.
+              One login across UnicoOS. Every creator welcome. Built by <strong style={{ color: "white" }}>E1 Unico</strong>.
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 14 }}>
               <a href="#waitlist" style={{ color: "white", fontWeight: 800, fontSize: 16, padding: "16px 34px", borderRadius: 16, textDecoration: "none", background: "linear-gradient(135deg,#ef4444,#f97316)", boxShadow: "0 8px 40px rgba(239,68,68,0.35)" }}>

@@ -74,7 +74,7 @@ export default function Image() {
         {/* Bottom row */}
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <div style={{ display: "flex", fontSize: 26, fontWeight: 700, color: "#c9a84c" }}>
-            One login · Honest about AI · Faith-friendly
+            One login · Honest about AI · Every creator welcome
           </div>
           <div style={{ display: "flex", fontSize: 24, color: "#6b7280" }}>e1unico.com/unicoclip</div>
         </div>

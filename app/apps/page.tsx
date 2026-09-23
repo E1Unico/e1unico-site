@@ -193,7 +193,7 @@ export default function AppsPage() {
             {[
               { emoji: "🔑", title: "One login", desc: "One Unico account is built to sign you into every app as it launches — no new password per product." },
               { emoji: "💳", title: "One balance", desc: "UnicoAI credits are designed to work across the ecosystem — spend them wherever you go." },
-              { emoji: "🙏", title: "Faith-friendly", desc: "A family- and faith-affirming content standard runs across the whole ecosystem, by default." },
+              { emoji: "🎨", title: "Every creator", desc: "Every genre, every content category — the ecosystem is built wide open, not around one audience." },
               { emoji: "🦅", title: "One company", desc: "All built and backed by E1 Unico Corporation — BBB accredited, Texas based." },
             ].map(c => (
               <div key={c.title} className="card-lift" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 18, padding: "24px 22px", textAlign: "left" }}>
