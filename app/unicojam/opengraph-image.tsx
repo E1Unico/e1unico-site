@@ -74,7 +74,7 @@ export default function Image() {
         {/* Bottom row */}
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <div style={{ display: "flex", fontSize: 26, fontWeight: 700, color: "#c9a84c" }}>
-            $14.99/week · One login · Faith-friendly
+            $14.99/week · One login · Every genre
           </div>
           <div style={{ display: "flex", fontSize: 24, color: "#6b7280" }}>e1unico.com/unicojam</div>
         </div>

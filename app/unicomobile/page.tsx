@@ -27,7 +27,6 @@ const COMPARE: { feature: string; unicomobile: string; others: string }[] = [
   { feature: "One login across your tools", unicomobile: "UnicoOS single sign-on", others: "Yet another portal" },
   { feature: "Connected to your CRM + AI receptionist", unicomobile: "Built for it (UniRo)", others: "Not connected" },
   { feature: "Network approach", unicomobile: "Carrier-neutral by design", others: "Locked to one carrier" },
-  { feature: "Faith-friendly company standard", unicomobile: "On by default", others: "None" },
 ];
 
 const FAQ: { q: string; a: string }[] = [

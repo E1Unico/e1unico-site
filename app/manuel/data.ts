@@ -48,7 +48,7 @@ export const VENTURES: Venture[] = [
   {
     name: "UnicoJam",
     tag: "AI Music Studio · Launching Soon",
-    desc: "Turn a prompt into a finished song. Faith-friendly by design.",
+    desc: "Turn a prompt into a finished song. Every genre welcome.",
     url: "https://e1unico.com/unicojam",
     emoji: "🎵",
     accent: "rgba(124,58,237,0.28)",

@@ -155,7 +155,7 @@ export default function WaitlistForm() {
         {state === "loading" ? "⏳ Adding you…" : "🎬 Get Early Access"}
       </button>
       <p style={{ fontSize: 11, color: "#6b7280", textAlign: "center", lineHeight: 1.5 }}>
-        No spam. One login across UnicoOS. Faith-friendly by design.
+        No spam. One login across UnicoOS. Every creator welcome.
       </p>
     </form>
   );
