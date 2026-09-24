@@ -43,7 +43,7 @@ export default function ManuelLayout({ children }: { children: React.ReactNode }
             justifyContent: "space-between",
           }}
         >
-          <Link href="/" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}>
+          <Link href="/manuel" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}>
             <Image
               src="/e1unico-logo.jpg"
               alt="The Montemayor Crest"
@@ -59,7 +59,7 @@ export default function ManuelLayout({ children }: { children: React.ReactNode }
             <a href="#about" style={{ fontSize: 13, color: "#9ca3af", textDecoration: "none", padding: "6px 14px" }}>About</a>
             <a href="#ventures" style={{ fontSize: 13, color: "#9ca3af", textDecoration: "none", padding: "6px 14px" }}>Ventures</a>
             <a href="#podcast" style={{ fontSize: 13, color: "#9ca3af", textDecoration: "none", padding: "6px 14px" }}>Podcast</a>
-            <Link href="/links" style={{ fontSize: 13, color: "#9ca3af", textDecoration: "none", padding: "6px 14px" }}>Links</Link>
+            <Link href="/manuel/links" style={{ fontSize: 13, color: "#9ca3af", textDecoration: "none", padding: "6px 14px" }}>Links</Link>
             <a
               href={`mailto:${CONTACT_EMAIL}`}
               className="btn-gold"
@@ -77,8 +77,8 @@ export default function ManuelLayout({ children }: { children: React.ReactNode }
       <footer style={{ borderTop: "1px solid rgba(255,255,255,0.06)", padding: "32px 20px", textAlign: "center" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "6px 24px", marginBottom: 16, fontSize: 12, color: "#4b5563" }}>
-            <Link href="/" style={{ color: "#c9a84c", textDecoration: "none", fontWeight: 600 }}>Home</Link>
-            <Link href="/links" style={{ color: "#c9a84c", textDecoration: "none", fontWeight: 600 }}>Links</Link>
+            <Link href="/manuel" style={{ color: "#c9a84c", textDecoration: "none", fontWeight: 600 }}>Home</Link>
+            <Link href="/manuel/links" style={{ color: "#c9a84c", textDecoration: "none", fontWeight: 600 }}>Links</Link>
             <a href="https://e1unico.com" target="_blank" rel="noreferrer" style={{ color: "#818cf8", textDecoration: "none", fontWeight: 600 }}>E1Unico.com →</a>
             <a href={`mailto:${CONTACT_EMAIL}`} style={{ color: "#c9a84c", textDecoration: "none", fontWeight: 600 }}>{CONTACT_EMAIL}</a>
           </div>
