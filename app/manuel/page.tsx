@@ -69,7 +69,7 @@ export default function ManuelHome() {
             <a href="#ventures" className="btn-gold" style={{ color: "white", fontWeight: 800, fontSize: 15, padding: "15px 32px", borderRadius: 16, textDecoration: "none", display: "inline-block", boxShadow: "0 8px 40px rgba(201,168,76,0.3)" }}>
               🏢 See My Companies
             </a>
-            <Link href="/links" style={{ color: "white", fontWeight: 700, fontSize: 15, padding: "15px 30px", borderRadius: 16, textDecoration: "none", display: "inline-block", background: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.15)" }}>
+            <Link href="/manuel/links" style={{ color: "white", fontWeight: 700, fontSize: 15, padding: "15px 30px", borderRadius: 16, textDecoration: "none", display: "inline-block", background: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.15)" }}>
               🔗 All My Links
             </Link>
           </div>
