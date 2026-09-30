@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { notifyUnicoOS } from "../../../../lib/notify-unicoos";
 
 export const runtime = "nodejs";
 
@@ -110,6 +111,8 @@ export async function POST(req: NextRequest) {
     notifyTelegram(text),
     notifyResend(`🎧 UnicoMusic waitlist — ${email}`, html),
     notifyWebhook({ product: "unicomusic", email, name, genres, role, page, source, when }),
+    // UnicoOS lead inbox (S14) — off unless UNICOOS_LEADS_ENABLED=1 + UNICOOS_URL.
+    notifyUnicoOS({ product: "unicomusic", email, name, source, useCase: [genres && `Wants to make: ${genres}`, role && `Role: ${role}`].filter(Boolean).join(" · ") }),
   ]);
 
   const delivered = results.some(r => r.status === "fulfilled" && r.value === true);

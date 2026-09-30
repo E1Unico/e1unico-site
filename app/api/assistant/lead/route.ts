@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { notifyUnicoOS } from "../../../../lib/notify-unicoos";
 
 export const runtime = "nodejs";
 
@@ -142,6 +143,9 @@ Problem: ${problem || "(none)"}
     notifyResend(`✨ e1unico.com lead — ${name}`, html),
     notifyTwilioSms(sms),
     notifyWebhook({ name, contact, problem, page, source, when, transcript }),
+    // UnicoOS lead inbox (S14) — only when the visitor left an email (a phone-only
+    // lead stays here); off unless UNICOOS_LEADS_ENABLED=1 + UNICOOS_URL.
+    notifyUnicoOS({ product: "askunico", email: contact, name, source, useCase: problem }),
   ]);
 
   const delivered = results.some(r => r.status === "fulfilled" && r.value === true);
