@@ -73,13 +73,14 @@ async function notifyWebhook(payload: object) {
   }
 }
 
-// Twilio SMS — sends the lead summary to Unico's direct line (281-739-6522 by default).
+// Twilio SMS — sends the lead summary to Unico's private line. The number lives ONLY in the
+// LEAD_SMS_TO env var (this repo is public): with it unset, no text is sent.
 async function notifyTwilioSms(text: string) {
   const sid = process.env.TWILIO_ACCOUNT_SID;
   const token = process.env.TWILIO_AUTH_TOKEN;
   const from = process.env.TWILIO_FROM || process.env.UNICOOS_TWILIO_NUMBER; // 1-828-678-6426 lives in env
-  const to = process.env.LEAD_SMS_TO || "+12817396522"; // Unico's direct line
-  if (!sid || !token || !from) return false;
+  const to = process.env.LEAD_SMS_TO; // private — never hard-code it here
+  if (!sid || !token || !from || !to) return false;
   try {
     const body = new URLSearchParams({ From: from, To: to, Body: text.slice(0, 1500) });
     const auth = Buffer.from(`${sid}:${token}`).toString("base64");
