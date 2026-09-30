@@ -52,8 +52,8 @@ async function notifyTwilioSms(text: string) {
   const sid = process.env.TWILIO_ACCOUNT_SID;
   const token = process.env.TWILIO_AUTH_TOKEN;
   const from = process.env.TWILIO_FROM || process.env.UNICOOS_TWILIO_NUMBER;
-  const to = process.env.LEAD_SMS_TO || "+12817396522"; // Unico's direct line
-  if (!sid || !token || !from) return false;
+  const to = process.env.LEAD_SMS_TO; // Unico's private line — env only (public repo)
+  if (!sid || !token || !from || !to) return false;
   try {
     const body = new URLSearchParams({ From: from, To: to, Body: text.slice(0, 1500) });
     const auth = Buffer.from(`${sid}:${token}`).toString("base64");
