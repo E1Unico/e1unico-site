@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { notifyUnicoOS } from "../../../../lib/notify-unicoos";
 
 export const runtime = "nodejs";
 
@@ -8,9 +9,8 @@ export const runtime = "nodejs";
 // This captures INTEREST only — no account, credits, or model generation happens
 // here. Unico3D itself (designs, the 3D engine, STL export) lives in the unico-os
 // monorepo at unicoos.app/unico3d.
-// Not forwarded to the UnicoOS lead inbox yet: its /api/leads accepts a fixed
-// product list that does not include unico3d. Add it there, then wire
-// notifyUnicoOS({ product: "unico3d", … }) here.
+// The UnicoOS lead inbox (S14) accepts unico3d from unico-os #978 on; before
+// that deploy it answers 400 and this channel simply reports false.
 
 type WaitlistBody = {
   email?: string;
@@ -103,6 +103,8 @@ export async function POST(req: NextRequest) {
     notifyTelegram(text),
     notifyResend(`🧊 Unico3D early access — ${email}`, html),
     notifyWebhook({ product: "unico3d", email, name, makes, page, source, when }),
+    // UnicoOS lead inbox (S14) — off unless UNICOOS_LEADS_ENABLED=1 + UNICOOS_URL.
+    notifyUnicoOS({ product: "unico3d", email, name, source, useCase: makes ? `Makes: ${makes}` : "" }),
   ]);
 
   const delivered = results.some(r => r.status === "fulfilled" && r.value === true);
