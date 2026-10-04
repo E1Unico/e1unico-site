@@ -40,10 +40,11 @@ const GROUPS: { key: string; label: string; sub: string; apps: App[] }[] = [
   {
     key: "create",
     label: "Create",
-    sub: "Make the music and the video — fast.",
+    sub: "Make the music, the video — and the part.",
     apps: [
       { name: "Unico", tail: "Jam", wordmarkTail: "Jam", emoji: "🎵", status: "Launching Soon", statusColor: "#a78bfa", blurb: "AI music studio — turn a prompt into a finished, radio-ready song. Your genre, your words.", href: "/unicojam", grad: "linear-gradient(135deg,#a78bfa,#7c3aed)", accent: "#a78bfa" },
       { name: "Unico", tail: "Clip", wordmarkTail: "Clip", emoji: "🎬", status: "Launching Soon", statusColor: "#5eead4", blurb: "Video studio — turn footage, ideas, and your UnicoJam tracks into short shareable videos in minutes.", href: "/unicoclip", grad: "linear-gradient(135deg,#5eead4,#06b6d4)", accent: "#5eead4" },
+      { name: "Unico", tail: "3D", wordmarkTail: "3D", emoji: "🧊", status: "Early Access", statusColor: "#fdba74", blurb: "Design desk for makers — a sentence or a photo becomes a 3D model tagged for 3D print, CNC, leather or metal, downloadable as an STL sized for your machine. Part of UnicoOS, works on its own.", href: "/unico3d", grad: "linear-gradient(135deg,#fdba74,#f97316)", accent: "#fdba74" },
     ],
   },
   {
@@ -225,6 +226,7 @@ export default function AppsPage() {
             <Link href="/unicomusic" style={{ color: "#f9a8d4", textDecoration: "none", fontWeight: 600 }}>UnicoMusic</Link>
             <Link href="/unicotube" style={{ color: "#fca5a5", textDecoration: "none", fontWeight: 600 }}>UnicoTube</Link>
             <Link href="/unicomobile" style={{ color: "#7dd3fc", textDecoration: "none", fontWeight: 600 }}>UnicoMobile</Link>
+            <Link href="/unico3d" style={{ color: "#fdba74", textDecoration: "none", fontWeight: 600 }}>Unico3D</Link>
           </div>
           <p style={{ fontSize: 11, color: "#374151" }}>© 2026 E1 Unico Corporation · One login, one empire · Building the Empire 🦅</p>
         </div>
