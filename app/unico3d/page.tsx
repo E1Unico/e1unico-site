@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 const HOW = [
   { emoji: "✍️", title: "Describe it, or snap it", desc: "Type what you need — \"a phone stand with a cable slot\" — or upload a photo of the thing. Unico3D builds the 3D model." },
   { emoji: "🛠", title: "Say how you'll make it", desc: "3D print (filament or resin), CNC, laser-cut leather, or metal. Set the material and the real size in millimeters. Each method comes with a short what-it-wants guide." },
-  { emoji: "📦", title: "Download and go", desc: "Grab the STL — already rotated for your slicer and scaled to the size you gave — or the raw OBJ / GLB for CAD. Open it in Cura, Bambu Studio, Fusion, Lychee… whatever you run." },
+  { emoji: "📦", title: "Download and go", desc: "Grab the STL or 3MF — already rotated for your slicer and scaled to the size you gave — a cut profile as SVG / DXF for the laser, or the raw OBJ / GLB for CAD. Open it in Cura, Bambu Studio, LightBurn, Fusion, Lychee… whatever you run." },
 ];
 
 // Positioning — qualitative on purpose. No vendor names, no per-model price
@@ -25,7 +25,7 @@ const HOW = [
 const COMPARE: { feature: string; unico3d: string; others: string }[] = [
   { feature: "Where your shop runs", unico3d: "Inside UnicoOS — same login as your quotes, invoices and customers", others: "A separate tool, a separate account" },
   { feature: "From idea to model", unico3d: "A sentence or a photo", others: "Hours in CAD, or hire it out" },
-  { feature: "Ready for the machine", unico3d: "STL rotated and sized for the slicer", others: "Convert, rotate and scale by hand" },
+  { feature: "Ready for the machine", unico3d: "STL / 3MF rotated and sized for the slicer; SVG / DXF profiles for the laser", others: "Convert, rotate and scale by hand" },
   { feature: "Fabrication-aware", unico3d: "Print / CNC / leather / metal, each with its own guide", others: "A generic mesh" },
   { feature: "How you pay", unico3d: "Per model, with UnicoAI credits", others: "Another monthly subscription" },
 ];
@@ -33,11 +33,11 @@ const COMPARE: { feature: string; unico3d: string; others: string }[] = [
 const FAQ: { q: string; a: string }[] = [
   { q: "What is Unico3D?", a: "A design desk for makers. You describe a part (or upload a photo), Unico3D generates a 3D model, you tag it with how it'll be made — 3D print, CNC, laser-cut leather, or metal — plus the material and real-world size, and you download a file your machine understands. It's built into UnicoOS, so a maker who also runs a shop has their quotes, invoices and customers in the same place." },
   { q: "Do I need UnicoOS to use it?", a: "Unico3D lives inside UnicoOS today — it has its own front door, and a free sign-up as a 3D-printing / CNC / fabrication business drops you straight into it. A standalone Unico3D app and domain are on the roadmap; you don't have to use anything else in UnicoOS to use Unico3D." },
-  { q: "What files do I get?", a: "Today: a binary STL that's already rotated to Z-up and scaled so the longest side matches the size you set — the file every slicer opens — plus the model's native OBJ / GLB / FBX / USDZ for CAD and viewers. Next: 3MF project files, and flat-pattern SVG / DXF for laser-cut leather and sheet metal." },
-  { q: "Does it do CNC and metal, not just 3D printing?", a: "It gives you the shape for all of them: the STL or OBJ goes into your CAM software (Fusion, Carbide Create) for CNC, and casting shops take the STL for a pattern. A true solid (STEP) for machining is a different pipeline and isn't here yet. For leather and sheet metal, a flat pattern is a different file from a 3D mesh — use the model as the reference today; SVG / DXF export is on the list." },
+  { q: "What files do I get?", a: "A binary STL and a 3MF project file, both already rotated to Z-up and scaled so the longest side matches the size you set — the files every slicer opens; cut profiles as SVG / DXF (the outline of a section at any height) for laser cutters, plasma and waterjet; plus the model's native OBJ / GLB / FBX / USDZ for CAD and viewers." },
+  { q: "Does it do CNC and metal, not just 3D printing?", a: "It gives you the shape for all of them: the STL or OBJ goes into your CAM software (Fusion, Carbide Create) for CNC, and casting shops take the STL for a pattern. A true solid (STEP) for machining is a different pipeline and isn't here yet. For leather and sheet metal you get a cut profile — the outline of a section through the model at the height you pick — as SVG for the laser or DXF for the plasma table; for a flat piece that is the pattern. Unfolding a curved surface into a flat pattern is still on the list." },
   { q: "Is it available now?", a: "It's opening in early access. The engine behind it is being connected and priced; join the list and you'll hear the moment it's on. Nothing on this page is a live offer." },
   { q: "How much does a model cost?", a: "Per model, with the UnicoAI credits you already use across Unico apps — a quick preview is cheaper than a textured refine or a photo-to-3D run. We'll publish the exact figures at launch, not before." },
-  { q: "Can I edit the model?", a: "Not inside Unico3D yet — it's a generator, not a CAD editor. Download the OBJ / GLB and tweak it in Blender, Fusion, Tinkercad or whatever you use. A simple in-page viewer is next on the list." },
+  { q: "Can I edit the model?", a: "Not inside Unico3D — it's a generator, not a CAD editor. You can spin it around in the page, read its volume, weight and watertight check, and download the OBJ / GLB to tweak it in Blender, Fusion, Tinkercad or whatever you use." },
   { q: "What happens to my prompts and photos?", a: "They're used to generate your model and nothing else. Designs belong to your business in UnicoOS — another business can't see them. Prompts and photo links go to the 3D engine; your customer and company data never do." },
 ];
 
@@ -68,15 +68,19 @@ const BUILT = [
   "Photo → 3D model",
   "Tag each design: 3D print (filament / resin), CNC, laser leather, metal — with material and size in mm",
   "A short \"what this method wants\" guide for every design",
-  "Download STL — Z-up, scaled to your size — plus OBJ / GLB / FBX / USDZ",
+  "Download STL and 3MF — Z-up, scaled to your size — plus OBJ / GLB / FBX / USDZ",
+  "Cut profiles as SVG / DXF for laser leather and sheet metal — the outline at any height",
+  "Spin the model around in the page before you download",
+  "Print facts: volume, surface, estimated weight for your material, watertight check",
+  "Quote it: the part goes straight onto an estimate for a customer, then an invoice",
+  "Files kept in Unico's own storage — a design outlives the vendor's link",
   "Designs scoped to your business, never another's",
 ];
 
 const NEXT = [
-  "3MF project files for Bambu / Prusa",
-  "Flat-pattern SVG / DXF for laser-cut leather and sheet metal",
-  "Spin it around in the page before you download",
-  "A quote and invoice for a fabrication job, straight from the design",
+  "A true unfold of curved surfaces into flat leather patterns",
+  "STEP solids for CNC (a different pipeline from a mesh)",
+  "Kerf offset and nesting several profiles on one sheet",
   "Standalone Unico3D app and domain",
 ];
 
@@ -176,8 +180,8 @@ export default function Unico3DPage() {
             {[
               { emoji: "🖨️", title: "3D print", desc: "Filament or resin. STL sized to your bed, rotated the way the slicer expects." },
               { emoji: "⚙️", title: "CNC", desc: "The shape for your CAM software. A machinable STEP is a later step — we say so." },
-              { emoji: "🧵", title: "Leather", desc: "Model the piece in 3D; flat SVG / DXF patterns for the laser are next." },
-              { emoji: "🔥", title: "Metal", desc: "Patterns for casting; cut paths for plasma and waterjet to follow." },
+              { emoji: "🧵", title: "Leather", desc: "Model the piece in 3D; take the cut profile as SVG straight to the laser." },
+              { emoji: "🔥", title: "Metal", desc: "STL patterns for casting; DXF cut profiles for plasma and waterjet." },
             ].map(c => (
               <div key={c.title} style={{ background: "rgba(249,115,22,0.06)", border: "1px solid rgba(249,115,22,0.2)", borderRadius: 18, padding: "22px 20px" }}>
                 <div style={{ fontSize: 30, marginBottom: 10 }}>{c.emoji}</div>
