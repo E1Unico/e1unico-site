@@ -273,6 +273,7 @@ export default function UnicoCardPage() {
             <Link href="/" style={{ color: "#9ca3af", textDecoration: "none", fontWeight: 600 }}>← E1Unico.com</Link>
             <Link href="/apps" style={{ color: "#818cf8", textDecoration: "none", fontWeight: 600 }}>All Unico Apps</Link>
             <Link href="/unicomobile" style={{ color: "#7dd3fc", textDecoration: "none", fontWeight: 600 }}>UnicoMobile</Link>
+            <Link href="/unico3d" style={{ color: "#fdba74", textDecoration: "none", fontWeight: 600 }}>Unico3D</Link>
             <span className="gold-text" style={{ fontWeight: 600 }}>UnicoCard</span>
             <a href="https://unicoos.app" target="_blank" rel="noreferrer" style={{ color: "#818cf8", textDecoration: "none", fontWeight: 600 }}>UnicoOS →</a>
             <Link href="/legal/privacy" style={{ color: "#4b5563", textDecoration: "none", fontWeight: 600 }}>Privacy Policy</Link>

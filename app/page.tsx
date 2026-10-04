@@ -434,6 +434,19 @@ export default function Home() {
               </div>
             </div>
 
+            {/* Unico3D */}
+            <div className="card-lift" style={{ borderRadius: 24, padding: "32px 28px", background: "rgba(249,115,22,0.08)", border: "1px solid rgba(249,115,22,0.28)" }}>
+              <div style={{ width: 64, height: 64, background: "linear-gradient(135deg, #fdba74, #f97316)", borderRadius: 14, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 30, marginBottom: 20 }}>🧊</div>
+              <p style={{ fontWeight: 900, fontSize: 18, color: "white", marginBottom: 4 }}>Unico3D</p>
+              <p style={{ fontSize: 12, color: "#fdba74", fontWeight: 600, marginBottom: 14 }}>3D Models for Makers · Early Access</p>
+              <p style={{ color: "#9ca3af", fontSize: 13, lineHeight: 1.7, marginBottom: 20 }}>A sentence or a photo becomes a 3D model, tagged for 3D print, CNC, leather or metal — download an STL sized for your machine. Part of UnicoOS, works on its own.</p>
+              <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 4 }}>
+                <a href="/unico3d"
+                  style={{ background: "linear-gradient(135deg,#f97316,#ea580c)", color: "white", fontWeight: 700, fontSize: 12, padding: "8px 16px", borderRadius: 8, textDecoration: "none" }}>🧊 Get Early Access</a>
+                <a href="/unico3d" style={{ fontSize: 12, color: "#fdba74", fontWeight: 700, textDecoration: "none", alignSelf: "center" }}>Learn more →</a>
+              </div>
+            </div>
+
             {/* UnicoCard */}
             <div className="card-lift gold-border" style={{ borderRadius: 24, padding: "32px 28px", background: "rgba(14,14,24,0.9)" }}>
               <div style={{ width: 64, height: 64, background: "linear-gradient(135deg, #f0c96e, #c9a84c)", borderRadius: 14, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 30, marginBottom: 20 }}>💳</div>

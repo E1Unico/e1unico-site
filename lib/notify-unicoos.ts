@@ -13,7 +13,7 @@
 //   - only the products UnicoOS's /api/leads accepts, and only with an email.
 // — Fable
 
-export const UNICOOS_LEAD_PRODUCTS = ["unicojam", "unicomusic", "unicotube", "unicoclip", "unicomobile", "askunico"] as const;
+export const UNICOOS_LEAD_PRODUCTS = ["unicojam", "unicomusic", "unicotube", "unicoclip", "unicomobile", "askunico", "unico3d"] as const;
 export type UnicoOSLeadProduct = (typeof UNICOOS_LEAD_PRODUCTS)[number];
 
 export const TIMEOUT_MS = 4000;
