@@ -439,7 +439,7 @@ export default function Home() {
               <div style={{ width: 64, height: 64, background: "linear-gradient(135deg, #fdba74, #f97316)", borderRadius: 14, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 30, marginBottom: 20 }}>🧊</div>
               <p style={{ fontWeight: 900, fontSize: 18, color: "white", marginBottom: 4 }}>Unico3D</p>
               <p style={{ fontSize: 12, color: "#fdba74", fontWeight: 600, marginBottom: 14 }}>3D Models for Makers · Early Access</p>
-              <p style={{ color: "#9ca3af", fontSize: 13, lineHeight: 1.7, marginBottom: 20 }}>A sentence or a photo becomes a 3D model, tagged for 3D print, CNC, leather or metal — download an STL sized for your machine. Part of UnicoOS, works on its own.</p>
+              <p style={{ color: "#9ca3af", fontSize: 13, lineHeight: 1.7, marginBottom: 20 }}>A sentence or a photo becomes a 3D model, tagged for 3D print, CNC, leather or metal — STL / 3MF sized for your machine, SVG / DXF profiles for the laser. Part of UnicoOS, works on its own.</p>
               <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 4 }}>
                 <a href="/unico3d"
                   style={{ background: "linear-gradient(135deg,#f97316,#ea580c)", color: "white", fontWeight: 700, fontSize: 12, padding: "8px 16px", borderRadius: 8, textDecoration: "none" }}>🧊 Get Early Access</a>
