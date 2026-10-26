@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test:notify-unicoos": "node --experimental-strip-types --no-warnings tests/notify-unicoos.test.mjs"
+    "test:notify-unicoos": "node --experimental-strip-types --no-warnings tests/notify-unicoos.test.mjs",
+    "test:for-sale": "node --experimental-strip-types --no-warnings tests/for-sale.test.mjs"
   },
   "dependencies": {
     "next": "16.2.7",
