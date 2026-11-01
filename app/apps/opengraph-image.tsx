@@ -12,7 +12,7 @@ const APPS = [
   { label: "UnicoClip", color: "#5eead4", emoji: "🎬" },
   { label: "UnicoMusic", color: "#f9a8d4", emoji: "🎧" },
   { label: "UnicoTube", color: "#fca5a5", emoji: "▶️" },
-  { label: "UnicoMobile", color: "#7dd3fc", emoji: "📶" },
+  { label: "UnicoWireless", color: "#7dd3fc", emoji: "📶" },
 ];
 
 export default function Image() {

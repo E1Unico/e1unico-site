@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "UnicoCard — One Tap. Everything You Do. | Smart NFC Business Card",
   description:
-    "UnicoCard is the tap-to-share smart business card from E1 Unico. One tap sends your contact and links to any phone, captures the lead, and shows you the analytics — all inside UnicoOS. Built to grow into your Unico Mobile eSIM and identity, too.",
+    "UnicoCard is the tap-to-share smart business card from E1 Unico. One tap sends your contact and links to any phone, captures the lead, and shows you the analytics — all inside UnicoOS. Built to grow into your Unico Wireless eSIM and identity, too.",
   openGraph: {
     title: "UnicoCard — One Tap. Everything You Do.",
     description: "Tap-to-share smart business card: share your contact & links, capture leads, track taps. Part of the UnicoOS ecosystem.",
@@ -29,7 +29,7 @@ const COMPARE: { feature: string; unicocard: string; others: string }[] = [
 ];
 
 const ROADMAP = [
-  { emoji: "📶", title: "Provision your Unico Mobile eSIM", desc: "Tap your UnicoCard to load a Unico Mobile line onto your phone — no plastic SIM to chase. (Coming with Unico Mobile.)" },
+  { emoji: "📶", title: "Provision your Unico Wireless eSIM", desc: "Tap your UnicoCard to load a Unico Wireless line onto your phone — no plastic SIM to chase. (Coming with Unico Wireless.)" },
   { emoji: "🪪", title: "Carry your identity", desc: "An identity applet alongside your contact card, so your UnicoCard becomes the one thing you hand over." },
   { emoji: "💳", title: "Payments, later", desc: "A payment layer riding on the same card — distribution, identity, and money in one tap." },
 ];
@@ -39,7 +39,7 @@ const FAQ: { q: string; a: string }[] = [
   { q: "Does the other person need an app?", a: "No. UnicoCard uses NFC — the same tap-to-pay technology most phones already have. They just tap and your info opens in their browser." },
   { q: "Where do my leads and analytics live?", a: "Inside UnicoOS, alongside the rest of your business — contacts, follow-ups, and tap analytics in one place, under one login." },
   { q: "Can I change what my card shares?", a: "Yes — update your details or links once and every tap serves the latest version. No reprinting." },
-  { q: "How does it connect to Unico Mobile?", a: "That's on the roadmap: we're designing UnicoCard so a tap can provision your Unico Mobile eSIM — load a phone line onto your device with no physical SIM. It'll arrive alongside Unico Mobile; the card's share/lead/analytics features work today." },
+  { q: "How does it connect to Unico Wireless?", a: "That's on the roadmap: we're designing UnicoCard so a tap can provision your Unico Wireless eSIM — load a phone line onto your device with no physical SIM. It'll arrive alongside Unico Wireless; the card's share/lead/analytics features work today." },
   { q: "How do I get one?", a: "UnicoCard is part of the UnicoOS ecosystem. Explore it on UnicoOS, or call us and we'll get you set up." },
 ];
 
@@ -50,7 +50,7 @@ const JSON_LD = {
       "@type": "Product",
       name: "UnicoCard",
       description:
-        "Tap-to-share smart NFC business card from E1 Unico Corporation. Shares contact details and links with one tap, captures leads into the UnicoOS CRM, and tracks tap analytics. Roadmap includes provisioning a Unico Mobile eSIM plus identity and payment applets.",
+        "Tap-to-share smart NFC business card from E1 Unico Corporation. Shares contact details and links with one tap, captures leads into the UnicoOS CRM, and tracks tap analytics. Roadmap includes provisioning a Unico Wireless eSIM plus identity and payment applets.",
       brand: { "@type": "Brand", name: "UnicoCard" },
       category: "Smart business card",
       manufacturer: { "@type": "Organization", name: "E1 Unico Corporation", url: "https://e1unico.com" },
@@ -107,7 +107,7 @@ export default function UnicoCardPage() {
               turns the moment into a saved lead, and shows you exactly what&apos;s working — all inside UnicoOS.
             </p>
             <p style={{ fontSize: 14, color: "#6b7280", marginBottom: 32, lineHeight: 1.6 }}>
-              Built by <strong style={{ color: "white" }}>E1 Unico</strong>. And on the roadmap: tap your card to load your <strong style={{ color: "#7dd3fc" }}>Unico Mobile</strong> eSIM.
+              Built by <strong style={{ color: "white" }}>E1 Unico</strong>. And on the roadmap: tap your card to load your <strong style={{ color: "#7dd3fc" }}>Unico Wireless</strong> eSIM.
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 14 }}>
               <a href="https://unicoos.app" target="_blank" rel="noreferrer" className="btn-gold" style={{ color: "white", fontWeight: 800, fontSize: 16, padding: "16px 34px", borderRadius: 16, textDecoration: "none", boxShadow: "0 8px 40px rgba(201,168,76,0.3)" }}>
@@ -220,7 +220,7 @@ export default function UnicoCardPage() {
             ))}
           </div>
           <p style={{ textAlign: "center", color: "#4b5563", fontSize: 12, marginTop: 20 }}>
-            Roadmap items arrive with Unico Mobile and future releases — the card you get today already shares, captures, and tracks.
+            Roadmap items arrive with Unico Wireless and future releases — the card you get today already shares, captures, and tracks.
           </p>
         </div>
       </section>
@@ -272,7 +272,7 @@ export default function UnicoCardPage() {
           <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "6px 24px", marginBottom: 16, fontSize: 12 }}>
             <Link href="/" style={{ color: "#9ca3af", textDecoration: "none", fontWeight: 600 }}>← E1Unico.com</Link>
             <Link href="/apps" style={{ color: "#818cf8", textDecoration: "none", fontWeight: 600 }}>All Unico Apps</Link>
-            <Link href="/unicomobile" style={{ color: "#7dd3fc", textDecoration: "none", fontWeight: 600 }}>UnicoMobile</Link>
+            <Link href="/unicowireless" style={{ color: "#7dd3fc", textDecoration: "none", fontWeight: 600 }}>UnicoWireless</Link>
             <Link href="/unico3d" style={{ color: "#fdba74", textDecoration: "none", fontWeight: 600 }}>Unico3D</Link>
             <span className="gold-text" style={{ fontWeight: 600 }}>UnicoCard</span>
             <a href="https://unicoos.app" target="_blank" rel="noreferrer" style={{ color: "#818cf8", textDecoration: "none", fontWeight: 600 }}>UnicoOS →</a>

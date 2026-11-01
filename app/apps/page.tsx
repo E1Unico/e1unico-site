@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "The Unico App Ecosystem — One Login, One Empire | E1 Unico",
   description:
-    "Every Unico app in one place: UnicoOS to run your business, UnicoJam + UnicoClip to create, UnicoMusic + UnicoTube to distribute and earn, and UnicoMobile to connect. One login, one balance, one ecosystem — built by E1 Unico Corporation.",
+    "Every Unico app in one place: UnicoOS to run your business, UnicoJam + UnicoClip to create, UnicoMusic + UnicoTube to distribute and earn, and UnicoWireless to connect. One login, one balance, one ecosystem — built by E1 Unico Corporation.",
   openGraph: {
     title: "The Unico App Ecosystem",
     description: "Run your business, create, distribute, earn, and connect — all under one login. See every Unico app.",
@@ -61,8 +61,8 @@ const GROUPS: { key: string; label: string; sub: string; apps: App[] }[] = [
     label: "Connect",
     sub: "Keep your business — and your team — in signal, and one tap from everyone you meet.",
     apps: [
-      { name: "Unico", tail: "Card", wordmarkTail: "Card", emoji: "💳", status: "Live", statusColor: "#f0c96e", blurb: "Tap-to-share smart business card — send your contact and links, capture the lead into your CRM, and track every tap. Roadmap: provision your Unico Mobile eSIM.", href: "/unicocard", grad: "linear-gradient(135deg,#f0c96e,#c9a84c)", accent: "#f0c96e" },
-      { name: "Unico", tail: "Mobile", wordmarkTail: "Mobile", emoji: "📶", status: "Coming Soon", statusColor: "#7dd3fc", blurb: "Business wireless designed to live inside UnicoOS — team lines, one bill, tied to your CRM and UniRo. Carrier-neutral by design.", href: "/unicomobile", grad: "linear-gradient(135deg,#7dd3fc,#0ea5e9)", accent: "#7dd3fc" },
+      { name: "Unico", tail: "Card", wordmarkTail: "Card", emoji: "💳", status: "Live", statusColor: "#f0c96e", blurb: "Tap-to-share smart business card — send your contact and links, capture the lead into your CRM, and track every tap. Roadmap: provision your Unico Wireless eSIM.", href: "/unicocard", grad: "linear-gradient(135deg,#f0c96e,#c9a84c)", accent: "#f0c96e" },
+      { name: "Unico", tail: "Wireless", wordmarkTail: "Wireless", emoji: "📶", status: "Coming Soon", statusColor: "#7dd3fc", blurb: "Business wireless designed to live inside UnicoOS — team lines, one bill, tied to your CRM and UniRo. Carrier-neutral by design.", href: "/unicowireless", grad: "linear-gradient(135deg,#7dd3fc,#0ea5e9)", accent: "#7dd3fc" },
     ],
   },
 ];
@@ -81,7 +81,7 @@ const JSON_LD = {
   "@context": "https://schema.org",
   "@type": "ItemList",
   name: "The Unico App Ecosystem",
-  description: "Apps and services built by E1 Unico Corporation: UnicoOS, UnicoJam, UnicoClip, UnicoMusic, UnicoTube, and UnicoMobile.",
+  description: "Apps and services built by E1 Unico Corporation: UnicoOS, UnicoJam, UnicoClip, UnicoMusic, UnicoTube, and UnicoWireless.",
   itemListElement: GROUPS.flatMap(g => g.apps).map((a, i) => ({
     "@type": "ListItem",
     position: i + 1,
@@ -225,7 +225,7 @@ export default function AppsPage() {
             <Link href="/unicoclip" style={{ color: "#5eead4", textDecoration: "none", fontWeight: 600 }}>UnicoClip</Link>
             <Link href="/unicomusic" style={{ color: "#f9a8d4", textDecoration: "none", fontWeight: 600 }}>UnicoMusic</Link>
             <Link href="/unicotube" style={{ color: "#fca5a5", textDecoration: "none", fontWeight: 600 }}>UnicoTube</Link>
-            <Link href="/unicomobile" style={{ color: "#7dd3fc", textDecoration: "none", fontWeight: 600 }}>UnicoMobile</Link>
+            <Link href="/unicowireless" style={{ color: "#7dd3fc", textDecoration: "none", fontWeight: 600 }}>UnicoWireless</Link>
             <Link href="/unico3d" style={{ color: "#fdba74", textDecoration: "none", fontWeight: 600 }}>Unico3D</Link>
           </div>
           <p style={{ fontSize: 11, color: "#374151" }}>© 2026 E1 Unico Corporation · One login, one empire · Building the Empire 🦅</p>
