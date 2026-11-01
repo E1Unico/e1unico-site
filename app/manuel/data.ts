@@ -8,12 +8,12 @@ export type SocialLink = {
 };
 
 export const SOCIALS: SocialLink[] = [
-  { name: "Instagram", emoji: "📷", url: "" },
-  { name: "TikTok", emoji: "🎵", url: "" },
-  { name: "YouTube", emoji: "▶️", url: "" },
-  { name: "X", emoji: "✕", url: "" },
-  { name: "LinkedIn", emoji: "💼", url: "" },
-  { name: "Facebook", emoji: "📘", url: "" },
+  { name: "Instagram", emoji: "📷", url: "https://instagram.com/UnicoOnline" },
+  { name: "TikTok", emoji: "🎵", url: "https://tiktok.com/@UnicoOnline" },
+  { name: "YouTube", emoji: "▶️", url: "https://youtube.com/@UnicoOnline" },
+  { name: "X", emoji: "✕", url: "https://x.com/UnicoOnline" },
+  { name: "LinkedIn", emoji: "💼", url: "https://linkedin.com/in/UnicoOnline" },
+  { name: "Facebook", emoji: "📘", url: "https://facebook.com/UnicoOnline" },
 ];
 
 export const CONTACT_EMAIL = "unicoonline@gmail.com";
@@ -60,5 +60,37 @@ export const VENTURES: Venture[] = [
     url: "https://IndustrialDrip.Net",
     logo: "/industrial-drip-logo.jpg",
     accent: "rgba(185,28,28,0.28)",
+  },
+  {
+    name: "UnicoCard",
+    tag: "Tap-to-Share Smart Business Card",
+    desc: "One tap sends your contact and links to any phone and captures the lead.",
+    url: "https://unicocard.com",
+    emoji: "💳",
+    accent: "rgba(14,165,233,0.28)",
+  },
+  {
+    name: "UnicoTrust",
+    tag: "Security & Compliance Automation",
+    desc: "SOC 2, HIPAA, GDPR and ISO 27001 automation for growing businesses.",
+    url: "https://unicotrust.com",
+    emoji: "🛡️",
+    accent: "rgba(16,185,129,0.28)",
+  },
+  {
+    name: "Unico Wireless",
+    tag: "Business Phone Lines · Coming Soon",
+    desc: "Team phone lines managed inside UnicoOS.",
+    url: "https://unicowireless.com",
+    emoji: "📶",
+    accent: "rgba(56,189,248,0.28)",
+  },
+  {
+    name: "Feast and Fun",
+    tag: "Feast and Fun LLC",
+    desc: "One of my companies.",
+    url: "https://feastandfun.com",
+    emoji: "🎉",
+    accent: "rgba(244,114,182,0.28)",
   },
 ];
