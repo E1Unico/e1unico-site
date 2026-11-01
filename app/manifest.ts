@@ -7,7 +7,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "E1 Unico Corporation",
     short_name: "E1 Unico",
     description:
-      "BBB Accredited business launch & consulting, and the Unico app ecosystem — UnicoOS, UnicoJam, UnicoClip, UnicoMusic, UnicoTube, and UnicoMobile.",
+      "BBB Accredited business launch & consulting, and the Unico app ecosystem — UnicoOS, UnicoJam, UnicoClip, UnicoMusic, UnicoTube, and UnicoWireless.",
     start_url: "/",
     display: "standalone",
     background_color: "#05050a",
