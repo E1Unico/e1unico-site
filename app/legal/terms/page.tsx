@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { SUPPORT_EMAIL } from "../../../lib/contact";
 
 export const metadata: Metadata = {
   title: "Terms of Service — E1 Unico Corporation",
@@ -53,7 +54,7 @@ export default function TermsOfService() {
           <p style={pStyle}>
             Subscription plans (UnicoOS, UnicoCare, website hosting/care, and similar recurring
             services) renew automatically each billing period until canceled. You can cancel by
-            emailing <a href="mailto:Unico@E1Unico.com" style={{ color: gold }}>Unico@E1Unico.com</a>{" "}
+            emailing <a href={`mailto:${SUPPORT_EMAIL}`} style={{ color: gold }}>{SUPPORT_EMAIL}</a>{" "}
             or calling <a href="tel:18333186426" style={{ color: gold }}>1-833-E1-UNICO</a>;
             cancellation stops future billing but does not refund the current billing period
             already paid for.
@@ -123,7 +124,7 @@ export default function TermsOfService() {
           <h2 style={hStyle}>Contact us</h2>
           <p style={pStyle}>
             E1 Unico Corporation · Spring, TX ·{" "}
-            <a href="mailto:Unico@E1Unico.com" style={{ color: gold }}>Unico@E1Unico.com</a> ·{" "}
+            <a href={`mailto:${SUPPORT_EMAIL}`} style={{ color: gold }}>{SUPPORT_EMAIL}</a> ·{" "}
             <a href="tel:18333186426" style={{ color: gold }}>1-833-E1-UNICO</a>
           </p>
         </div>

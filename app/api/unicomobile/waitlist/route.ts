@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { notifyUnicoOS } from "../../../../lib/notify-unicoos";
+import { SUPPORT_EMAIL } from "../../../../lib/contact";
 
 export const runtime = "nodejs";
 
@@ -41,7 +42,7 @@ async function notifyTelegram(text: string) {
 
 async function notifyResend(subject: string, html: string) {
   const key = process.env.RESEND_API_KEY;
-  const to = process.env.UNICOMOBILE_LEAD_EMAIL || process.env.UNIRO_LEAD_EMAIL || "unico@e1unico.com";
+  const to = process.env.UNICOMOBILE_LEAD_EMAIL || process.env.UNIRO_LEAD_EMAIL || SUPPORT_EMAIL;
   const from = process.env.UNIRO_LEAD_FROM || "UnicoMobile <uniro@e1unico.com>";
   if (!key) return false;
   try {

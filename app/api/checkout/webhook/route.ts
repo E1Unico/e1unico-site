@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
+import { SUPPORT_EMAIL } from "../../../../lib/contact";
 
 export const runtime = "nodejs";
 
@@ -33,7 +34,7 @@ async function notifyTelegram(text: string) {
 
 async function notifyResend(subject: string, html: string) {
   const key = process.env.RESEND_API_KEY;
-  const to = process.env.SALE_LEAD_EMAIL || process.env.UNIRO_LEAD_EMAIL || "unico@e1unico.com";
+  const to = process.env.SALE_LEAD_EMAIL || process.env.UNIRO_LEAD_EMAIL || SUPPORT_EMAIL;
   const from = process.env.SALE_LEAD_FROM || process.env.UNIRO_LEAD_FROM || "E1Unico <orders@e1unico.com>";
   if (!key) return false;
   try {

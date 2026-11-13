@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Metadata } from "next";
 import BuyButton from "./components/BuyButton";
 import MobileMenu from "./components/MobileMenu";
+import { SUPPORT_EMAIL } from "../lib/contact";
 
 export const metadata: Metadata = {
   title: "E1 Unico Corporation — All-In-One Business Launch & Consulting",
@@ -46,7 +47,7 @@ const jsonLd = {
   image: "https://e1unico.com/e1unico-logo.jpg",
   description: "BBB Accredited Texas business launch and consulting company. The 2K Special gets businesses registered, branded, and operating.",
   telephone: "+18333186426",
-  email: "Unico@E1Unico.com",
+  email: SUPPORT_EMAIL,
   priceRange: "$$",
   address: {
     "@type": "PostalAddress",
@@ -240,9 +241,9 @@ export default function Home() {
                 <BuyButton product="2k-special" label="🛒 Order Now — $2,350" className="btn-gold"
                   style={{ display: "block", width: "100%", color: "white", fontWeight: 800, fontSize: 16, padding: "16px", borderRadius: 14, border: "none", cursor: "pointer", marginBottom: 10, boxShadow: "0 8px 32px rgba(201,168,76,0.3)" }} />
 
-                <a href="mailto:Unico@E1Unico.com"
+                <a href={`mailto:${SUPPORT_EMAIL}`}
                   style={{ display: "block", width: "100%", color: "#9ca3af", fontWeight: 600, fontSize: 13, padding: "12px", borderRadius: 14, textDecoration: "none", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)" }}>
-                  📧 Unico@E1Unico.com
+                  📧 {SUPPORT_EMAIL}
                 </a>
 
                 <p style={{ fontSize: 11, color: "#4b5563", marginTop: 16 }}>Evenings 7:30–9:30 PM · 7 days/wk</p>
@@ -696,7 +697,7 @@ export default function Home() {
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 16, marginBottom: 44 }} className="sm:grid-cols-3 grid-cols-1">
             {[
               { icon: "📞", label: "Phone",  value: "1-833-E1-UNICO", sub: "1-833-318-6426",    href: "tel:18333186426" },
-              { icon: "📧", label: "Email",  value: "Unico@E1Unico.com", sub: "Fast response", href: "mailto:Unico@E1Unico.com" },
+              { icon: "📧", label: "Email",  value: SUPPORT_EMAIL, sub: "Fast response", href: `mailto:${SUPPORT_EMAIL}` },
               { icon: "🕗", label: "Hours",  value: "7:30–9:30 PM",  sub: "Every day",          href: null },
             ].map(c => (
               <div key={c.label} className="gold-border card-lift" style={{ borderRadius: 18, padding: "24px 16px", background: "rgba(14,14,24,0.8)" }}>
@@ -748,7 +749,7 @@ export default function Home() {
             <a href="https://unicoos.app" target="_blank" rel="noreferrer" style={{ color: "#818cf8", textDecoration: "none", fontWeight: 600 }}>UnicoOS →</a>
             <a href="https://IndustrialDrip.Net" target="_blank" rel="noreferrer" style={{ color: "#f87171", textDecoration: "none", fontWeight: 600 }}>IndustrialDrip.Net →</a>
             <a href="tel:18333186426" style={{ color: "#c9a84c", textDecoration: "none", fontWeight: 600 }}>1-833-E1-UNICO</a>
-            <a href="mailto:Unico@E1Unico.com" style={{ color: "#c9a84c", textDecoration: "none", fontWeight: 600 }}>Unico@E1Unico.com</a>
+            <a href={`mailto:${SUPPORT_EMAIL}`} style={{ color: "#c9a84c", textDecoration: "none", fontWeight: 600 }}>{SUPPORT_EMAIL}</a>
             <a href="/legal/privacy" style={{ color: "#4b5563", textDecoration: "none", fontWeight: 600 }}>Privacy Policy</a>
             <a href="/legal/terms" style={{ color: "#4b5563", textDecoration: "none", fontWeight: 600 }}>Terms of Service</a>
             <a href="/trust" style={{ color: "#4b5563", textDecoration: "none", fontWeight: 600 }}>Trust &amp; Compliance</a>
