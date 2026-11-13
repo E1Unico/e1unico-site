@@ -1,6 +1,8 @@
 // Central place to wire up real links as they become available —
 // edit the `url` fields below and every page on the site updates.
 
+import { SUPPORT_EMAIL } from "../../lib/contact";
+
 export type SocialLink = {
   name: string;
   emoji: string;
@@ -16,7 +18,7 @@ export const SOCIALS: SocialLink[] = [
   { name: "Facebook", emoji: "📘", url: "https://facebook.com/UnicoOnline" },
 ];
 
-export const CONTACT_EMAIL = "unicoonline@gmail.com";
+export const CONTACT_EMAIL = SUPPORT_EMAIL;
 
 export type Venture = {
   name: string;

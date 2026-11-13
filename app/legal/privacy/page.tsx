@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { SUPPORT_EMAIL } from "../../../lib/contact";
 
 export const metadata: Metadata = {
   title: "Privacy Policy — E1 Unico Corporation",
@@ -99,7 +100,7 @@ export default function PrivacyPolicy() {
           <p style={pStyle}>
             You can ask us to access, correct, or delete the personal information we hold about
             you, or to stop contacting you, by emailing{" "}
-            <a href="mailto:Unico@E1Unico.com" style={{ color: gold }}>Unico@E1Unico.com</a> or
+            <a href={`mailto:${SUPPORT_EMAIL}`} style={{ color: gold }}>{SUPPORT_EMAIL}</a> or
             calling <a href="tel:18333186426" style={{ color: gold }}>1-833-E1-UNICO</a>.
           </p>
         </div>
@@ -124,7 +125,7 @@ export default function PrivacyPolicy() {
           <h2 style={hStyle}>Contact us</h2>
           <p style={pStyle}>
             E1 Unico Corporation · Spring, TX ·{" "}
-            <a href="mailto:Unico@E1Unico.com" style={{ color: gold }}>Unico@E1Unico.com</a> ·{" "}
+            <a href={`mailto:${SUPPORT_EMAIL}`} style={{ color: gold }}>{SUPPORT_EMAIL}</a> ·{" "}
             <a href="tel:18333186426" style={{ color: gold }}>1-833-E1-UNICO</a>
           </p>
         </div>

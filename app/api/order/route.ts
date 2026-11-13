@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { SUPPORT_EMAIL } from "../../../lib/contact";
 
 export async function POST(req: NextRequest) {
   const body = await req.json();
@@ -16,7 +17,7 @@ export async function POST(req: NextRequest) {
       headers: { "Content-Type": "application/json", Authorization: `Bearer ${RESEND_KEY}` },
       body: JSON.stringify({
         from: "orders@e1unico.com",
-        to: ["Unico@E1Unico.com"],
+        to: [SUPPORT_EMAIL],
         subject: `🛒 New Order: ${product} — ${price}`,
         html: `
           <div style="font-family:sans-serif;max-width:600px;margin:0 auto;background:#05050a;color:white;padding:32px;border-radius:16px;">

@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { SUPPORT_EMAIL } from "../../lib/contact";
 
 const UEI = "YSEHX6CMMWA9";
 const CAGE = "24MC6";
@@ -130,7 +131,7 @@ export default function TrustAndCompliance() {
           <p style={pStyle}>
             E1 Unico Corporation is a SAM.gov registered entity (UEI: {UEI}), eligible for federal,
             state, local, and tribal government contract awards. Contact us at{" "}
-            <a href="mailto:Unico@E1Unico.com" style={{ color: indigo }}>Unico@E1Unico.com</a> or{" "}
+            <a href={`mailto:${SUPPORT_EMAIL}`} style={{ color: indigo }}>{SUPPORT_EMAIL}</a> or{" "}
             <a href="tel:18333186426" style={{ color: indigo }}>1-833-E1-UNICO</a> for procurement inquiries.
           </p>
         </div>
