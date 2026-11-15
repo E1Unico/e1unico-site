@@ -37,7 +37,7 @@ const GENRES = ["Gospel", "Hip-Hop", "R&B", "Lo-Fi", "Trap", "Country", "Afrobea
 const FAQ: { q: string; a: string }[] = [
   { q: "How is this different from Suno, Udio, or Donna?", a: "UnicoJam makes full songs from a prompt like they do — but it's built into UnicoOS. One login runs your whole business AND your music, credits are shared across the ecosystem, every genre is welcome from gospel to drill, and serious artists get a real label path through Multi Genre Records. It's a music studio that lives where you already work." },
   { q: "Do I own the songs I make?", a: "Yes. Tracks you generate are yours to download in studio quality, share, and release. Your library stays in your account across every device." },
-  { q: "What does $14.99/week actually get me?", a: "A weekly generation allowance of full songs plus downloads and public share pages. If you go big in a given week, overages ride on UnicoAI credits — so you only ever pay for what you actually make, never a surprise lockout." },
+  { q: "What does $14.99/month actually get me?", a: "A monthly generation allowance of full songs plus downloads and public share pages. If you go big in a given month, overages ride on UnicoAI credits — so you only ever pay for what you actually make, never a surprise lockout. UnicoJam is also included with Uni Pro and up." },
   { q: "Do I need UnicoOS to use it?", a: "No. UnicoJam works as a standalone app with its own login. But if you already run your business on UnicoOS, it shows up as one of your apps automatically — same account, same balance." },
   { q: "Can it write the lyrics for me?", a: "Either way. Paste your own lyrics, or describe a vibe and let UnicoJam write them. You stay in control of the final track." },
   { q: "What kind of music can I make with UnicoJam?", a: "Whatever you want. Gospel, hip-hop, R&B, country, EDM, drill — UnicoJam isn't built around one genre or one audience, it's built for every artist in the Unico ecosystem." },
@@ -56,7 +56,7 @@ const JSON_LD = {
       operatingSystem: "Web, iOS, Android",
       description:
         "AI music studio that turns a prompt into a finished, radio-ready song. Part of the UnicoOS ecosystem with a single login, shared credits, and every genre welcome.",
-      offers: { "@type": "Offer", price: "14.99", priceCurrency: "USD", description: "$14.99 per week" },
+      offers: { "@type": "Offer", price: "14.99", priceCurrency: "USD", description: "$14.99 per month" },
       publisher: { "@type": "Organization", name: "E1 Unico Corporation", url: "https://e1unico.com" },
     },
     {
@@ -75,7 +75,8 @@ const PRICE_INCLUDES = [
   "Bring your own lyrics or auto-write them",
   "Studio-quality downloads",
   "Public share / play pages",
-  "Weekly generation allowance",
+  "Monthly generation allowance",
+  "Included with Uni Pro and up",
   "Overage billed through UnicoAI credits — never a surprise bill",
   "One account across UnicoOS + the standalone app",
 ];
@@ -235,7 +236,7 @@ export default function UnicoJamPage() {
               <p style={{ fontSize: 11, fontWeight: 700, color: "#c4b5fd", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 12 }}>UnicoJam Pro</p>
               <div style={{ display: "flex", alignItems: "baseline", justifyContent: "center", gap: 4, marginBottom: 4 }}>
                 <span style={{ fontSize: 68, fontWeight: 900, lineHeight: 1, background: "linear-gradient(135deg,#a78bfa,#7c3aed)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>$14.99</span>
-                <span style={{ fontSize: 18, color: "#9ca3af", fontWeight: 700 }}>/week</span>
+                <span style={{ fontSize: 18, color: "#9ca3af", fontWeight: 700 }}>/month</span>
               </div>
               <p style={{ color: "#6b7280", fontSize: 13, marginBottom: 24 }}>Cancel anytime · Founder pricing locked for early access</p>
               <a href="#waitlist" className="btn-indigo" style={{ display: "block", width: "100%", color: "white", fontWeight: 800, fontSize: 16, padding: "15px", borderRadius: 14, textDecoration: "none", marginBottom: 12 }}>

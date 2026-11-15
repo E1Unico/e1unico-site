@@ -7,7 +7,7 @@ export const runtime = "nodejs";
 // UnicoJam early-access waitlist capture.
 // Mirrors the Ask Unico lead pipeline: every notify channel is env-gated and
 // fires independently, and we always log so a signup is never silently dropped.
-// No payment or generation happens here — UnicoJam checkout ($14.99/wk) and the
+// No payment or generation happens here — UnicoJam checkout ($14.99/mo) and the
 // ElevenLabs generation engine are gated on human prerequisites (Stripe price
 // IDs + ElevenLabs account) and live in the unico-os monorepo, not this site.
 
