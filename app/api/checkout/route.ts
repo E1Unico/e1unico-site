@@ -62,11 +62,12 @@ const PRICES: Record<string, { mode: "payment" | "subscription"; line_items: { p
   "unicoos-starter":        { mode: "subscription", line_items: [{ price: process.env.STRIPE_PRICE_PRO_2026         || "price_1TlcPKJS6gY9XerPxsF9AQ9N",       quantity: 1 }] }, // legacy Starter → new Pro
   "unicoos-professional":   { mode: "subscription", line_items: [{ price: process.env.STRIPE_PRICE_PROX_2026        || "price_1TlcPKJS6gY9XerPd2FiwTB7",       quantity: 1 }] }, // legacy Professional → new ProX
   // ── UnicoJam (AI music app) ──────────────────────────────────────────
-  // $14.99/week recurring. The price ID is a human prerequisite (Stripe price
-  // not created yet — see UNICO_BUILD_SPEC §4), so this is env-gated and stays
-  // inert until STRIPE_PRICE_UNICOJAM_WEEKLY is set. Until then the /unicojam
+  // $14.99/month recurring (Unico, 2026-11-15; was $14.99/week). The monthly
+  // Stripe price now exists (set STRIPE_PRICE_UNICOJAM_MONTHLY on this project
+  // to use it); STRIPE_PRICE_UNICOJAM_WEEKLY is still read as a fallback so
+  // nothing that pointed at it breaks. Until the engine is live the /unicojam
   // page routes users to the waitlist, not this checkout.
-  "unicojam-pro":           { mode: "subscription", line_items: [{ price: process.env.STRIPE_PRICE_UNICOJAM_WEEKLY  || "",                                    quantity: 1 }] }, // $14.99/wk
+  "unicojam-pro":           { mode: "subscription", line_items: [{ price: process.env.STRIPE_PRICE_UNICOJAM_MONTHLY || process.env.STRIPE_PRICE_UNICOJAM_WEEKLY || "", quantity: 1 }] }, // $14.99/mo
 };
 
 export async function POST(req: NextRequest) {
